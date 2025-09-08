@@ -1,0 +1,9 @@
+export {default as Jumbotron} from './components/Jumbotron';
+export {default as IntegrationFeature} from './components/IntegrationFeature';
+export {default as Banner} from './components/Banner';
+export {default as TargetUser} from './components/TargetUser';
+export {default as Footer} from './components/Footer';
+export {default as TemplateSampleContainer} from './components/TemplateSample';
+export {default as QnA} from './components/QnA';
+export {default as Advantage} from './components/Advantage';
+export {default as Detail} from './components/Detail';

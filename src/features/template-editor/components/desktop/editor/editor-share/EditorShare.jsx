@@ -1,0 +1,141 @@
+import { EditorContentWrapper, HorizontalWrapper, InputEditorLarge, LabelText, TitleHeader } from "../../../../assets/Global.styled";
+import { ActionButton, ActionButtonIcon, ActionButtonText, ActionButtonWrapper, DividingLine, EditorShareContainer, QrCode, ShareItems, TextButton } from "./EditorShare.styled";
+import qrCode from '../../../../../../assets/images/qr-code.png';
+import {useWindowSize} from '../../../../../../hooks/useWindowSize';
+import linkIcon from '../../../../../../assets/images/link-icon.png';
+import whatsappIcon from '../../../../../../assets/images/whatsapp.png';
+import facebookIcon from '../../../../../../assets/images/facebook.png';
+import copyIcon from '../../../../../../assets/images/copy-icon.png';
+import uploadIcon from '../../../../../../assets/images/upload-icon.png';
+import leftArrow from '../../../../../../assets/images/left-arrow.png';
+import { useState } from "react";
+import { useSelector } from "react-redux";
+
+export default function EditorShare({handleEditMode, linkPage, setLinkPage, handleChangeLinkPage,  handleLoginPopUp}){
+    const size = useWindowSize();
+    const height = size[0] - 130;
+    const loggedIn = useSelector(state => state.authentication.loggedIn);
+    const [link, setLink] = useState('https://infork.com/' + linkPage);
+    const [edit, setEdit] = useState(false);
+    console.log(edit);
+    const handleCheckLink = async () => {
+        let url = 'https://dummy-backend-500141028909.asia-southeast2.run.app/personal-area/check-link';
+        if (process.env.NODE_ENV === 'development'){
+            url = 'http://localhost:5001/personal-area/check-link';
+        }
+        try {
+            const response = await fetch(url, {
+                method: "POST",
+                credentials: 'include',
+                mode: 'cors',
+                headers: {
+                    "Content-Type":"application/json"
+                },
+                body: JSON.stringify({link: link})
+            });
+            const json = await response.json();
+            console.log(json.status);
+            if (json.status === 'fail'){
+                alert('link already exists');
+                // setLink(linkPage);
+                setLink('https://infork.com/' + linkPage);
+            } 
+            if (json.status === 'ok'){
+                setLinkPage(link);
+                console.log('link changed');
+            }
+            if (linkPage !== '' ){
+                console.log(link);
+            }
+        } catch (error) {
+            throw error;
+        }
+    }
+    const handleClickLink = () => {
+        const inputLink = document.getElementById('inputLink');
+        const linkButton = document.getElementById('linkButton');
+        if (loggedIn){
+            if (!edit){
+                setEdit(true);
+                linkButton.innerHTML = 'Save';
+                inputLink.disabled = false;
+                setLink(linkPage);
+                inputLink.focus();
+                // inputLink.value = 'bambang';
+            } else {
+                handleCheckLink();
+                // handleChangeLinkPage(link);
+                setEdit(false);
+                setLink('https://infork.com/' + link);
+                linkButton.innerHTML = 'Edit';
+                inputLink.disabled = true;
+            }
+        } else {
+            handleLoginPopUp();
+        }
+    }
+    return (
+        <EditorShareContainer>
+            <TitleHeader>
+                <img onClick={() => handleEditMode(false)} src={leftArrow} alt='close icon' />
+                <h3>Share</h3>
+            </TitleHeader>
+            <EditorContentWrapper style={{height: height}}>
+                <ShareItems>
+                    <HorizontalWrapper>
+                        <LabelText>Qr Code</LabelText>
+                        <p>Download</p>
+                    </HorizontalWrapper>
+                    <QrCode>
+                        <img src={qrCode} alt='qr code' />
+                    </QrCode>
+                    <HorizontalWrapper>
+                        <LabelText>Link Page</LabelText>
+                        <TextButton id="linkButton" onClick={handleClickLink}>Edit</TextButton>
+                        {/* <p id="linkButton" onClick={handleClickLink}>Edit</p> */}
+                    </HorizontalWrapper>
+                    <InputEditorLarge>
+                        <input id="inputLink" type='text' value={link} onChange={(e) => setLink(e.target.value)} disabled/>
+                    </InputEditorLarge>
+                    <DividingLine />
+                    <ActionButtonWrapper>
+                        <ActionButtonIcon>
+                            <img src={linkIcon} alt='link icon' />
+                        </ActionButtonIcon>
+                        <ActionButtonText>
+                            <h4>Copy a link</h4>
+                            <p>Share to your friends</p>
+                        </ActionButtonText>
+                        <ActionButton>
+                            <img src={copyIcon} alt="copy icon" />
+                        </ActionButton>
+                    </ActionButtonWrapper>
+                    <ActionButtonWrapper>
+                        <ActionButtonIcon>
+                            <img src={whatsappIcon} alt='link icon' />
+                        </ActionButtonIcon>
+                        <ActionButtonText>
+                            <h4>Share on Whatsapp</h4>
+                            <p>Share to your friends</p>
+                        </ActionButtonText>
+                        <ActionButton>
+                            <img src={uploadIcon} alt='upload icon' />
+                        </ActionButton>
+                    </ActionButtonWrapper>
+                    <ActionButtonWrapper>
+                        <ActionButtonIcon>
+                            <img src={facebookIcon} alt='link icon' />
+                        </ActionButtonIcon>
+                        <ActionButtonText>
+                            <h4>Share on Facebook</h4>
+                            <p>Share to your friends</p>
+                        </ActionButtonText>
+                        <ActionButton>
+                            <img src={uploadIcon} alt='upload icon' />
+                        </ActionButton>
+                    </ActionButtonWrapper>
+                </ShareItems>
+            </EditorContentWrapper>
+        </EditorShareContainer>
+    )
+}
