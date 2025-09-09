@@ -1,36 +1,54 @@
 import styled from "styled-components";
 
+// export const ListItemsWrapper = styled.div`
+//     position: relative;
+//     width: 100%;
+//     height: auto;
+//     // padding-bottom: 20px;
+//     z-index: 6;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: flex-start;
+//     justify-content: flex-start;
+//     overflow-x: scroll;
+//     &::-webkit-scrollbar {
+//         display: none;
+//     }
+//     // @media only screen and (min-width: 400px){
+//     //     width: 400px;
+//     // }
+//     // @media only screen and (min-width: 600px){
+//     //     width: 300px;
+//     // }
+// `;
+
 export const ListItemsWrapper = styled.div`
-    position: relative;
     width: 100%;
     height: auto;
-    // padding-bottom: 20px;
     z-index: 6;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    overflow-x: scroll;
+    white-space: nowrap;
+    overflow-x: auto;
+    // overflow-y: hidden;
     &::-webkit-scrollbar {
         display: none;
     }
-    // @media only screen and (min-width: 400px){
-    //     width: 400px;
-    // }
-    // @media only screen and (min-width: 600px){
-    //     width: 300px;
-    // }
 `;
 
 export const ListItemsContent = styled.div`
     height: auto;
     width: auto;
+    margin: 0 7.5%;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     justify-content: flex-start;
-    // padding-left: 25px;
 `;
+
+
 
 export const ScrollRightButton = styled.div`
     position: absolute;

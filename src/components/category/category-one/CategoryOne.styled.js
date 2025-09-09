@@ -6,6 +6,7 @@ export const CategoryText = styled.div`
     align-items: center;
     justify-content: center;
     width: 100%;
+    // background: pink;
     margin: 20px 0;
     textarea {
         text-align: center;
@@ -42,5 +43,14 @@ export const CategoryText = styled.div`
     }
     h3 {
         margin: 0;
+    }
+
+    @media only screen and (min-width: 400px){
+        width: 85%;
+        max-width: 400px;
+    }
+    @media only screen and (min-width: 600px){
+        width: 85%;
+        max-width: 600px;
     }
 `;

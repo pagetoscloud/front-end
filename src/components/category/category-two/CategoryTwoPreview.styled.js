@@ -5,7 +5,7 @@ export const CategoryText = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    width: 280px;
+    width: 85%;
     margin: 20px 0;
     position: relative;
     h3 {
@@ -28,13 +28,15 @@ export const CategoryText = styled.div`
     // @media only screen and (min-width: 1000px){
     //     width: 550px;
     // }
-    @media only screen and (min-width: 300px){
-        width: 300px;
-    }
+    // @media only screen and (min-width: 300px){
+    //     width: 300px;
+    // }
     @media only screen and (min-width: 400px){
-        width: 400px;
+        width: 85%;
+        max-width: 400px;
     }
     @media only screen and (min-width: 600px){
-        width: 600px;
+        width: 85%;
+        max-width: 600px;
     }
 `;

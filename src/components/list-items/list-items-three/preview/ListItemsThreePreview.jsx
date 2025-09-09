@@ -25,7 +25,7 @@ export default function ListItemsThreePreview({children, containerRef, contentRe
             >
             <ListItemsContent
                 ref={contentRef}
-                style={windowSize[1] < 600 ? {paddingLeft: `${left}px`}: {}}
+                // style={windowSize[1] < 600 ? {paddingLeft: `${left}px`}: {}}
             >
                 {children}
             </ListItemsContent>

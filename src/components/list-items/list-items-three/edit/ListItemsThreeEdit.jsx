@@ -24,7 +24,7 @@ export default function ListItemsThreeEdit({children, containerRef, contentRef, 
         >
             <ListItemsContent
                 ref={contentRef}
-                style={windowSize[1] < 600 ? {paddingLeft: `${left}px`}: {paddingLeft: '25px'}}
+                // style={windowSize[1] < 600 ? {paddingLeft: `${left}px`}: {paddingLeft: '25px'}}
             >
                 {children}
             </ListItemsContent>

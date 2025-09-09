@@ -6,7 +6,7 @@ export const HeaderContainer = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    // background: white;
+    background: white;
     // background: blue;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     @media only screen and (max-width: 600px){

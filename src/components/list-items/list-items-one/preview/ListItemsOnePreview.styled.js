@@ -1,14 +1,22 @@
 import styled from "styled-components";
 
 export const ListItemsWrapper = styled.div`
-    min-width: 300px;
+    width: 85%;
+    min-width: 200px;
     height: auto;
     z-index: 6;
     // max-width: 600px;
     display: grid;
-    grid-template-columns: 140px 140px;
-    column-gap: 20px;
+    grid-template-columns: 100%;
+    // column-gap: 8%;
     row-gap: 30px;
+    @media only screen and (min-width: 300px){
+        display: grid;
+        // min-width: 280px;
+        width: 85%;
+        grid-template-columns: 45% 45%;
+        column-gap: 10%;
+    }
     @media only screen and (min-width: 400px){
         display: grid;
         max-width: 400px;

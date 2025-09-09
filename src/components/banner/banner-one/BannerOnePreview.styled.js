@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const Banner = styled.div`
-    width: 260px;
+    // min-width: 300px;
+    width: 85%;
     height: 150px;
     display: flex;
     flex-direction: row;
@@ -11,7 +12,7 @@ export const Banner = styled.div`
     // background: transparent;
     @media only screen and (min-width: 300px){
         width: 85%;
-        max-width: 300px;
+        // max-width: 300px;
     }
     @media only screen and (min-width: 400px){
         width: 85%;

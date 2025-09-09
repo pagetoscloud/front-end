@@ -1,11 +1,12 @@
 import styled from "styled-components";
 
+
 export const CategoryText = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    width: 300px;
+    width: 85%;
     margin: 20px 0;
     position: relative;
     textarea {
@@ -40,5 +41,13 @@ export const CategoryText = styled.div`
     textarea:focus-within {
         // border: 1px solid blue;
          box-shadow:0px 0px 0px 1px blue inset;
+    }
+    @media only screen and (min-width: 400px){
+        width: 85%;
+        max-width: 400px;
+    }
+    @media only screen and (min-width: 600px){
+        width: 85%;
+        max-width: 600px;
     }
 `;

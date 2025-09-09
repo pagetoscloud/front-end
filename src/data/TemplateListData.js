@@ -895,7 +895,7 @@ export const templateListData = [
                     id: 1,
                     name: 'Popular',
                     listItems: [
-                        {id: 1, name: 'Cheese Kebab Melt', price: 'Rp 24.000', description: 'Cruncy bacon with special double beef.', image: 'https://storage.googleapis.com/pagetos_template_image/kebab-hero.png'},
+                        {id: 1, name: 'Cheese Kebab Melt', price: 'Rp 24.000', description: 'Cruncy bacon with special double beef.', image: 'https://storage.googleapis.com/pagetos_template_image/Cheese-Kebab-Melt.jpg'},
                         {id: 2, name: 'Turkish Adana', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Turkish-Adana.jpg'},
                         {id: 3, name: 'Falafel Wrap', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Falafel-Wrap.jpg'},
                         {id: 4, name: 'Doner Kebab Box', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Doner-Kebab-Box.jpg'},

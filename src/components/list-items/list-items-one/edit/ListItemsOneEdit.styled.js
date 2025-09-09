@@ -1,24 +1,11 @@
 
 import styled from "styled-components";
-
 export const ListItemsWrapper = styled.div`
-    width: 300px;
+    width: 85%;
     height: auto;
     z-index: 6;
-    max-width: 600px;
     display: grid;
-    grid-template-columns: 140px 140px;
-    column-gap: 20px;
+    grid-template-columns: 45% 45%;
+    column-gap: 10%;
     row-gap: 30px;
-    // @media only screen and (min-width: 400px){
-    //     display: grid;
-    //     width: 400px;
-    //     grid-template-columns: 180px 180px;
-    //     column-gap: 30px;
-    // }
-    // @media only screen and (min-width: 600px){
-    //     width: 600px;
-    //     display: grid;
-    //     grid-template-columns: 180px 180px 180px;
-    // }
 `;
