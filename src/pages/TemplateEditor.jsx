@@ -32,9 +32,7 @@ export default function TemplateEditor(){
     const [components, setComponents] = useState([]);
     const { web_id } = useParams();
     const dispatch = useDispatch();
-    // const [page, setPage] = useState('page one');
     const page = useSelector(state => state.templatePagePosition.currentPosition);
-    console.log('current page', page);
     const [showNavigation, setShowNavigation] = useState(false);
     const {loggedIn} = useSelector(state => state.authentication);
     const style = useSelector(state => state.templateStyle.current);
@@ -131,7 +129,6 @@ export default function TemplateEditor(){
         }
     }
     const handleChangePage = (e) => {
-        console.log(Object.values(styleData).length, Object.values(content).length);
         if (Object.values(styleData).length !== 0 && Object.values(content).length !== 0){
             dispatch({
                 ...changePage(e),
@@ -162,8 +159,7 @@ export default function TemplateEditor(){
         setEditMode(e);
     }
     useEffect(() => {
-        if (productList.length > 0){
-            console.log('product list changed');
+        if (productList.length === 0){
             setEditMode('Template')
         }
     }, [])

@@ -21,8 +21,6 @@ import frenchFries from '../assets/images/french-fries.jpg'
 import hotDog from '../assets/images/hot-dog.jpg'
 import { componentsData } from './ComponentsData';
 
-
-
 export const templateListData = [
     {
         name: 'Zebra Pelari',

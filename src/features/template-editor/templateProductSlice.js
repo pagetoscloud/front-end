@@ -115,6 +115,19 @@ const productSlice = createSlice({
             console.log(list, changed);
             state.product = {...state.product, list, changed};
         },
+        clearProductList : (state, action) => {
+            state.product = {
+                list: [],
+                changed: {
+                    categories: [],
+                    products: []
+                },
+                deleted: {
+                    categories: [],
+                    products: []
+                }
+            }
+        },
         addNewProduct: (state, action) => {
             const randomId = Math.floor(Math.random() * 123456);
             const newProduct = {
@@ -244,7 +257,7 @@ const productSlice = createSlice({
 
 export default productSlice.reducer;
 export const { 
-  addNewProduct, deleteProduct,
+  addNewProduct, clearProductList, deleteProduct,
   editProduct, editCategory,
   initialDataLocally
 } = productSlice.actions;

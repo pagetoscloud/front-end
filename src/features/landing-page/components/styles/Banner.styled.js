@@ -72,13 +72,18 @@ export const BannerText = styled.div`
     }
 `; 
 
-export const BannerActionButton = styled.button`
+export const BannerActionButton = styled.div`
     width: auto;
     height: auto;
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: 700;
+    color: pink;
     border-radius: 5px;
     background-color: transparent;
     border: 2px solid black;
+    padding: 10px 20px;
+    a {
+        font-weight: 700;
+        font-size: 16px;
+        color: black;
+        text-decoration: none;
+    }
 `;

@@ -17,6 +17,7 @@ import { useWindowSize } from "../../../../../hooks/useWindowSize";
 import { useDispatch, useSelector } from "react-redux";
 // import { undoState, redoState } from "../../../templateStyleSlice";
 import { REDO, UNDO } from "../../../undoRedoMiddleware";
+import { clearProductList } from "../../../templateProductSlice";
 // import { saveProductEdit } from "../../../templateProductSlice";
 
 
@@ -54,12 +55,12 @@ export default function Header({handleLocalStorage, handleChangePage, handleShow
     const handleBackHome = () => {
         localStorage.removeItem('templateEditor');
         localStorage.removeItem('templatedata');
+        dispatch(clearProductList());
         navigate('/');
     }
     const handleSaveData = () => {
         // localStorage.removeItem('templatedata');
         handleDownloadImage()
-        console.log('clicked')
         // dispatch(saveProductEdit(web_id));
         // handleSave();
     }

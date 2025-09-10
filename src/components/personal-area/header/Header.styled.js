@@ -48,7 +48,7 @@ export const RightContent = styled.div`
     }
 `;
 
-export const UpgradeButton = styled.div`
+export const SolidButton = styled.div`
     width: 100px;
     height: 35px;
     display: none;
@@ -59,12 +59,13 @@ export const UpgradeButton = styled.div`
     background: #1FD07D;
     border-radius: 10px;
     cursor: pointer;
-    p {
+    p, a {
         font-size: 16px;
         font-weight: 600;
         color: white;
         margin: 0;
         text-align: center;
+        text-decoration: none;
     }
     @media only screen and (min-width: 600px){
         display: flex;

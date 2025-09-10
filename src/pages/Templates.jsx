@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { PersonalAreaHeader, PersonalAreaNavigation } from "../components";
 import HorizontalLayout from "../layouts/HorizontalLayout";
 import VerticalLayout from "../layouts/VerticalLayout";
 import { DetailTemplate, MainTemplate } from "../features/templates";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { initialStyle } from "../features/template-editor/templateStyleSlice";
 import { initialContent } from "../features/template-editor/templateContentSlice";
 import { initialDataLocally } from "../features/template-editor/templateProductSlice";
@@ -12,6 +12,7 @@ export default function Templates(){
     const [showNavigation, setShowNavigation] = useState(true);
     const [currentDetail, setCurrentDetail] = useState({});
     const [showDetail, setShowDetail] = useState(false);
+    const { loggedIn } = useSelector(state => state.authentication);
     const dispatch = useDispatch();
     const handleLocalStorage = () => {
         dispatch(initialDataLocally(currentDetail.content.product));
@@ -45,6 +46,11 @@ export default function Templates(){
             setShowDetail(true);
         }
     }
+    useEffect(() => {
+        if (!loggedIn){
+            setShowNavigation(false)
+        }
+    }, [loggedIn])
     return (
         <VerticalLayout>
             {

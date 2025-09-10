@@ -2,23 +2,26 @@ import {
     AddDesignButton, HeaderWrapper, 
     LeftContent, Logo, 
     Menu, ProfilePicture, 
-    RightContent, Toggle, 
-    UpgradeButton 
+    RightContent, SolidButton, Toggle, 
 } from "./Header.styled";
 import logo from '../../../assets/images/Pixel-style-logo.png';
 import toggle from '../../../assets/images/togle-icon.png';
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 export default function Header({handleShowNavigation}){
     const navigate = useNavigate();
     const accountData = useSelector(state => state.accountData.personalData);
+    const { loggedIn } = useSelector(state => state.authentication)
     return (
         <HeaderWrapper>
             <LeftContent>
-                <Toggle onClick={handleShowNavigation}>
-                    <img src={toggle} alt='toggle icon' />
-                </Toggle>
+                {
+                    loggedIn &&
+                    <Toggle onClick={handleShowNavigation}>
+                        <img src={toggle} alt='toggle icon' />
+                    </Toggle>
+                }
                 <Logo>
                     <img onClick={() => navigate('/')} src={logo} alt='logo' />
                 </Logo>
@@ -28,20 +31,29 @@ export default function Header({handleShowNavigation}){
                     <p>Berlangganan</p>
                 </Menu>
             </LeftContent>
-            <RightContent>
+            <RightContent style={loggedIn ? {} : {width: '230px'} }>
                 <AddDesignButton onClick={() => navigate('/editor/*')}>
                     <p>Add</p>
                 </AddDesignButton>
-                <UpgradeButton>
-                    <p>Upgrade</p>
-                </UpgradeButton>
-                <ProfilePicture>
-                    {
-                        accountData.profilePicture ?
-                        <img src={accountData.profilePicture} alt='profile' />:
-                        <h2>{accountData.username[0].toUpperCase()}</h2>
-                    }
-                </ProfilePicture>
+                {
+                    loggedIn ? 
+                    <SolidButton>
+                        <p>Upgrade</p>
+                    </SolidButton> :
+                    <SolidButton>
+                        <Link to={'/login'}>Login</Link>
+                    </SolidButton>
+                }
+                {
+                    loggedIn &&
+                    <ProfilePicture>
+                        {
+                            accountData.profilePicture ?
+                            <img src={accountData.profilePicture} alt='profile' />:
+                            <h2>{accountData.username[0].toUpperCase()}</h2>
+                        }
+                    </ProfilePicture>
+                }
             </RightContent>
         </HeaderWrapper>
     )

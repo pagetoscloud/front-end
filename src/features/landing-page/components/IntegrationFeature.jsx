@@ -13,7 +13,7 @@ import {
     TextContent
 } from './styles/IntegrationFeature.styled';
 
-export default function IntegrationFeature(){
+export default function IntegrationFeature({handleLocalStorage}){
     return (
         <IntegrationContainer>
             <IntegrationListWrapper>
@@ -55,7 +55,7 @@ export default function IntegrationFeature(){
             <TextContent>
                 <h2>Terhubung Dengan berbagai Platform lain.</h2>
                 <p>Hubungkan semua platform populer yang kamu mau.</p>
-                <ActionButtonSolid>Hubungkan</ActionButtonSolid>
+                <ActionButtonSolid onClick={handleLocalStorage}>Hubungkan</ActionButtonSolid>
             </TextContent>
         </IntegrationContainer>
     )

@@ -8,6 +8,7 @@ import onlineShop from '../../../assets/images/online-store.png';
 import restaurant from '../../../assets/images/restaurant.png';
 import bento from '../../../assets/images/bento.png';
 import { ActionButtonSolid } from "./styles/Global.styled";
+import { Link } from "react-router-dom";
 export default function TargetUser(){
     return (
         <TargetUserContainer>
@@ -15,7 +16,7 @@ export default function TargetUser(){
                 <TargetUserText>
                     <h2>Dibuat Khusus Untuk UMKM Indonesia.</h2>
                     <p>Desain menyesuaikan dengan UMKM Indonesia.</p>
-                    <ActionButtonSolid>Lihat Desain</ActionButtonSolid>
+                    <ActionButtonSolid><Link to={'/template'}>Lihat Desain</Link></ActionButtonSolid>
                 </TargetUserText>
                 <IconListWrapper>
                     <IconItemsDark>
