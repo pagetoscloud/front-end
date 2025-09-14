@@ -34,9 +34,9 @@ function App() {
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/email-verification" element={<EmailVerification />} />
         <Route path="/reset-password" element={<ResetPassword />} />
-        {/* route bellow will work after all syste m connect with backend */}
+        <Route path="/not-found" element={<PageNotFound />} />
         <Route path="/:link" element={<DigitalPage />} />
-        <Route path="*" element={<PageNotFound />} />
+        {/* route bellow will work after all syste m connect with backend */}
       </Routes>
     </BrowserRouter>
   )

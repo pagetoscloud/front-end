@@ -1,5 +1,6 @@
 import { 
-    EditorProductContainer, EditorProductHeader, 
+    EditorProductContainer, EditorProductHeader,
+    SuggestionText, 
 } from "./EditorProduct.styled";
 import { 
         EditorContentWrapper, TextButtonBold, TitleHeader 
@@ -9,13 +10,15 @@ import EditorProductItems from "./EditorProductItems";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { addNewCategory } from "../../../../templateContentSlice";
-import { CustomSelect } from "../../../desktop/micro-components/CustomSelect";
+import { CustomSelect } from "../../../micro-components/CustomSelect";
+import { deleteProduct } from "../../../../templateProductSlice";
 
 export default function EditorProduct({handleEditMode}){
     // const size = useWindowSize();
     // const height = size[0] - (190);
     const dispatch = useDispatch();
-    const contentData = useSelector(state => state.templateContent);
+    const productData = useSelector(state => state.product.product.list);
+    // const Data = useSelector(state => state.product);
     const findCategory = (e) => {
         let data = [];
         for (let i = 0; i < e.length; i++){
@@ -23,10 +26,20 @@ export default function EditorProduct({handleEditMode}){
         }
         return data;
     }
-    const category = findCategory(contentData.product);
-    const [currentCategory, setCurrentCategory] = useState(category[0]);
-    const productItems = contentData.product.filter(data => data.name === currentCategory);
-    const product = productItems[0].listItems;
+    const category = productData.length > 0 ? findCategory(productData) : [];
+    const [currentCategory, setCurrentCategory] = useState(productData.length > 0 ? category[0] : []);
+    const productItems = productData.length > 0 ? productData.filter(data => data.name === currentCategory) : [];
+    const product = productItems.length > 0 ? productItems[0].listItems : [];
+    const handleDeleteProduct = (id) => {
+        console.log('uhuy');
+        dispatch({
+            ...deleteProduct({
+                category: currentCategory,
+                id: id,
+            }),
+            meta: {record: true}
+        })
+    }
     const handleAddNewCategory = () => {
         dispatch(addNewCategory({
             data: {
@@ -48,25 +61,37 @@ export default function EditorProduct({handleEditMode}){
                 <h3>Product</h3>
                 {/* <img onClick={() => handleEditMode(false)} src={rightArrow} alt="close icon" /> */}
             </TitleHeader>
-            <EditorProductHeader>
-                <CustomSelect
-                    value={currentCategory}
-                    list={category}
-                    handleChange={setCurrentCategory}
-                    handleAddNewCategory={handleAddNewCategory}
-                />
-                <TextButtonBold onClick={() => handleEditMode('New Product')}>Add</TextButtonBold>
-            </EditorProductHeader>
-            <EditorContentWrapper style={{height: 320}}>
-                {
-                    product &&
-                    product.map((data, index) => {
-                        return (
-                            <EditorProductItems data={data} index={index}/>
-                        )
-                    })
-                }
-            </EditorContentWrapper>
+            {
+                product.length > 0 ? 
+                <>
+                    <EditorProductHeader>
+                        <CustomSelect
+                            value={currentCategory}
+                            list={category}
+                            handleChange={setCurrentCategory}
+                            handleAddNewCategory={handleAddNewCategory}
+                        />
+                        <TextButtonBold onClick={() => handleEditMode('New Product')}>Add</TextButtonBold>
+                    </EditorProductHeader>
+                    <EditorContentWrapper style={{height: 320}}>
+                        {
+                            product &&
+                            product.map((data, index) => {
+                                return (
+                                    <EditorProductItems 
+                                        handleDeleteProduct={handleDeleteProduct}
+                                        data={data} 
+                                        index={index}
+                                    />
+                                )
+                            })
+                        }
+                    </EditorContentWrapper>
+                </> : 
+                <>
+                    <SuggestionText>Empty Product</SuggestionText>
+                </>
+            }
         </EditorProductContainer>
     )
 }

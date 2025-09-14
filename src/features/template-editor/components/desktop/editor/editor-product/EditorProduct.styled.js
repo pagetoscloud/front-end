@@ -49,3 +49,12 @@ export const ProductCategory = styled.div`
         cursor: pointer;
     }
 `;
+
+export const SuggestionText = styled.p`
+    width: 80%;
+    margin: 0 10%;
+    padding: 20px 0;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.7);
+    text-align: center;
+`;

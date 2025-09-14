@@ -1,6 +1,6 @@
+import { Link } from "react-router-dom";
 import { BannerActionButton, BannerContainer, BannerText, BannerWrapper } from "./styles/Banner.styled";
 import bannerHero from '../.././../assets/images/product-edit-hero.png';
-import { Link } from "react-router-dom";
 export default function Banner(){
     return (
         <BannerContainer>

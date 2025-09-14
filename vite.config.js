@@ -13,5 +13,16 @@ export default defineConfig({
       'www.pagetos.com',
       'pagetos-front-end-500141028909.asia-southeast1.run.app'
     ]
-  }
+  },
+  test: {
+    globals: true,         // lets you use describe/it/expect without imports
+    environment: 'jsdom',  // simulates browser for React components
+    setupFiles: './src/setupTests.ts', // run before each test (optional)
+    coverage: {
+      provider: "v8", // or 'istanbul'
+      reporter: ["text", "json", "html"], // choose your reports
+      reportsDirectory: "./coverage",     // output folder
+    },
+
+  },
 })

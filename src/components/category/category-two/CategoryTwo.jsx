@@ -5,7 +5,7 @@ import CategoryTwoEdit from "./CategoryTwoEdit";
 import CategoryTwoPreview from "./CategoryTwoPreview";
 
 export default function CategoryTwo({styleData, data, handleEditMode, mode}){
-    const [category, setCategory] = useState(data.name);
+    const [category, setCategory] = useState(data? data.name : '');
     const dispatch = useDispatch();
     const handleChangeCategory = (e) => {
         setCategory(e);

@@ -3,13 +3,27 @@ import styled from "styled-components";
 export const ProductListItemsWrapper = styled.div`
     width: 90%;
     height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    @media only screen and (min-width: 600px){
+        width: 240px;
+        height: auto;
+    }
+`;
+
+export const ProductListItems = styled.div`
+    width: 90%;
+    height: auto;
     padding: 10px 0;
     border: 1px solid rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 20px;
+    // margin-top: 20px;
     border-radius: 5px;
     cursor: pointer;
     @media only screen and (min-width: 600px){
@@ -17,7 +31,6 @@ export const ProductListItemsWrapper = styled.div`
         height: auto;
     }
 `;
-
 export const ProductListItemsDisplay = styled.div`
     width: 90%;
     height: auto;
