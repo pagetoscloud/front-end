@@ -14,7 +14,6 @@ export default function DigitalPage(){
     const components = templateListData.filter(temp => temp.id === websiteData.template_id)[0];
     const [page, setPage] = useState('page one');
     const [currentItems, setCurrentItems] = useState({});
-    console.log('digital');
     const checkObject = (object) => {
         if (object === null){
             return false;

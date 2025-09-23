@@ -13,7 +13,7 @@ export default function EditorBackground({editMode, componentsMode}){
     const styleData = useSelector(state => state.templateStyle.current);
     // const [showBackground, setShowBackground] = useState(false);
     // const [showBorder, setShowBorder] = useState(false);
-    const [
+    const {
         backgroundColor, handleChangeBackgroundColor,
         backgroundColorDisplay,
         backgroundOpacity, handleChangeBackgroundOpacity,
@@ -24,7 +24,7 @@ export default function EditorBackground({editMode, componentsMode}){
         handleChangeEffectType,
         borderColor, handleChangeBorderColor,
         // borderSize, handleChangeBorderSize
-    ] = useDispatchBackgroundStyle(styleData, editMode);
+    } = useDispatchBackgroundStyle(styleData, editMode);
     // console.log(componentsMode);
     // const handleShowColorList = (e) => {
     //     if (e === 'border'){

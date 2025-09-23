@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">8.13% </span>
+                <span class="strong">8.53% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7/86</span>
+                <span class='fraction'>7/82</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">8.13% </span>
+                <span class="strong">8.53% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7/86</span>
+                <span class='fraction'>7/82</span>
             </div>
         
             
@@ -162,10 +162,7 @@
 <a name='L97'></a><a href='#L97'>97</a>
 <a name='L98'></a><a href='#L98'>98</a>
 <a name='L99'></a><a href='#L99'>99</a>
-<a name='L100'></a><a href='#L100'>100</a>
-<a name='L101'></a><a href='#L101'>101</a>
-<a name='L102'></a><a href='#L102'>102</a>
-<a name='L103'></a><a href='#L103'>103</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L100'></a><a href='#L100'>100</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -175,18 +172,15 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -277,18 +271,15 @@ import { useWindowSize } from "../../../hooks/useWindowSize";
 &nbsp;
 &nbsp;
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >export default function ListItemsThree({data, handleEditMode, styleData, components, mode, handleChangePage, handleChangeCurrentItems, onEdit}){</span></span>
-<span class="cstat-no" title="statement not covered" >    const windowSize = useWindowSize();</span>
-<span class="cstat-no" title="statement not covered" >    const windowWidth = windowSize[0];</span>
-<span class="cstat-no" title="statement not covered" >    console.log(windowWidth);</span>
+    // const windowSize = useWindowSize();
+    // const windowWidth = windowSize[0];
 <span class="cstat-no" title="statement not covered" >    const totalItems = data.listItems.length;</span>
 <span class="cstat-no" title="statement not covered" >    const containerRef = useRef(0);</span>
 <span class="cstat-no" title="statement not covered" >    const contentRef = useRef(0);</span>
 <span class="cstat-no" title="statement not covered" >    const [scrollPosition, setScrollPosition] = useState(0);</span>
 <span class="cstat-no" title="statement not covered" >    const [leftSpace, setLeftSpace] = useState(0);</span>
 <span class="cstat-no" title="statement not covered" >    const [rightSpace, setRightSpace] = useState(0);</span>
-<span class="cstat-no" title="statement not covered" >    const [slideWidth, setSlideWidth] = useState(containerRef.current.clientWidth / totalItems);</span>
-<span class="cstat-no" title="statement not covered" >    console.log(slideWidth);</span>
-    // console.log(containerRef.current.clientWidth / templateListData.length)
+<span class="cstat-no" title="statement not covered" >    const [slideWidth, setSlideWidth] = useState(((contentRef.current.clientWidth - containerRef.current.clientWidth) / 4) * 1.15);</span>
 <span class="cstat-no" title="statement not covered" >    const handleChangeScroll = () =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        setScrollPosition(containerRef.current.scrollLeft);</span>
 <span class="cstat-no" title="statement not covered" >        setLeftSpace(containerRef.current.scrollLeft);</span>
@@ -299,7 +290,7 @@ import { useWindowSize } from "../../../hooks/useWindowSize";
 <span class="cstat-no" title="statement not covered" >        setScrollPosition(scrollPosition + value);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    useEffect(() =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        setSlideWidth(containerRef.current.clientWidth / totalItems)</span>
+<span class="cstat-no" title="statement not covered" >        setSlideWidth(((contentRef.current.clientWidth - containerRef.current.clientWidth) / 4) * 1.15);</span>
 <span class="cstat-no" title="statement not covered" >        setLeftSpace(containerRef.current.scrollLeft);</span>
 <span class="cstat-no" title="statement not covered" >        setRightSpace(contentRef.current.clientWidth - containerRef.current.clientWidth - containerRef.current.scrollLeft);</span>
 <span class="cstat-no" title="statement not covered" >    }, [totalItems])</span>
@@ -349,7 +340,7 @@ import { useWindowSize } from "../../../hooks/useWindowSize";
             }
 <span class="cstat-no" title="statement not covered" >            &lt;&gt;</span>
                 {
-<span class="cstat-no" title="statement not covered" >                    rightSpace !== 0 ?</span>
+<span class="cstat-no" title="statement not covered" >                    rightSpace &gt; 0 ?</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;ScrollRightButton onClick={() =&gt; handleClickScroll(slideWidth)}&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;img src={rightArrow} alt="right arrow" /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/ScrollRightButton&gt; :</span>
@@ -358,7 +349,7 @@ import { useWindowSize } from "../../../hooks/useWindowSize";
 <span class="cstat-no" title="statement not covered" >                    &lt;/ScrollRightButton&gt;</span>
                 }
                 {
-<span class="cstat-no" title="statement not covered" >                    leftSpace !== 0 ?</span>
+<span class="cstat-no" title="statement not covered" >                    leftSpace &gt; 0 ?</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;ScrollLeftButton onClick={() =&gt; handleClickScroll(-slideWidth)}&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;img src={leftArrow} alt="left arrow" /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/ScrollLeftButton&gt;:</span>
@@ -376,7 +367,7 @@ import { useWindowSize } from "../../../hooks/useWindowSize";
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-09-13T07:24:37.826Z
+                at 2025-09-23T01:20:38.586Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

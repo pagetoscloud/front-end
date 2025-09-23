@@ -35,11 +35,9 @@ export default function Dashboard(){
         }
     }
     // const navigate = useNavigate();
-    console.log(localStorage.getItem('unsave-template'))
     const dispatch = useDispatch();
     const handleLocalStorage = (data) => {
         if (data){
-            console.log(data);
             // dispatch(initialStyle({data: data.style}));
             // dispatch(initialContent({data: data.content}));
             // dispatch(initialDataLocally(data.content.product));
@@ -105,7 +103,6 @@ export default function Dashboard(){
                 }
                 const json = await response.json();
                 if (json.status === 'ok'){
-                    console.log(json.data);
                     if (json.data.profile_picture === null){
                         dispatch(changeAllData({
                             username: json.data.username,
@@ -149,7 +146,6 @@ export default function Dashboard(){
                 if (json.status === 'ok'){
                     dispatch(initialCollection(json.data));
                 } else {
-                    console.log(json);
                     dispatch(initialCollection([]));
                     // navigate('/login');
                 }
@@ -181,15 +177,13 @@ export default function Dashboard(){
                     body: unsaveFormData,
                 })
                 const json = await response.json();
-                if (json.status === 'ok'){
-                    console.log('upload file oke')
-                }
+                // if (json.status === 'ok'){
+                // }
             } catch (error) {        
               console.log(error);
             }
         }
         if (localStorage.getItem('unsave-thumbnail-progress')){
-            console.log('process');
             unsaveTemplate();
             localStorage.removeItem('unsave-thumbnail-progress');
             localStorage.removeItem('unsave-template-progress');

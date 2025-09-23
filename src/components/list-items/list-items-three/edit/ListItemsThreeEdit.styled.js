@@ -41,11 +41,13 @@ export const ListItemsWrapper = styled.div`
 export const ListItemsContent = styled.div`
     height: auto;
     width: auto;
-    margin: 0 7.5%;
+    margin-left: 7.5%;
+    margin-right: 5%;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     justify-content: flex-start;
+    // background: pink;
 `;
 
 

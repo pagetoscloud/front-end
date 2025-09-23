@@ -29,9 +29,10 @@ export const ItemDetailsBox = styled.div`
 `;
 
 export const ItemDetailsBoxHover = styled.div`
-    width: 100%;
-    height: 450px;
+    width: 99%;
+    height: 99%;
     position: absolute;
+    top: 0.5%;
     background: white;
     border-radius: 20px 20px 0 0;
     overflow: hidden;
@@ -61,6 +62,12 @@ export const ItemDetailslBoxBackground = styled.div`
     }
     background: white;
 `;
+export const Image = styled.div`
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+`;
 
 export const ItemDetailsImage = styled.div`
     width: 80%;
@@ -68,13 +75,18 @@ export const ItemDetailsImage = styled.div`
     max-width: 300px;
     max-height: 250px;
     margin-top: 40px;
-    overflow: hidden;
+    // overflow: hidden;
     border-radius: 10px;
     z-index: 4;
     cursor: pointer;
-    &:hover {
-        box-shadow: 0px 0px 0px 1px blue inset;
-    }
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    // &:hover {
+    //     box-shadow: 0px 0px 0px 1px blue inset;
+    // }
     img {
         width: 100%;
         height: auto;
@@ -131,5 +143,15 @@ export const ItemDetailsButton = styled.div`
     cursor: pointer;
     img {
         width: 20px;
+    }
+`;
+
+export const BoxEditWrapper = styled.div`
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    padding: 2px;
+    &:hover {
+        box-shadow: 0px 0px 0px 1px blue inset;
     }
 `;

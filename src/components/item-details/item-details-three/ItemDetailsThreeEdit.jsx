@@ -1,8 +1,16 @@
-import { ItemDetailsBox, ItemDetailsBoxHover, ItemDetailsButton, ItemDetailsImage, ItemDetailslBoxBackground, ItemDetailsText, ItemDetailsWrapper, ItemsDetailsInput } from "./ItemDetailsThreeEdit.styled";
+import { BoxEditWrapper, Image, ItemDetailsBox, ItemDetailsBoxHover, ItemDetailsButton, ItemDetailsImage, ItemDetailslBoxBackground, ItemDetailsText, ItemDetailsWrapper, ItemsDetailsInput } from "./ItemDetailsThreeEdit.styled";
 import arrowDown from '../../../assets/images/arrow-down.png';
+import { useCustomRef } from "../../../hooks/useCustomRef";
 
 export default function ItemDetailsThreeEdit({page, styleData, contentData, handleEditMode}){
     const itemsNoOne = contentData.product[0].listItems[0];
+    const {
+        refOne, activeOne, setActiveOne,
+        refTwo, activeTwo, setActiveTwo,
+        refThree, activeThree, setActiveThree,
+        // refFour, activeFour, setActiveFour,
+        // refFive, activeFive, setActiveFive
+    } = useCustomRef();
     return (
         <>
             {
@@ -22,21 +30,36 @@ export default function ItemDetailsThreeEdit({page, styleData, contentData, hand
                                 <path d="M18.3 5.71a1 1 0 0 0-1.41 0L12 10.59 7.11 5.7a1 1 0 1 0-1.41 1.42L10.59 12l-4.89 4.89a1 1 0 1 0 1.41 1.41L12 13.41l4.89 4.89a1 1 0 0 0 1.41-1.41L13.41 12l4.89-4.89a1 1 0 0 0 0-1.4z" />
                             </svg>
                         </div>
-                        <ItemDetailsBoxHover 
-                            onClick={() => handleEditMode({mode: 'Background', type: 'background', component: 'itemDetails'})}
+                        <ItemDetailsBoxHover
+                            ref={refOne} 
+                            style={activeOne ? {boxShadow: '0px 0px 0px 1px blue inset'}: {}}
+                            onClick={() => {
+                                setActiveOne(true);
+                                handleEditMode({mode: 'Background', type: 'background', component: 'itemDetails'})
+                            }}
                         />
                         <ItemDetailslBoxBackground 
                             style={styleData.itemDetails.style.background}
                         />
                         <ItemDetailsImage 
-                            onClick={() => handleEditMode({mode: 'Image', type: 'image', component: 'itemDetails', image: contentData.banner.image})}
-                            style={{borderRadius: styleData.itemDetails.style.image.borderRadius}} 
+                            ref={refTwo}
+                            onClick={() => {
+                                setActiveTwo(true);
+                                handleEditMode({mode: 'Image', type: 'image', component: 'itemDetails', image: contentData.banner.image})
+                            }}
+                                // style={{borderRadius: styleData.itemDetails.style.image.borderRadius}} 
                             >
-                            <img 
-                                style={styleData.itemDetails.style.image} 
-                                src={itemsNoOne.image} 
-                                alt="item detail" 
+                            <BoxEditWrapper 
+                                style={activeTwo ? {boxShadow: '0px 0px 0px 1px blue inset'}: {}}
                             />
+                            <Image
+                                style={styleData.itemDetails.style.image} 
+                            >
+                                <img 
+                                    src={itemsNoOne.image} 
+                                    alt="item detail" 
+                                />
+                            </Image>
                         </ItemDetailsImage>
                         <ItemDetailsText>
                             <ItemsDetailsInput
@@ -62,9 +85,16 @@ export default function ItemDetailsThreeEdit({page, styleData, contentData, hand
                             <img src={arrowDown} alt="arrow down" />
                         </ItemDetailsButton> */}
                         <ItemDetailsButton
+                            ref={refThree}
                             style={styleData.itemDetails.style.button} 
-                            onClick={() => handleEditMode({mode: 'Button', type: 'button', component: 'itemDetails', buttonIndex: 0, id: 1})}
+                            onClick={() => {
+                                setActiveThree(true)
+                                handleEditMode({mode: 'Button', type: 'button', component: 'itemDetails', buttonIndex: 0, id: 1})
+                            }}
                         >
+                            <BoxEditWrapper 
+                                style={activeThree ? {boxShadow: '0px 0px 0px 1px blue inset'}: {}}
+                            />
                             {/* <img src={arrowDown} alt="arrow down" /> */}
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"

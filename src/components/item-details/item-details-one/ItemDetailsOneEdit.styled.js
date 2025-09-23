@@ -82,26 +82,16 @@ export const ItemDetailslBoxBackground = styled.div`
 `;
 
 export const ItemDetailsImage = styled.div`
-    // width: 80%;
-    // // max-height: 200px;
-    // margin-top: 30px;
-    // overflow: hidden;
-    // border-radius: 10px;
-    // img {
-    //     width: 100%;
-    //     height: auto;
-    // }
-    // @media only screen and (min-width: 1000px){
-    //     width: 300px;
-    //     height: 300px;
-    //     margin-top: 50px;
-    // }
+    position: relative;
     width: 80%;
     max-width: 250px;
     max-height: 250px;
     margin-top: 45px;
-    overflow: hidden;
-    // border-radius: 10px;
+    // overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     padding: 3px;
     img {
         width: 100%;
@@ -109,9 +99,6 @@ export const ItemDetailsImage = styled.div`
     }
     z-index: 4;
     cursor: pointer;
-    &:hover {
-        box-shadow: 0px 0px 0px 1px blue inset;
-    }
 `;
 
 export const ItemDetailsText = styled.div`
@@ -164,5 +151,27 @@ export const ItemDetailsButton = styled.div`
     cursor: pointer;
     img {
         width: 20px;
+    }
+`;
+
+export const Image = styled.div`
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    // display: flex;
+    // flex-direction: row;
+    // align-items: center;
+    // justify-content: center;
+`;
+
+export const BoxEditWrapper = styled.div`
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    padding: 2px;
+    z-index: 10;
+    &:hover {
+        box-shadow: 0px 0px 0px 1px blue inset;
     }
 `;

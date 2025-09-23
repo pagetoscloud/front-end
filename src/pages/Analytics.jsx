@@ -15,9 +15,6 @@ export default function Analytics(){
     const [analyticsData, setAnalyticsData] = useState({});
     const dispatch = useDispatch();
     const changeAnalyticsData = (e) => {
-        // console.log(e);
-        // const monthList = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'Desember'];
-        // console.log(e.monthly[0].month_name.trim() == 'April')
         const grouped = {};
         e.daily.forEach(entry => {
         const month = entry.month.trim(); // remove extra spaces
@@ -37,7 +34,6 @@ export default function Analytics(){
             data
         }));
         setAnalyticsData(result);
-        console.log(result);
     }
     const handleCurrentCollection = (e) => {
         setCurrentCollection(e);
@@ -115,15 +111,11 @@ export default function Analytics(){
                 const json = await response.json();
                 if (json.status === 'ok'){
                     dispatch(initialCollection(json.data));
-                    // fetchingDataVisitor(json.data[0].web_id)
                     setCollectionList(json.data);
                     setCurrentCollection(json.data[0])
                     setLoading(false);
                     changeCurrentCollection(json.data[0]);
-                    // console.log(json.data[0].web_id)
-                    // setLoading(false);
                 } else {
-                    // navigate('/login');
                     setError(true);
                 }
             } catch (error) {

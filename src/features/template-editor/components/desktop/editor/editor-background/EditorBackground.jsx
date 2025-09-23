@@ -1,23 +1,21 @@
 import { useState } from "react";
 import { ColorDisplay, ColorDisplayWrapper, ColorInputHex, ColorOpacity, HorizontalWrapper, InputEditorWrapper, InputRangeEditor, LabelText, SelectEditorLarge, TitleHeader } from "../../../../assets/Global.styled";
-import { EditorBackgroundContainer } from "./EditorBackground.styled";
+import { AddButton, EditorBackgroundContainer } from "./EditorBackground.styled";
 import leftArrow from '../../../../../../assets/images/left-arrow.png';
 import { useSelector } from "react-redux";
 import EditorColorList from "../editor-color-list/EditorColorList";
 import { useDispatchBackgroundStyle } from "../../../../hooks/useDispatchBackgroundStyle";
 import EditorColorPicker from "../editor-color-picker/EditorColorPicker";
 import { EffectTemplateEditor } from "../../../../../../components";
+import addIcon from "../../../../../../assets/images/Plus-Math.png"
 
 export default function EditorBackground({handleEditMode, editMode}){
     const styleData = useSelector(state => state.templateStyle.current);
     const contentData = useSelector(state => state.templateContent);
-    console.log(contentData);
-    console.log(styleData[editMode.component].data.circle);
-    // const backgroundData = styleData.itemDetails.data.background.effect;
     const [pickColor, setPickColor] = useState(false);
     const [showBackground, setShowBackground] = useState(false);
     const [showBorder, setShowBorder] = useState(false);
-    const [
+    const {
         backgroundColor, handleChangeBackgroundColor,
         backgroundColorDisplay, 
         backgroundOpacity, handleChangeBackgroundOpacity,
@@ -29,7 +27,7 @@ export default function EditorBackground({handleEditMode, editMode}){
         borderColor, handleChangeBorderColor,
         borderSize, handleChangeBorderSize,
         borderType, handleChangeBorderType
-    ] = useDispatchBackgroundStyle(styleData, editMode);
+    } = useDispatchBackgroundStyle(styleData, editMode);
     const handleShowColorList = (e) => {
         setPickColor(e.type);
         if (e.type === 'color list' && e.mode === 'background'){
@@ -137,10 +135,13 @@ export default function EditorBackground({handleEditMode, editMode}){
             <InputEditorWrapper>
                 <HorizontalWrapper>
                     <LabelText>Effect</LabelText>
-                    <p onClick={() => handleAddBackgroundEffect()}>+</p>
+                    {/* <p onClick={() => handleAddBackgroundEffect()}>+</p> */}
+                    <AddButton onClick={() => handleAddBackgroundEffect()}>
+                        <img src={addIcon} />
+                    </AddButton>
                 </HorizontalWrapper>
                 {/* <SelectEditorLarge style={{marginBottom: 20}}>
-                    <select 
+                    xx<select 
                         onChange={(e) => handleChangeBackgroundBlur(e.target.value)}
                     >
                         <option>none</option>

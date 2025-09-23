@@ -2,7 +2,6 @@ import { useState } from "react";
 
 export function useChangeLinkPage(web_id) {
     const [linkPage, setLinkPage] = useState('');
-    console.log(linkPage)
     const handleChangeLinkPage = async (value) => {
         setLinkPage(value);
         let url = 'https://dummy-backend-500141028909.asia-southeast2.run.app/personal-area/change-link';

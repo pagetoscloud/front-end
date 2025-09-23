@@ -2,18 +2,32 @@ import EditBoard from "./EditorBoard";
 import { EditorWrapper } from "./Editor.styled";
 import Navigation from "./Navigation";
 import NavigationBackground from "./editor-background/NavigationBackground";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import NavigationText from "./editor-text/NavigationText";
 import NavigationImage from "./editor-image/NavigationImage";
 import NavigationButton from "./editor-button/NavigationButton";
+import { useDispatch } from "react-redux";
+import { changeRef } from "../../../editorBoardRefSlice";
 
 export default function Editor({editMode, handleEditMode, handleChangeComponents}){
     const [componentsMode, setComponentsMode] = useState(false);
+    const editorBoardRef = useRef();
+    const dispatch = useDispatch();
     const handleComponentsMode = (value) => {
         setComponentsMode(value);
     }
+    useEffect(() => {
+        function handleClickOutside(e) {
+            console.log(e.x);
+            if (editorBoardRef.current.contains(e.target)){
+                dispatch(changeRef({x: e.x, y: e.y}))
+            }
+        }
+        document.addEventListener("click", handleClickOutside);
+        return () => document.removeEventListener("click", handleClickOutside);
+    }, []);
     return (
-        <EditorWrapper>
+        <EditorWrapper ref={editorBoardRef}>
             {
                 editMode === 'Setting' || editMode === 'Template' || editMode === 'Share' || editMode === 'Product' ?
                 <EditBoard 

@@ -10,17 +10,17 @@ import Image from "./image/Image";
 export default function EditorImage({editMode, componentsMode}){
     const styleData = useSelector(state => state.templateStyle.current);
     const contentData = useSelector(state => state.templateContent);
-    const [
+    const {
         imageOpacity, handleChangeImageOpacity,
         imageBlur, handleChangeImageBlur,
         imageBorderRadius, handleChangeImageBorderRadius,
         imageFilter, handleChangeImageFilter
-    ] = useDispatchImageStyle(styleData, editMode);
-    const [
+    } = useDispatchImageStyle(styleData, editMode);
+    const {
         browserImage, handleChangeImageBrowser,
         selectedUploadImage, handleChangeImageUpload
 
-    ] = useDispatchImageContent(contentData, editMode);
+    } = useDispatchImageContent(contentData, editMode);
     return (
         <EditorImageContainer>
             {

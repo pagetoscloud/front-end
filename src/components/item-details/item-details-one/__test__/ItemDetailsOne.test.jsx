@@ -7,8 +7,18 @@ import { useDispatch } from 'react-redux';
 vi.mock('react-redux', () => {
   return {
     useDispatch: vi.fn(),
+    useSelector: vi.fn(() => ({})),
   };
 });
+
+// vi.mock("react-redux", async (importOriginal) => {
+//   const actual = await importOriginal();
+//   return {
+//     ...actual,
+//     useDispatch: () => vi.fn(),
+//     useSelector: vi.fn(() => ({})), // return empty state by default
+//   };
+// });
 
 // ✅ Mock custom hook with vi.mock
 vi.mock('../../../../hooks/useWindowSize', () => {

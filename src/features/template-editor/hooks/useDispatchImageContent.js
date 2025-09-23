@@ -60,8 +60,8 @@ export function useDispatchImageContent(data, editMode){
             }));
         }
     } 
-    return [
+    return {
         browserImage, handleChangeImageBrowser,
         selectedUploadImage, handleChangeImageUpload
-    ]
+    }
 }

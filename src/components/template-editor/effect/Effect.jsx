@@ -121,7 +121,8 @@ export default function Effect({effectProps, listEffect, handleDeleteEffect, han
                 <></>
             }
             <DeleteButton onClick={() => handleDeleteEffect(name)}>
-                <p>-</p>
+                {/* <p>-</p> */}
+                <img src={closeIcon} alt='delete btn' />
             </DeleteButton>
         </EffectWrapper>
     )

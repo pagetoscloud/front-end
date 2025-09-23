@@ -9,6 +9,7 @@ import collectionsSlice from '../features/collections/collectionsSlice';
 import historySlice from '../features/template-editor/historySlice';
 import productSlice from '../features/template-editor/templateProductSlice';
 import templatePagePositionSlice from '../features/template-editor/templatePagePositionSlice';
+import editorBoardRefSlice from '../features/template-editor/editorBoardRefSlice';
 const appReducer = combineReducers({
   // add more reducers here
     authentication: authSlice,
@@ -19,7 +20,8 @@ const appReducer = combineReducers({
     templateComponents: templateComponentsSlice,
     templatePagePosition: templatePagePositionSlice,
     history: historySlice,
-    product: productSlice
+    product: productSlice,
+    editorBoardRef: editorBoardRefSlice
 });
 
 const rootReducer = (state, action) => {

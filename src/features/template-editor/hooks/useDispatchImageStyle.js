@@ -8,8 +8,6 @@ export function useDispatchImageStyle(data, editMode){
     const [imageBorderRadius, setImageBorderRadius] = useState(data[editMode.component].data[editMode.type].borderRadius);
     const [imageFilter, setImageFilter] = useState(data[editMode.component].data[editMode.type].filter.type);
     const dispatch = useDispatch();
-    console.log(imageFilter)
-    console.log(imageOpacity)
     useEffect(() => {
         setImageOpacity(data[editMode.component].data[editMode.type].opacity);
         setImageBlur(data[editMode.component].data[editMode.type].filter.value);
@@ -59,10 +57,10 @@ export function useDispatchImageStyle(data, editMode){
             style: e.style
         }));
     }
-    return [
+    return {
         imageOpacity, handleChangeImageOpacity,
         imageBlur, handleChangeImageBlur,
         imageBorderRadius, handleChangeImageBorderRadius,
         imageFilter, handleChangeImageFilter
-    ]
+    }
 }

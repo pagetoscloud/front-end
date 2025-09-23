@@ -9,10 +9,27 @@ import EditorProduct from "./editor-product/EditorProduct";
 import EditorNewProduct from "./editor-new-product/EditorNewProduct";
 import TemplateList from "./template-list/TemplateList";
 import EditorButton from "./editor-button/EditorButton";
+import { useEffect, useRef } from "react";
+import { useDispatch } from "react-redux";
+import { changeRef } from "../../../editorBoardRefSlice";
 
 export default function EditBoard({editMode, handleEditMode, handleChangeComponents, linkPage, setLinkPage, handleChangeLinkPage, handleShowColorList, handleUploadImageCollection, handleLoginPopUp}) {
+    const editorBoardRef = useRef();
+    const dispatch = useDispatch();
+    useEffect(() => {
+        function handleClickOutside(e) {
+            if (editorBoardRef.current.contains(e.target)){
+                console.log(editorBoardRef);
+                dispatch(changeRef({x: e.x, y: e.y}))
+            }
+        }
+        document.addEventListener("click", handleClickOutside);
+        return () => document.removeEventListener("click", handleClickOutside);
+    }, []);
     return (
-        <EditBoardContainer>
+        <EditBoardContainer
+            ref={editorBoardRef}
+        >
             {
                 editMode.mode === 'Background'?
                 <EditorBackground 

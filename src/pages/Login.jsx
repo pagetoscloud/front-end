@@ -5,12 +5,10 @@ export default function Login(){
     const [status, setStatus] = useState('');
     const navigate = useNavigate();
     const authenticationProcess = async (data) => {
-        console.log(data);
         let url = 'https://dummy-backend-500141028909.asia-southeast2.run.app/auth/login';
         if (process.env.NODE_ENV === 'development'){
             url = 'http://localhost:5001/auth/login'
         }
-        console.log(url);
         try {
             const response = await fetch(url, {
                 method: "POST",
@@ -26,9 +24,7 @@ export default function Login(){
             }
             const json = await response.json();
             setStatus(json.status);
-            console.log(json);
             if (json.status === 'ok'){
-                console.log(json.data);
                 navigate('/dashboard');
             }
         } catch (error) {

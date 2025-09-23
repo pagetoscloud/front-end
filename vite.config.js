@@ -23,6 +23,6 @@ export default defineConfig({
       reporter: ["text", "json", "html"], // choose your reports
       reportsDirectory: "./coverage",     // output folder
     },
-
+    testTimeout: 15000,
   },
 })

@@ -27,7 +27,6 @@ export default function Settings(){
         }
         const formData = new FormData();
         formData.append('file', value);
-        console.log(value);
         try {
             const response = await fetch(url, {
                 method: 'POST',
@@ -36,9 +35,9 @@ export default function Settings(){
                 body: formData
             });
             const json = await response.json();
-            if (json.status === 'ok'){
-                console.log('ok')
-            }
+            // if (json.status === 'ok'){
+            //     console.log('ok')
+            // }
         } catch (error) {
             console.log(error);
         }

@@ -10,3 +10,13 @@ export const EditorBackgroundContainer = styled.div`
     // background-color: pink;
     position: relative;
 `;
+
+export const AddButton = styled.div`
+    width: 15px;
+    height: 15px;
+    img {
+        width: 100%;
+        height: auto;
+    }
+    cursor: pointer;
+`;

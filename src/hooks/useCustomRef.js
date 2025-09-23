@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useSelector } from "react-redux";
 
 export function useCustomRef(){
     const refOne = useRef(null);
@@ -11,27 +12,31 @@ export function useCustomRef(){
     const [activeThree , setActiveThree] = useState(false);
     const [activeFour , setActiveFour] = useState(false);
     const [activeFive , setActiveFive] = useState(false);
+    const editorBoardRef = useSelector(state => state.editorBoardRef.currentRef);
     useEffect(() => {
         function handleClickOutside(e) {
-            if (refOne.current && !refOne.current.contains(e.target)) {
-                setActiveOne(false);
-            }
-            if (refTwo.current && !refTwo.current.contains(e.target)) {
-                setActiveTwo(false);
-            }
-            if (refThree.current && !refThree.current.contains(e.target)) {
-                setActiveThree(false);
-            }
-            if (refFour.current && !refFour.current.contains(e.target)) {
-                setActiveFour(false);
-            }
-            if (refFive.current && !refFive.current.contains(e.target)) {
-                setActiveFive(false);
+            console.log('current' + e.x, 'editor' + editorBoardRef.x);
+            if (e.x !== editorBoardRef.x){
+                if (refOne.current && !refOne.current.contains(e.target)) {
+                    setActiveOne(false);
+                }
+                if (refTwo.current && !refTwo.current.contains(e.target)) {
+                    setActiveTwo(false);
+                }
+                if (refThree.current && !refThree.current.contains(e.target)) {
+                    setActiveThree(false);
+                }
+                if (refFour.current && !refFour.current.contains(e.target)) {
+                    setActiveFour(false);
+                }
+                if (refFive.current && !refFive.current.contains(e.target)) {
+                    setActiveFive(false);
+                }
             }
         }
         document.addEventListener("click", handleClickOutside);
         return () => document.removeEventListener("click", handleClickOutside);
-    }, []);
+    }, [editorBoardRef]);
     return {
         refOne, activeOne, setActiveOne,
         refTwo, activeTwo, setActiveTwo,

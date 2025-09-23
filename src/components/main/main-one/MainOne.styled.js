@@ -11,6 +11,7 @@ export const MainContainer = styled.div`
     justify-content: start;
     // background: pink;
     // background: pink;
+    // z-index: 100;
 `;
 
 export const ItemsListWrapper = styled.div`

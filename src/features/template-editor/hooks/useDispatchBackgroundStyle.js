@@ -224,7 +224,7 @@ export function useDispatchBackgroundStyle(data, editMode){
             }));
         }
     }
-    return [
+    return {
         backgroundColor, handleChangeBackgroundColor,
         backgroundColorDisplay,
         backgroundOpacity, handleChangeBackgroundOpacity,
@@ -236,5 +236,5 @@ export function useDispatchBackgroundStyle(data, editMode){
         borderColor, handleChangeBorderColor,
         borderSize, handleChangeBorderSize,
         borderType, handleChangeBorderType
-    ]
+    }
 }

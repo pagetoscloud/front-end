@@ -51,10 +51,8 @@ export default function TemplateEditor(){
             const mockup = document.getElementById('mockup');
             let data = {}
             if (web_id !== '*') {
-                console.log('already have web_id', web_id);
                 data = handleSave(web_id, components, documentName, style, content, image, linkPage);
             } else {
-                console.log('not have id', randomId);
                 data = handleSave(randomWebId, components, documentName, style, content, image, linkPage);
             }
             mockup.style.width = '350px';
@@ -207,7 +205,6 @@ export default function TemplateEditor(){
         if (web_id !== '*' && loggedIn){
             dispatch(fetchProducts(web_id));
             fetchingData();
-            console.log('login');
         }
         // if (web_id !== '*' && !loggedIn){
         //     console.log('not login');

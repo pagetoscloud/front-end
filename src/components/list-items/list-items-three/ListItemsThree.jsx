@@ -8,18 +8,15 @@ import { useWindowSize } from "../../../hooks/useWindowSize";
 
 
 export default function ListItemsThree({data, handleEditMode, styleData, components, mode, handleChangePage, handleChangeCurrentItems, onEdit}){
-    const windowSize = useWindowSize();
-    const windowWidth = windowSize[0];
-    console.log(windowWidth);
+    // const windowSize = useWindowSize();
+    // const windowWidth = windowSize[0];
     const totalItems = data.listItems.length;
     const containerRef = useRef(0);
     const contentRef = useRef(0);
     const [scrollPosition, setScrollPosition] = useState(0);
     const [leftSpace, setLeftSpace] = useState(0);
     const [rightSpace, setRightSpace] = useState(0);
-    const [slideWidth, setSlideWidth] = useState(containerRef.current.clientWidth / totalItems);
-    console.log(slideWidth);
-    // console.log(containerRef.current.clientWidth / templateListData.length)
+    const [slideWidth, setSlideWidth] = useState(((contentRef.current.clientWidth - containerRef.current.clientWidth) / 4) * 1.15);
     const handleChangeScroll = () => {
         setScrollPosition(containerRef.current.scrollLeft);
         setLeftSpace(containerRef.current.scrollLeft);
@@ -30,7 +27,7 @@ export default function ListItemsThree({data, handleEditMode, styleData, compone
         setScrollPosition(scrollPosition + value);
     }
     useEffect(() => {
-        setSlideWidth(containerRef.current.clientWidth / totalItems)
+        setSlideWidth(((contentRef.current.clientWidth - containerRef.current.clientWidth) / 4) * 1.15);
         setLeftSpace(containerRef.current.scrollLeft);
         setRightSpace(contentRef.current.clientWidth - containerRef.current.clientWidth - containerRef.current.scrollLeft);
     }, [totalItems])
@@ -80,7 +77,7 @@ export default function ListItemsThree({data, handleEditMode, styleData, compone
             }
             <>
                 {
-                    rightSpace !== 0 ?
+                    rightSpace > 0 ?
                     <ScrollRightButton onClick={() => handleClickScroll(slideWidth)}>
                         <img src={rightArrow} alt="right arrow" />
                     </ScrollRightButton> :
@@ -89,7 +86,7 @@ export default function ListItemsThree({data, handleEditMode, styleData, compone
                     </ScrollRightButton>
                 }
                 {
-                    leftSpace !== 0 ?
+                    leftSpace > 0 ?
                     <ScrollLeftButton onClick={() => handleClickScroll(-slideWidth)}>
                         <img src={leftArrow} alt="left arrow" />
                     </ScrollLeftButton>:

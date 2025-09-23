@@ -5,6 +5,7 @@ export const ListItemsWrapper = styled.div`
     height: auto;
     z-index: 6;
     display: flex;
+    // background: red;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
@@ -27,11 +28,12 @@ export const ListItemsWrapper = styled.div`
         padding: 0;
         margin: 0;
         max-width: 400px;
-        width: 85%;
+        // width: 85%;
     }
     @media only screen and (min-width: 600px){
         max-width: 600px;
-        width: 85%;
+        // max-width: 800px;
+        // width: 85%;
         // margin-left: 15%;
     }
 `;
@@ -44,6 +46,7 @@ export const ListItemsContent = styled.div`
     flex-direction: row;
     align-items: flex-start;
     justify-content: flex-start;
+    // background: pink;
     @media only screen and (min-width: 400px){
         margin: 0;
     }

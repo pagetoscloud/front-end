@@ -53,10 +53,21 @@ const templateContentSlice = createSlice({
                 }
             }
         },
+        // addNewProduct: (state, action) => {
+        //     state.product = state.product.map((items, index) => {
+        //         if (items.name === action.payload.category){
+        //             return items.listItems.filter(data => data.id !== action.payload.id)
+        //         }
+        //         return items;
+        //     });
+        // },
         addNewProduct: (state, action) => {
-            state.product = state.product.map((items, index) => {
-                if (items.name === action.payload.category){
-                    return items.listItems.filter(data => data.id !== action.payload.id)
+            state.product = state.product.map((items) => {
+                if (items.name === action.payload.category) {
+                return {
+                    ...items,
+                    listItems: items.listItems.filter(data => data.id !== action.payload.id),
+                };
                 }
                 return items;
             });

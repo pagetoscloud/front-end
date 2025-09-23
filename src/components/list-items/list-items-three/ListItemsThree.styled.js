@@ -9,6 +9,30 @@ export const ListItemsThreeContainer = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    // background: blue;
+    @media only screen and (min-width: 600px){
+        width: 600px;
+    }
+`;
+
+export const ListItemsEditContainer = styled.div`
+    width: 100%;
+    height: auto;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+`;
+
+export const ListItemsPreviewContainer = styled.div`
+    width: 100%;
+    height: auto;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 `;
 
 export const ScrollRightButton = styled.div`

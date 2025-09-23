@@ -26,7 +26,6 @@ const filterList = [
 
 export default function EditorImage({handleEditMode, editMode, handleUploadImageCollection, handleLoginPopUp}){
     const size = useWindowSize();
-    console.log(editMode);
     const height = size[0] - (130);
     const styleData = useSelector(state => state.templateStyle.current);
     const contentData = useSelector(state => state.templateContent);
@@ -60,16 +59,16 @@ export default function EditorImage({handleEditMode, editMode, handleUploadImage
         // prevData.push({image_link: URL.createObjectURL(e), name: 'New Image'});
         // setUploadImageList(prevData);
     }
-    const [
+    const {
         imageOpacity, handleChangeImageOpacity,
         imageBlur, handleChangeImageBlur,
         imageBorderRadius, handleChangeImageBorderRadius,
         imageFilter, handleChangeImageFilter
-    ] = useDispatchImageStyle(styleData, editMode);
-    const [
+    } = useDispatchImageStyle(styleData, editMode);
+    const {
         browserImage, handleChangeImageBrowser,
         selectedUploadImage, handleChangeImageUpload
-    ] = useDispatchImageContent(contentData, editMode);
+    } = useDispatchImageContent(contentData, editMode);
     useEffect(() => {
         const fetchImageCollection = async () => {
             let url = 'https://dummy-backend-500141028909.asia-southeast2.run.app/personal-area/collection-image';

@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">15.09% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/53</span>
+                <span class='fraction'>8/53</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">15.09% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/53</span>
+                <span class='fraction'>8/53</span>
             </div>
         
             
@@ -126,14 +126,14 @@
 <a name='L61'></a><a href='#L61'>61</a>
 <a name='L62'></a><a href='#L62'>62</a>
 <a name='L63'></a><a href='#L63'>63</a>
-<a name='L64'></a><a href='#L64'>64</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L64'></a><a href='#L64'>64</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -189,29 +189,29 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import { useSelector } from "react-redux";<span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span></span>
-<span class="cstat-no" title="statement not covered" >import { useDispatchImageContent } from "../../../../hooks/useDispatchImageContent";</span>
-<span class="cstat-no" title="statement not covered" >import { useDispatchImageStyle } from "../../../../hooks/useDispatchImageStyle";</span>
-<span class="cstat-no" title="statement not covered" >import { EditorImageContainer } from "./EditorImage.styled";</span>
-<span class="cstat-no" title="statement not covered" >import Opacity from "./opacity/Opacity";</span>
-<span class="cstat-no" title="statement not covered" >import Radius from "./radius/Radius";</span>
-<span class="cstat-no" title="statement not covered" >import Filter from "./filter/Filter";</span>
-<span class="cstat-no" title="statement not covered" >import Image from "./image/Image";</span>
+<span class="cline-any cline-no">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useSelector } from "react-redux";
+import { useDispatchImageContent } from "../../../../hooks/useDispatchImageContent";
+import { useDispatchImageStyle } from "../../../../hooks/useDispatchImageStyle";
+import { EditorImageContainer } from "./EditorImage.styled";
+import Opacity from "./opacity/Opacity";
+import Radius from "./radius/Radius";
+import Filter from "./filter/Filter";
+import Image from "./image/Image";
 &nbsp;
-<span class="cstat-no" title="statement not covered" >export default function EditorImage({editMode, componentsMode}){</span>
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >export default function EditorImage({editMode, componentsMode}){</span></span>
 <span class="cstat-no" title="statement not covered" >    const styleData = useSelector(state =&gt; state.templateStyle.current);</span>
 <span class="cstat-no" title="statement not covered" >    const contentData = useSelector(state =&gt; state.templateContent);</span>
-<span class="cstat-no" title="statement not covered" >    const [</span>
+<span class="cstat-no" title="statement not covered" >    const {</span>
 <span class="cstat-no" title="statement not covered" >        imageOpacity, handleChangeImageOpacity,</span>
 <span class="cstat-no" title="statement not covered" >        imageBlur, handleChangeImageBlur,</span>
 <span class="cstat-no" title="statement not covered" >        imageBorderRadius, handleChangeImageBorderRadius,</span>
 <span class="cstat-no" title="statement not covered" >        imageFilter, handleChangeImageFilter</span>
-<span class="cstat-no" title="statement not covered" >    ] = useDispatchImageStyle(styleData, editMode);</span>
-<span class="cstat-no" title="statement not covered" >    const [</span>
+<span class="cstat-no" title="statement not covered" >    } = useDispatchImageStyle(styleData, editMode);</span>
+<span class="cstat-no" title="statement not covered" >    const {</span>
 <span class="cstat-no" title="statement not covered" >        browserImage, handleChangeImageBrowser,</span>
 <span class="cstat-no" title="statement not covered" >        selectedUploadImage, handleChangeImageUpload</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    ] = useDispatchImageContent(contentData, editMode);</span>
+<span class="cstat-no" title="statement not covered" >    } = useDispatchImageContent(contentData, editMode);</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;EditorImageContainer&gt;</span>
             {
@@ -259,7 +259,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-09-13T07:24:37.826Z
+                at 2025-09-23T01:20:38.586Z
             </div>
         <script src="../../../../../../../prettify.js"></script>
         <script>

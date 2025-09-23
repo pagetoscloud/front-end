@@ -1,5 +1,5 @@
-import { ConnectorTwoEdit } from "./connector-two-edit/ConnectorTwoEdit";
-import { ConnectorTwoPreview } from "./connector-two-preview/ConnectorTwoPreview";
+import { ConnectorTwoEdit } from "./ConnectorTwoEdit";
+import { ConnectorTwoPreview } from "./ConnectorTwoPreview";
 
 
 export default function ConnectorTwo({mode, page, styleData, contentData, handleEditMode, handleChangePage}) {

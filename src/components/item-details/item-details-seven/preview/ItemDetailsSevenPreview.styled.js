@@ -19,7 +19,7 @@ export const ItemDetailsWrapper = styled.div`
 
 export const ItemDetailsBox = styled.div`
     width: 100%;
-    height: 45%;
+    // height: 50%;
     position: absolute;
     bottom: 0;
     display: flex;
@@ -29,12 +29,12 @@ export const ItemDetailsBox = styled.div`
     // border-radius: 20px 20px 0 0;
     overflow: hidden;
     z-index: 5;
-    @media only screen and (min-width: 900px){
-        width: 400px;
-        height: 500px;
-        position: relative;
-        // border-radius: 20px;
-    }
+    // @media only screen and (min-width: 900px){
+    //     width: 400px;
+    //     height: 500px;
+    //     position: relative;
+    //     // border-radius: 20px;
+    // }
 `;
 
 export const ItemsDetailsBackground = styled.div`
@@ -47,7 +47,7 @@ export const ItemsDetailsBackground = styled.div`
     //     width: 600px;
     //     height: 800px;
     //     position: relative;
-        border-radius: 20px;
+    // border-radius: 20px;
     // }
 `;
 // export const ItemsDetailsBackground = styled.div`
@@ -84,9 +84,11 @@ export const ItemDetailsCircle = styled.div`
 
 export const ItemDetailsImage = styled.div`
     width: 100%;
-    height: 60%;
+    height: 50%;
+    max-height: 400px;
     overflow: hidden;
     // border-radius: 100px;
+    background: pink;
     img {
         width: 100%;
         height: auto;
@@ -102,7 +104,7 @@ export const ItemDetailsImage = styled.div`
     @media only screen and (min-width: 900px){
         width: 400px;
         height: 320px;
-        border-radius: 200px;
+        // border-radius: 200px;
         // margin-top: 30px;
     }
 `;

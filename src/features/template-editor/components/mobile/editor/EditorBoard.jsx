@@ -11,6 +11,8 @@ import EditorBackground from "./editor-background/EditorBackground";
 import EditorText from "./editor-text/EditorText";
 import EditorImage from "./editor-image/EditorImage";
 import EditorButton from "./editor-button/EditorButton";
+// import { useDispatch } from "react-redux";
+// import { useEffect, useRef } from "react";
 
 export default function EditBoard({editMode, handleEditMode, handleChangeComponents, handleComponentsMode, componentsMode}){
     return (

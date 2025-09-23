@@ -15,23 +15,25 @@ const templateStyleSlice = createSlice({
         changeScreen: (state, action) => {
             return {
                 ...state,
-                [action.payload.component]: {
-                   data: 
-                        {
-                            ...state[action.payload.component].data, 
-                            title: {
-                                            ...state[action.payload.component].data.title, 
-                                            [action.payload.itemData]: action.payload.data
-                                        }
-                        },
-                   style: 
-                        {
-                            ...state[action.payload.component].style, 
-                            title: {
-                                            ...state[action.payload.component].style.title, 
-                                            [action.payload.itemStyle]: action.payload.style
-                                        }
-                        }
+                current: {
+                    [action.payload.component]: {
+                       data: 
+                            {
+                                ...state.current[action.payload.component].data, 
+                                title: {
+                                                ...state.current[action.payload.component].data.title, 
+                                                [action.payload.itemData]: action.payload.data
+                                            }
+                            },
+                       style: 
+                            {
+                                ...state.current[action.payload.component].style, 
+                                title: {
+                                                ...state.current[action.payload.component].style.title, 
+                                                [action.payload.itemStyle]: action.payload.style
+                                            }
+                            }
+                    }
                 }
             }
         },

@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { useCustomRef } from "../../../../hooks/useCustomRef";
 import { 
     BoxEditWrapper,
@@ -14,6 +15,7 @@ import {
 
 export default function ItemDetailsSevenEdit({page, styleData, contentData, handleEditMode}){
     const itemsNoOne = contentData.product[0].listItems[0];
+    const [height, setHeight] = useState(0);
     const {
         refOne, activeOne, setActiveOne,
         refTwo, activeTwo, setActiveTwo,
@@ -21,19 +23,21 @@ export default function ItemDetailsSevenEdit({page, styleData, contentData, hand
         refFour, activeFour, setActiveFour,
         // refFive, activeFive, setActiveFive
     } = useCustomRef();
+    useEffect(() => {
+        if (page === 'page two'){
+            const detailWrapper = document.getElementById("detailWrapper");
+            const newHeight = detailWrapper.clientHeight > 800 ? (detailWrapper.clientHeight - 400) : (detailWrapper.clientHeight / 2);
+            setHeight(newHeight);
+        }
+    }, [page])
     return (
         <>
             {
                 page === 'page two' ?
-                <ItemDetailsWrapper>
-                    <ItemDetailsBoxHover 
-                        ref={refOne}
-                        style={activeOne ? {boxShadow: '0px 0px 0px 1px blue inset'}: {}}
-                        onClick={() => { 
-                            setActiveOne(true);
-                            handleEditMode({mode: 'Background', type: 'background', component: 'itemDetails'})
-                        }}
-                    />
+                <ItemDetailsWrapper id='detailWrapper'>
+                    {/* <ItemDetailslBoxBackground 
+                        style={styleData.itemDetails.style.background}
+                        /> */}
                     <ImageWrapper>
                         <CloseButton 
                             style={styleData.itemDetails.style.button} 
@@ -69,7 +73,11 @@ export default function ItemDetailsSevenEdit({page, styleData, contentData, hand
                                 style={activeFour ? {boxShadow: '0px 0px 0px 1px blue inset'}: {}}
                             />
                             <Image 
-                                style={styleData.itemDetails.style.image} 
+                                // style={styleData.itemDetails.style.image} 
+                                style={{
+                                    filter: styleData.itemDetails.style.image.filter,
+                                    borderRadius: `0 0 ${styleData.itemDetails.data.image.borderRadius}px ${styleData.itemDetails.data.image.borderRadius}px`
+                                }} 
                             >
                                 <img
                                     src={itemsNoOne.image} 
@@ -77,24 +85,24 @@ export default function ItemDetailsSevenEdit({page, styleData, contentData, hand
                                 />
                             </Image>
                         </ItemDetailsImage>
-                        {/* <ItemDetailsCircle
-                            ref={refFour}
-                            style={styleData.itemDetails.style.circle}
-                        >
-                            <BoxEditWrapper 
-                                onClick={() => {
-                                    setActiveFour(true);
-                                    handleEditMode({mode: 'Background', type: 'circle', component: 'itemDetails'})
-                                }}
-                                style={activeFour ? {boxShadow: '0px 0px 0px 1px blue inset'}: {}}
-                            />
-                        </ItemDetailsCircle> */}
                     </ImageWrapper>
+                    <ItemDetailslBoxBackground 
+                        style={styleData.itemDetails.style.background}
+                    />
                     <ItemDetailsBox
+                        style={{
+                            height: height,
+                            borderRadius: `${styleData.itemDetails.style.background.borderRadius}px 0`
+                        }}
                         // style={{borderRadius: `${styleData.itemDetails.style.background.borderRadius}px 0`}}
                     >
-                        <ItemDetailslBoxBackground 
-                            style={styleData.itemDetails.style.background}
+                        <ItemDetailsBoxHover 
+                            ref={refOne}
+                            style={activeOne ? {boxShadow: '0px 0px 0px 1px blue inset'}: {}}
+                            onClick={() => { 
+                                setActiveOne(true);
+                                handleEditMode({mode: 'Background', type: 'background', component: 'itemDetails'})
+                            }}
                         />
                         <ItemDetailsText>
                             <ItemsDetailsInput
@@ -139,7 +147,7 @@ export default function ItemDetailsSevenEdit({page, styleData, contentData, hand
                                 </svg>
                             </ItemDetailsButton>
                         </ItemDetailsText>
-                        <ItemsDetailsBackground />
+                        {/* <ItemsDetailsBackground /> */}
                     </ItemDetailsBox>
                 </ItemDetailsWrapper> :
                 <></>

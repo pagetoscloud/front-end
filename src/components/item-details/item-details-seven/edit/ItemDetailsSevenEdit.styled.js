@@ -15,39 +15,40 @@ export const ItemDetailsWrapper = styled.div`
 
 export const ItemDetailslBoxBackground = styled.div`
     width: 100%;
-    height: 500px;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    background: white;
-    // border-radius: 20px;
-    overflow: hidden;
-    &:hover {
-        border: 1px solid blue;
-    }
-    background: transparent;
-`;
-
-export const ItemDetailsBoxHover = styled.div`
-    width: 90%;
-    height: 500px;
-    padding: 2px;
+    height: 100%;
     position: absolute;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     // background: white;
-    // border-radius: 0 10px 10px 0;
+    // border-radius: 20px;
+    overflow: hidden;
+    &:hover {
+        border: 1px solid blue;
+    }
+    // background: transparent;
+`;
+
+export const ItemDetailsBoxHover = styled.div`
+    width: 95%;
+    height: 95%;
+    margin: 2%;
+    padding: 2px;
+    background: blue;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background: pink;
     overflow: hidden;
     cursor: pointer;
     &:hover {
         border: 1px solid blue;
     }
     background: transparent;
-    z-index: 2;
+    z-index: 6;
 `;
 
 export const ItemDetailsBox = styled.div`
@@ -60,8 +61,8 @@ export const ItemDetailsBox = styled.div`
     align-items: center;
     justify-content: flex-start;
     overflow: hidden;
-    background: transparent;
-    z-index: 6;
+    // background: transparent;
+    // background: blue;
 `;
 
 export const ItemsDetailsBackground = styled.div`
@@ -73,17 +74,13 @@ export const ItemsDetailsBackground = styled.div`
 
 export const ImageWrapper = styled.div`
     width: 100%;
-    height: 60%;
+    height: 50%;
+    max-height: 400px;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
     justify-content: center;
-    // background: pink;
-    // @media only screen and (min-height: 600px){
-    //     height: 50%;
-    //     margin-top: 20%;
-    // }
 `;
 
 export const ItemDetailsCircle = styled.div`
@@ -104,18 +101,12 @@ export const ItemDetailsCircle = styled.div`
 export const ItemDetailsImage = styled.div`
     width: 100%;
     height: 100%;
-    // overflow: hidden;
     border-radius: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    // background: blue;
-    img {
-        width: 100%;
-        height: auto;
-    }
-    z-index: 4;
+    z-index: 7;
     cursor: pointer;
     position: relative;
 `;
@@ -125,6 +116,16 @@ export const Image = styled.div`
     width: 100%;
     height: 100%;
     overflow: hidden;
+    border-radius: 0 0 20px 20px;
+    background: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    img {
+        width: 100%;
+        height: auto;
+    }
 `;
 
 export const ItemDetailsText = styled.div`
@@ -137,6 +138,7 @@ export const ItemDetailsText = styled.div`
     align-items: center;
     // margin-bottom: 10px;
     padding-bottom: 80px;
+    z-index: 10;
 `;
 
 export const ItemsDetailsInput = styled.textarea`
@@ -146,7 +148,8 @@ export const ItemsDetailsInput = styled.textarea`
     padding: 5px 1%;
     font-family: 'Roboto';
     background: transparent;
-    z-index: 4;
+    // background: pink;
+    z-index: 10;
     border: none;
     text-align: center;
     field-sizing: content;
@@ -196,13 +199,14 @@ export const CloseButton = styled.div`
     img {
         width: 20px;
     }
-    z-index: 5;
+    z-index: 10;
     cursor: pointer;
 `;
 
 export const BoxEditWrapper = styled.div`
-    width: 100%;
-    height: 100%;
+    width: 96%;
+    height: 96%;
+    margin: 2%;
     position: absolute;
     padding: 2px;
     &:hover {

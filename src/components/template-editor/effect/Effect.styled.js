@@ -52,19 +52,24 @@ export const SelectEditorSmall = styled.div`
 `;
 
 export const DeleteButton = styled.div`
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    p {
-        font-size: 24px;
-        margin: 0;
-        line-height: 0;
-        background: pink;
+    // p {
+    //     font-size: 24px;
+    //     margin: 0;
+    //     line-height: 0;
+    //     background: pink;
+    // }
+    img {
+        width: 100%;
+        height: auto;
     }
+    
 `;
 
 export const BoxShadowSetting = styled.div`
