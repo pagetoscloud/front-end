@@ -9,7 +9,7 @@ import NavigationButton from "./editor-button/NavigationButton";
 import { useDispatch } from "react-redux";
 import { changeRef } from "../../../editorBoardRefSlice";
 
-export default function Editor({editMode, handleEditMode, handleChangeComponents}){
+export default function Editor({editMode, handleEditMode, handleChangeComponents, linkPage, setLinkPage, handleChangeLinkPage, handleUploadImageCollection, handleLoginPopUp}){
     const [componentsMode, setComponentsMode] = useState(false);
     const editorBoardRef = useRef();
     const dispatch = useDispatch();
@@ -32,8 +32,14 @@ export default function Editor({editMode, handleEditMode, handleChangeComponents
                 editMode === 'Setting' || editMode === 'Template' || editMode === 'Share' || editMode === 'Product' ?
                 <EditBoard 
                     editMode={editMode} 
+                    linkPage={linkPage}
+                    setLinkPage={setLinkPage}
+                    handleLoginPopUp={handleLoginPopUp}
+                    handleUploadImageCollection={handleUploadImageCollection}
+                    handleComponentsMode={handleComponentsMode}
                     handleEditMode={handleEditMode}
                     handleChangeComponents={handleChangeComponents}
+                    handleChangeLinkPage={handleChangeLinkPage}
                     componentsMode={componentsMode}
                 /> :
                 <></>

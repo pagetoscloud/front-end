@@ -157,7 +157,8 @@ const gradientTypeData = [
                             }
                             {
                                 gradientColor.length < 4 &&
-                                <ColorListItems 
+                                <ColorListItems
+                                     
                                     onClick={handleAddNewColorGradient}
                                 >+</ColorListItems>
                             }

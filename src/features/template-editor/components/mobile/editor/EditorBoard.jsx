@@ -14,7 +14,7 @@ import EditorButton from "./editor-button/EditorButton";
 // import { useDispatch } from "react-redux";
 // import { useEffect, useRef } from "react";
 
-export default function EditBoard({editMode, handleEditMode, handleChangeComponents, handleComponentsMode, componentsMode}){
+export default function EditBoard({editMode, handleEditMode, handleChangeComponents, linkPage, setLinkPage, handleChangeLinkPage, handleShowColorList, handleUploadImageCollection, handleLoginPopUp, componentsMode, handleComponentsMode}){
     return (
         <EditorBoardWrapper>
             <EditorBoardContent>
@@ -30,6 +30,7 @@ export default function EditBoard({editMode, handleEditMode, handleChangeCompone
                 {
                     editMode.mode === 'Background' ?
                     <EditorBackground 
+                        handleShowColorList={handleShowColorList}
                         handleEditMode={handleEditMode}
                         editMode={editMode}
                         componentsMode={componentsMode}
@@ -40,8 +41,10 @@ export default function EditBoard({editMode, handleEditMode, handleChangeCompone
                     editMode.mode === 'Image' ?
                     <EditorImage
                         handleEditMode={handleEditMode}
-                        editMode={editMode}
+                        handleUploadImageCollection={handleUploadImageCollection}
+                        handleLoginPopUp={handleLoginPopUp}
                         componentsMode={componentsMode}
+                        editMode={editMode}
                     />:
                     <></>
                 }
@@ -70,7 +73,14 @@ export default function EditBoard({editMode, handleEditMode, handleChangeCompone
                 }
                                 {
                     editMode === 'Share' ?
-                    <EditorShare />:
+                    <EditorShare 
+                        handleEditMode={handleEditMode} 
+                        editMode={editMode}
+                        linkPage={linkPage}
+                        setLinkPage={setLinkPage}
+                        handleChangeLinkPage={handleChangeLinkPage}
+                        handleLoginPopUp={handleLoginPopUp}
+                    />:
                     <></>
                 }
                 {

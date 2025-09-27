@@ -64,7 +64,7 @@ export function useDispatchTextStyle(data, editMode){
         });
     }
     const handleChangeFontSize = (e) => {
-        setFontSize(e.data);
+        setFontSize(e);
         dispatch({
             ...changeText({
                     component: editMode.component,
@@ -172,7 +172,7 @@ export function useDispatchTextStyle(data, editMode){
             meta: {recored: true}
         });
     }
-    return [
+    return {
         fontColor, handleChangeFontColor, 
         opacity, handleChangeFontOpacity,
         fontSize, handleChangeFontSize,
@@ -181,5 +181,5 @@ export function useDispatchTextStyle(data, editMode){
         fontLineHeight, handleChangeFontLineHeight,
         fontSpacing, handleChangeFontSpacing,
         textAlign, handleChangeTextAlign
-    ]
+    }
 }

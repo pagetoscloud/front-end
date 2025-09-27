@@ -38,7 +38,7 @@ const textAlignList = [
 export default function EditorText({handleEditMode, editMode}){
     const styleData = useSelector(state => state.templateStyle.current);
     const [pickColor, setPickColor] = useState(false);
-    const [
+    const {
         fontColor, handleChangeFontColor,
         opacity, handleChangeFontOpacity,
         fontSize, handleChangeFontSize,
@@ -47,9 +47,9 @@ export default function EditorText({handleEditMode, editMode}){
         fontLineHeight, handleChangeFontLineHeight,
         fontSpacing, handleChangeFontSpacing,
         textAlign, handleChangeTextAlign
-    ] = useDispatchTextStyle(styleData, editMode);
+     } = useDispatchTextStyle(styleData, editMode);
+    //  console.log(fontSize);
     // const [show, setShow] = useState();
-    console.log(styleData);
     const handleShowColorPicker = (e) => {
         setPickColor(e.type);
     }
@@ -84,7 +84,8 @@ export default function EditorText({handleEditMode, editMode}){
                 <LabelText>Font Color</LabelText>
                 <HorizontalWrapper>
                     <ColorDisplayWrapper>
-                        <ColorDisplay 
+                        <ColorDisplay
+                            data-testid="color-display" 
                             style={{backgroundColor: fontColor}}
                             onClick={() => handleShowColorPicker({type: 'color list', mode: 'font'})}
                         />

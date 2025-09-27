@@ -15,7 +15,7 @@ export default function EditorColorList({handleChangeColor, handleShow, items, h
                 <img onClick={() => handleShow({type: false})} src={closeIcon} alt="close" />
             </ColorListHeader>
             <ColorListWrapper>
-                <ColorListItems onClick={() => handleShow({type: 'custom color', mode: ''})}>+</ColorListItems>
+                <ColorListItems data-testid="custom-color" onClick={() => handleShow({type: 'custom color', mode: ''})}>+</ColorListItems>
                 {
                     colorTemplateListData.map(color => {
                         return (

@@ -7,10 +7,72 @@ import whatsappIcon from '../../../../../../assets/images/whatsapp.png';
 import facebookIcon from '../../../../../../assets/images/facebook.png';
 import copyIcon from '../../../../../../assets/images/copy-icon.png';
 import uploadIcon from '../../../../../../assets/images/upload-icon.png';
+import { useSelector } from "react-redux";
+import { useState } from "react";
 
-export default function EditorShare({handleEditMode}){
+export default function EditorShare({handleEditMode, linkPage, setLinkPage, handleChangeLinkPage,  handleLoginPopUp}){
     // const size = useWindowSize();
     // const height = size[0] - 130;
+    // const size = useWindowSize();
+    // const height = size[0] - 130;
+    const loggedIn = useSelector(state => state.authentication.loggedIn);
+    const [link, setLink] = useState('https://infork.com/' + linkPage);
+    const [edit, setEdit] = useState(false);
+    const handleCheckLink = async () => {
+        let url = 'https://dummy-backend-500141028909.asia-southeast2.run.app/personal-area/check-link';
+        if (process.env.NODE_ENV === 'development'){
+            url = 'http://localhost:5001/personal-area/check-link';
+        }
+        try {
+            const response = await fetch(url, {
+                method: "POST",
+                credentials: 'include',
+                mode: 'cors',
+                headers: {
+                    "Content-Type":"application/json"
+                },
+                body: JSON.stringify({link: link})
+            });
+            const json = await response.json();
+            if (json.status === 'fail'){
+                alert('link already exists');
+                // setLink(linkPage);
+                setLink('https://infork.com/' + linkPage);
+            } 
+            if (json.status === 'ok'){
+                setLinkPage(link);
+                console.log('link changed');
+            }
+            if (linkPage !== '' ){
+                console.log(link);
+            }
+        } catch (error) {
+            throw error;
+        }
+    }
+    const handleClickLink = () => {
+        console.log('clicked');
+        console.log(loggedIn);
+        const inputLink = document.getElementById('inputLink');
+        const linkButton = document.getElementById('linkButton');
+        if (loggedIn){
+            if (!edit){
+                setEdit(true);
+                linkButton.innerHTML = 'Save';
+                inputLink.disabled = false;
+                setLink(linkPage);
+                inputLink.focus();
+            } else {
+                handleCheckLink();
+                setEdit(false);
+                setLink('https://infork.com/' + link);
+                linkButton.innerHTML = 'Edit';
+                inputLink.disabled = true;
+            }
+        } else {
+            handleLoginPopUp();
+        }
+    }
     return (
         <EditorShareContainer>
             <TitleHeader>
@@ -28,10 +90,11 @@ export default function EditorShare({handleEditMode}){
                     </QrCode>
                     <HorizontalWrapper>
                         <LabelText>Link Page</LabelText>
-                        <p>Copy</p>
+                        <p id="linkButton" onClick={handleClickLink}>Edit</p>
                     </HorizontalWrapper>
                     <InputEditorLarge>
-                        <input type='text' value={'http://inforku.com/mokfood'}/>
+                        {/* <input type='text' value={link}/> */}
+                        <input id="inputLink" type='text' value={link} onChange={(e) => setLink(e.target.value)} disabled/>
                     </InputEditorLarge>
                     <DividingLine />
                     <ActionButtonWrapper>

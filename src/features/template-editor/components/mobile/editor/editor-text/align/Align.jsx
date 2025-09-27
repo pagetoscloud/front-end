@@ -1,13 +1,32 @@
 import { AlignContent, AlignItems, AlignWrapper } from "./Align.styled";
-import alignLeft from '../../../../../../../assets/images/align-left.png';
-import alignCenter from '../../../../../../../assets/images/align-center.png';
-import alignRight from '../../../../../../../assets/images/align-right.png';
+import leftAlign from '../../../../../../../assets/images/align-left.png';
+import centerAlign from '../../../../../../../assets/images/align-center.png';
+import rightAlign from '../../../../../../../assets/images/align-right.png';
 
-export default function Align(){
+const textAlignList = [
+    {
+        id: 1,
+        name: 'Left',
+        icon: leftAlign
+    },
+    {
+        id: 2,
+        name: 'Center',
+        icon: centerAlign
+    },
+    {
+        id: 3,
+        name: 'Right',
+        icon: rightAlign
+    }
+]
+
+
+export default function Align({textAlign, handleChangeTextAlign}){
     return (
         <AlignWrapper>
             <AlignContent>
-                <AlignItems>
+                {/* <AlignItems>
                     <img src={alignLeft} alt="left align" />
                     <p>Left</p>
                 </AlignItems>
@@ -18,7 +37,20 @@ export default function Align(){
                 <AlignItems>
                     <img src={alignRight} alt="left align" />
                     <p>Right</p>
-                </AlignItems>
+                </AlignItems> */}
+                {
+                    textAlignList.map(item => {
+                        return (
+                            <AlignItems key={item.id} style={textAlign === item.name ? {boxShadow: '0px 0px 0px 1px rgba(0, 0, 0, 0.4) inset'} : {}}>
+                                <img
+                                    onClick={() => handleChangeTextAlign(item.name)}
+                                    src={item.icon} 
+                                    alt={item.name}
+                                />
+                            </AlignItems>
+                        )
+                    })
+                }
             </AlignContent>
         </AlignWrapper>
     )

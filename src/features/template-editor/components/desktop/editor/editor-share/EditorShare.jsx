@@ -17,7 +17,6 @@ export default function EditorShare({handleEditMode, linkPage, setLinkPage, hand
     const loggedIn = useSelector(state => state.authentication.loggedIn);
     const [link, setLink] = useState('https://infork.com/' + linkPage);
     const [edit, setEdit] = useState(false);
-    console.log(edit);
     const handleCheckLink = async () => {
         let url = 'https://dummy-backend-500141028909.asia-southeast2.run.app/personal-area/check-link';
         if (process.env.NODE_ENV === 'development'){
@@ -34,7 +33,6 @@ export default function EditorShare({handleEditMode, linkPage, setLinkPage, hand
                 body: JSON.stringify({link: link})
             });
             const json = await response.json();
-            console.log(json.status);
             if (json.status === 'fail'){
                 alert('link already exists');
                 // setLink(linkPage);
@@ -61,10 +59,8 @@ export default function EditorShare({handleEditMode, linkPage, setLinkPage, hand
                 inputLink.disabled = false;
                 setLink(linkPage);
                 inputLink.focus();
-                // inputLink.value = 'bambang';
             } else {
                 handleCheckLink();
-                // handleChangeLinkPage(link);
                 setEdit(false);
                 setLink('https://infork.com/' + link);
                 linkButton.innerHTML = 'Edit';

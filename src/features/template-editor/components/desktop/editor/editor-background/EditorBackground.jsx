@@ -11,7 +11,7 @@ import addIcon from "../../../../../../assets/images/Plus-Math.png"
 
 export default function EditorBackground({handleEditMode, editMode}){
     const styleData = useSelector(state => state.templateStyle.current);
-    const contentData = useSelector(state => state.templateContent);
+    // const contentData = useSelector(state => state.templateContent);
     const [pickColor, setPickColor] = useState(false);
     const [showBackground, setShowBackground] = useState(false);
     const [showBorder, setShowBorder] = useState(false);
@@ -77,6 +77,7 @@ export default function EditorBackground({handleEditMode, editMode}){
                 <HorizontalWrapper>
                     <ColorDisplayWrapper>
                         <ColorDisplay 
+                                data-testid="color-display"
                                 style={{background: backgroundColorDisplay}}
                                 onClick={() => handleShowColorList({type: 'color list', mode:'background'})}
                         />
@@ -136,7 +137,7 @@ export default function EditorBackground({handleEditMode, editMode}){
                 <HorizontalWrapper>
                     <LabelText>Effect</LabelText>
                     {/* <p onClick={() => handleAddBackgroundEffect()}>+</p> */}
-                    <AddButton onClick={() => handleAddBackgroundEffect()}>
+                    <AddButton role="button" onClick={() => handleAddBackgroundEffect()}>
                         <img src={addIcon} />
                     </AddButton>
                 </HorizontalWrapper>

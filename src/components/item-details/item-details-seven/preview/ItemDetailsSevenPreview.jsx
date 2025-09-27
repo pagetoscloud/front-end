@@ -25,11 +25,6 @@ export default function ItemDetailsSevenPreview({page, styleData, contentData, h
                 page === 'page two' ?
                 <ItemDetailsWrapper id='detailWrapper'>
                     <ItemDetailsImage
-                        // style={{
-                        //     height: imageHeight, 
-                        //     borderRadius: `0 0 ${styleData.itemDetails.style.image.borderRadius}px ${styleData.itemDetails.style.image.borderRadius}px`,
-                        //     // ...styleData.itemDetails.style.image
-                        // }}
                         style={{
                             height: imageHeight, 
                             filter: styleData.itemDetails.style.image.filter,
@@ -66,17 +61,17 @@ export default function ItemDetailsSevenPreview({page, styleData, contentData, h
                             alt="item detail" 
                         />
                     </ItemDetailsImage>
+                    <ItemsDetailsBackground 
+                        style={{
+                            background: styleData.itemDetails.style.background.background,
+                        }}
+                    />
                     <ItemDetailsBox 
                         style={{
                             height: boxHeight,
                             borderRadius: `${styleData.itemDetails.style.background.borderRadius}px 0`
                         }}
                     >
-                        <ItemsDetailsBackground 
-                            style={{
-                                background: styleData.itemDetails.style.background.background,
-                            }}
-                        />
                         <ItemDetailsText>
                             <ItemsTitle style={styleData.itemDetails.style.title}>{currentItems.name}</ItemsTitle>
                             <ItemsDescription style={styleData.itemDetails.style.paragraph}>{currentItems.description}</ItemsDescription>

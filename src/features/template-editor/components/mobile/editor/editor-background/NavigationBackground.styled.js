@@ -20,7 +20,19 @@ export const NavigationContainer = styled.div`
     position: absolute;
     bottom: 0;
 `;
-
+export const ScrollWrapper = styled.div`
+    overflow: scroll;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+`;
+    
+export const ScrollContent = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+`;
 export const MenuNav = styled.div`
     width: 40px;
     display: flex;

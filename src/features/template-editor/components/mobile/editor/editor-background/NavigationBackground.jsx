@@ -1,20 +1,17 @@
 // import { useWindowSize } from "../../../../../hooks/useWindowSize";
-import { CloseButton, MenuNav, NavigationContainer } from "./NavigationBackground.styled";
+import {MenuNav} from "./NavigationBackground.styled";
 import colorIcon from '../../../../../../assets/images/color-icon.png'
 import opacityIcon from '../../../../../../assets/images/opacity-icon.png';
 import blurIcon from '../../../../../../assets/images/blur-icon.png';
+import borderIcon from '../../../../../../assets/images/border-icon.png';
 import borderRadiusIcon from '../../../../../../assets/images/border-radius-icon.png';
-import closeIcon from '../../../../../../assets/images/close-icon.png';
+import Navigation from "../../../micro-components/navigation/Navigation";
 export default function NavigationBackground({handleComponentsMode, handleEditMode, componentsMode}){
     return (
-        <NavigationContainer>
-            {
-                !componentsMode ?
-                <CloseButton onClick={() => handleEditMode(false)}>
-                    <img src={closeIcon} alt='close' />
-                </CloseButton> :
-                <></>
-            }
+        <Navigation 
+            handleEditMode={handleEditMode}
+            componentsMode={componentsMode}
+        >
             <MenuNav>
                 <img  onClick={() => handleComponentsMode('Color')} src={colorIcon} alt="product icon" />
                 <p>Color</p>
@@ -28,9 +25,14 @@ export default function NavigationBackground({handleComponentsMode, handleEditMo
                 <p>Effect</p>
             </MenuNav>
             <MenuNav>
+                <img onClick={() => handleComponentsMode('Border')} src={borderIcon} alt="setting icon" />
+                <p>Border</p>
+            </MenuNav>
+            <MenuNav>
                 <img onClick={() => handleComponentsMode('Radius')} src={borderRadiusIcon} alt="setting icon" />
                 <p>Radius</p>
             </MenuNav>
-        </NavigationContainer>
+        </Navigation>
+
     )
 }

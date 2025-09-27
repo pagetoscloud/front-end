@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import ListItemsThreeEdit from "./edit/ListItemsThreeEdit";
-import ListItemsThreePreview from "./preview/ListItemsThreePreview";
+import ListItemsThreeEdit from "./ListItemsThreeEdit";
+import ListItemsThreePreview from "./ListItemsThreePreview";
 import rightArrow from '../../../assets/images/right-arrow.png';
 import leftArrow from '../../../assets/images/left-arrow.png';
 import { ListItemsThreeContainer, ScrollLeftButton, ScrollRightButton } from "./ListItemsThree.styled";
@@ -8,8 +8,6 @@ import { useWindowSize } from "../../../hooks/useWindowSize";
 
 
 export default function ListItemsThree({data, handleEditMode, styleData, components, mode, handleChangePage, handleChangeCurrentItems, onEdit}){
-    // const windowSize = useWindowSize();
-    // const windowWidth = windowSize[0];
     const totalItems = data.listItems.length;
     const containerRef = useRef(0);
     const contentRef = useRef(0);

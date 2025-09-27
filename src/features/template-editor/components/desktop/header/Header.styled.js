@@ -212,6 +212,10 @@ export const SaveButton = styled.div`
         font-weight: 700;
         margin: 5px 0;
     }
+    img {
+        width: 50%;
+        height: auto;
+    }
     @media only screen and (min-width: 900px){
         border-radius: 10px;
         border: 2px solid black;

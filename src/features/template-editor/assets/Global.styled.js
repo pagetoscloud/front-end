@@ -41,7 +41,7 @@ export const EditorContentWrapper = styled.div`
 `;
 
 export const InputEditorLarge = styled.div`
-    width: 240px;
+    width: 100%;
     height: 40px;
     border: 1px solid rgba(0, 0, 0, 0.1);
     display: flex;
@@ -50,6 +50,7 @@ export const InputEditorLarge = styled.div`
     justify-content: center;
     border-radius: 10px;
     margin: 10px 0;
+    // background: pink;
     input {
         cursor: pointer;
         border: none;
@@ -62,6 +63,9 @@ export const InputEditorLarge = styled.div`
     }
     &:focus-within {
         border: 1px solid #82F08B;   
+    }
+    @media only screen and (min-width: 600px){
+        width: 240px;
     }
 `;
 
@@ -304,7 +308,7 @@ export const VerticalWrapper = styled.div`
 `;
 
 export const ColorDisplayWrapper = styled.div`
-    width: 120px;
+    width: 50%;
     height: 40px;
     border-radius: 10px;
     display: flex;
@@ -313,6 +317,10 @@ export const ColorDisplayWrapper = styled.div`
     align-items: center;
     border: 1px solid rgba(0, 0, 0, 0.1);
     margin-top: 10px;
+    @media only screen and (min-width: 600px){
+        width: 120px;
+        height: 40px;
+    }
 `;
 
 export const ColorDisplay = styled.div`
@@ -324,8 +332,10 @@ export const ColorDisplay = styled.div`
 `;
 
 export const ColorInputHex = styled.div`
+    // width: 50%;
     width: 60px;
     height: 20px;
+    padding: 0 5px;
     &:focus-within {
         border: 1px solid rgba(0, 0, 0, 0.1);
     }
@@ -338,10 +348,15 @@ export const ColorInputHex = styled.div`
     input:focus {
         outline: none;
     }
+    // @media only screen and (min-width: 600px){
+    //     width: 60px;
+    //     height: 20px;
+    // }
 `;
 
 export const ColorOpacity = styled.div`
-    width: 80px;
+    width: 30%;
+    min-width: 90px;
     height: 40px;
     border-radius: 10px;
     display: flex;
@@ -362,6 +377,11 @@ export const ColorOpacity = styled.div`
     }
     input:focus {
         outline: none;
+    }
+
+    @media only screen and (min-width: 600px){
+        width: 80px;
+        height: 40px;
     }
 `;
 

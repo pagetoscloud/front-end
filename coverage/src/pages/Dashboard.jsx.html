@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">6.62% </span>
+                <span class="strong">6.93% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>12/181</span>
+                <span class='fraction'>12/173</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">6.62% </span>
+                <span class="strong">6.93% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>12/181</span>
+                <span class='fraction'>12/173</span>
             </div>
         
             
@@ -283,13 +283,7 @@
 <a name='L218'></a><a href='#L218'>218</a>
 <a name='L219'></a><a href='#L219'>219</a>
 <a name='L220'></a><a href='#L220'>220</a>
-<a name='L221'></a><a href='#L221'>221</a>
-<a name='L222'></a><a href='#L222'>222</a>
-<a name='L223'></a><a href='#L223'>223</a>
-<a name='L224'></a><a href='#L224'>224</a>
-<a name='L225'></a><a href='#L225'>225</a>
-<a name='L226'></a><a href='#L226'>226</a>
-<a name='L227'></a><a href='#L227'>227</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L221'></a><a href='#L221'>221</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -329,8 +323,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -417,7 +409,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -441,7 +432,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -472,10 +462,8 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -552,11 +540,9 @@ import { initialDataLocally } from "../features/template-editor/templateProductS
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
     // const navigate = useNavigate();
-<span class="cstat-no" title="statement not covered" >    console.log(localStorage.getItem('unsave-template'))</span>
 <span class="cstat-no" title="statement not covered" >    const dispatch = useDispatch();</span>
 <span class="cstat-no" title="statement not covered" >    const handleLocalStorage = (data) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        if (data){</span>
-<span class="cstat-no" title="statement not covered" >            console.log(data);</span>
             // dispatch(initialStyle({data: data.style}));
             // dispatch(initialContent({data: data.content}));
             // dispatch(initialDataLocally(data.content.product));
@@ -622,7 +608,6 @@ import { initialDataLocally } from "../features/template-editor/templateProductS
 <span class="cstat-no" title="statement not covered" >                }</span>
 <span class="cstat-no" title="statement not covered" >                const json = await response.json();</span>
 <span class="cstat-no" title="statement not covered" >                if (json.status === 'ok'){</span>
-<span class="cstat-no" title="statement not covered" >                    console.log(json.data);</span>
 <span class="cstat-no" title="statement not covered" >                    if (json.data.profile_picture === null){</span>
 <span class="cstat-no" title="statement not covered" >                        dispatch(changeAllData({</span>
 <span class="cstat-no" title="statement not covered" >                            username: json.data.username,</span>
@@ -666,7 +651,6 @@ import { initialDataLocally } from "../features/template-editor/templateProductS
 <span class="cstat-no" title="statement not covered" >                if (json.status === 'ok'){</span>
 <span class="cstat-no" title="statement not covered" >                    dispatch(initialCollection(json.data));</span>
 <span class="cstat-no" title="statement not covered" >                } else {</span>
-<span class="cstat-no" title="statement not covered" >                    console.log(json);</span>
 <span class="cstat-no" title="statement not covered" >                    dispatch(initialCollection([]));</span>
                     // navigate('/login');
 <span class="cstat-no" title="statement not covered" >                }</span>
@@ -698,15 +682,13 @@ import { initialDataLocally } from "../features/template-editor/templateProductS
 <span class="cstat-no" title="statement not covered" >                    body: unsaveFormData,</span>
 <span class="cstat-no" title="statement not covered" >                })</span>
 <span class="cstat-no" title="statement not covered" >                const json = await response.json();</span>
-<span class="cstat-no" title="statement not covered" >                if (json.status === 'ok'){</span>
-<span class="cstat-no" title="statement not covered" >                    console.log('upload file oke')</span>
-<span class="cstat-no" title="statement not covered" >                }</span>
+                // if (json.status === 'ok'){
+                // }
 <span class="cstat-no" title="statement not covered" >            } catch (error) {        </span>
 <span class="cstat-no" title="statement not covered" >              console.log(error);</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        if (localStorage.getItem('unsave-thumbnail-progress')){</span>
-<span class="cstat-no" title="statement not covered" >            console.log('process');</span>
 <span class="cstat-no" title="statement not covered" >            unsaveTemplate();</span>
 <span class="cstat-no" title="statement not covered" >            localStorage.removeItem('unsave-thumbnail-progress');</span>
 <span class="cstat-no" title="statement not covered" >            localStorage.removeItem('unsave-template-progress');</span>
@@ -748,7 +730,7 @@ import { initialDataLocally } from "../features/template-editor/templateProductS
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-09-23T01:20:38.586Z
+                at 2025-09-24T04:41:26.645Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

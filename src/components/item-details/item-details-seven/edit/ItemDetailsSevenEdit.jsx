@@ -65,7 +65,6 @@ export default function ItemDetailsSevenEdit({page, styleData, contentData, hand
                             ref={refFour}
                             onClick={() => {
                                 setActiveFour(true);
-                                // handleEditMode({mode: 'Background', type: 'circle', component: 'itemDetails'})
                                 handleEditMode({mode: 'Image', type: 'image', component: 'itemDetails', image: contentData.banner.image})
                             }}
                         >
@@ -73,7 +72,6 @@ export default function ItemDetailsSevenEdit({page, styleData, contentData, hand
                                 style={activeFour ? {boxShadow: '0px 0px 0px 1px blue inset'}: {}}
                             />
                             <Image 
-                                // style={styleData.itemDetails.style.image} 
                                 style={{
                                     filter: styleData.itemDetails.style.image.filter,
                                     borderRadius: `0 0 ${styleData.itemDetails.data.image.borderRadius}px ${styleData.itemDetails.data.image.borderRadius}px`

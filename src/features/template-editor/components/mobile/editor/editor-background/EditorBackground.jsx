@@ -7,12 +7,14 @@ import Opacity from "./opacity/Opacity";
 import Blur from "./effect/Effect";
 import Radius from "./radius/Radius";
 import Color from "./color/Color";
+import Border from "./border/Border";
+import { useState } from "react";
 // import EditorColorPicker from "../editor-color-picker/EditorColorPicker";
 
 export default function EditorBackground({editMode, componentsMode}){
     const styleData = useSelector(state => state.templateStyle.current);
-    // const [showBackground, setShowBackground] = useState(false);
-    // const [showBorder, setShowBorder] = useState(false);
+    const [showBackground, setShowBackground] = useState(false);
+    const [showBorder, setShowBorder] = useState(false);
     const {
         backgroundColor, handleChangeBackgroundColor,
         backgroundColorDisplay,
@@ -23,45 +25,46 @@ export default function EditorBackground({editMode, componentsMode}){
         handleChangeBackgroundEffectValue, handleDeleteBackgroundEffect,
         handleChangeEffectType,
         borderColor, handleChangeBorderColor,
-        // borderSize, handleChangeBorderSize
+        borderSize, handleChangeBorderSize,
+        borderType, handleChangeBorderType
     } = useDispatchBackgroundStyle(styleData, editMode);
-    // console.log(componentsMode);
-    // const handleShowColorList = (e) => {
-    //     if (e === 'border'){
-    //         if (showBackground){
-    //             setShowBackground(false);
-    //             setShowBorder(true);
-    //         } else {
-    //             setShowBorder(true);
-    //         }
-    //         if (showBorder){
-    //             setShowBorder(false);
-    //         }
-    //     } else if (e === 'background') {
-    //         if (showBorder){
-    //             setShowBorder(false);
-    //             setShowBackground(true);
-    //         } else {
-    //             setShowBackground(true);
-    //         }
-    //         if (showBackground){
-    //             setShowBackground(false);
-    //         }
-    //     } else {
-    //         setShowBackground(false);
-    //         setShowBorder(false);
-    //     }
-    // }
+    const handleShowColorList = (e) => {
+        console.log(e);
+        if (e.mode === 'border'){
+            if (showBackground){
+                setShowBackground(false);
+                setShowBorder(true);
+            } else {
+                setShowBorder(true);
+            }
+            if (showBorder){
+                setShowBorder(false);
+            }
+        } else if (e.mode === 'background') {
+            if (showBorder){
+                setShowBorder(false);
+                setShowBackground(true);
+            } else {
+                setShowBackground(true);
+            }
+            if (showBackground){
+                setShowBackground(false);
+            }
+        } else {
+            setShowBackground(false);
+            setShowBorder(false);
+        }
+    }
     return (
         <EditorBackgroundContainer>
-            {/* {
+            {
                 showBackground &&
                 <EditorColorList 
                         handleChangeBackgroundColor={handleChangeBackgroundColor}
                         handleShow={handleShowColorList}
                         items={'background'}
                 />
-            } */}
+            }
             {
                 componentsMode === 'Color' ?
                 <Color 
@@ -72,8 +75,8 @@ export default function EditorBackground({editMode, componentsMode}){
                     handleChangeBackgroundColor={handleChangeBackgroundColor}
                     handleChangeBackgroundOpacity={handleChangeBackgroundOpacity}
                     handleChangeBorderColor={handleChangeBorderColor}
-                    // showBackground={showBackground}
-                    // showBorder={showBorder}
+                    showBackground={showBackground}
+                    showBorder={showBorder}
                 />:
                 <></>
             }
@@ -107,7 +110,19 @@ export default function EditorBackground({editMode, componentsMode}){
                 />:
                 <></>
             }
-            
+            {
+                componentsMode === 'Border' ?
+                <Border
+                    borderColor={borderColor}
+                    borderSize={borderSize}
+                    borderType={borderType}
+                    handleChangeBorderSize={handleChangeBorderSize}
+                    handleChangeBorderColor={handleChangeBorderColor}
+                    handleChangeBorderType={handleChangeBorderType}
+                    handleShowColorList={handleShowColorList}
+                />:
+                <></>
+            }
             {/* {
                 showBorder &&
                 <EditorColorList 

@@ -1,5 +1,5 @@
-import ListItemsOneEdit from "./edit/ListItemsOneEdit"
-import ListItemsOnePreview from "./preview/ListItemsOnePreview"
+import ListItemsOneEdit from "./ListItemsOneEdit"
+import ListItemsOnePreview from "./ListItemsOnePreview"
 
 export default function ListItemsOne({data, handleEditMode, handleChangeProductText, styleData, components, mode, handleChangePage, handleChangeCurrentItems, containerRef, handleActiveBox, onEdit}){
     return (

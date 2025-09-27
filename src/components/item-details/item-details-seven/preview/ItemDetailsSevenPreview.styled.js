@@ -25,7 +25,7 @@ export const ItemDetailsBox = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     // border-radius: 20px 20px 0 0;
     overflow: hidden;
     z-index: 5;
@@ -88,10 +88,14 @@ export const ItemDetailsImage = styled.div`
     max-height: 400px;
     overflow: hidden;
     // border-radius: 100px;
-    background: pink;
+    background: rgba(158, 158, 158, 1);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     img {
-        width: 100%;
-        height: auto;
+        width: auto;
+        height: 100%;
     }
     @media only screen and (min-height: 600px){
         // height: 50%;

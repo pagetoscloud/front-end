@@ -11,6 +11,7 @@ import toggle from '../../../../../assets/images/togle-icon.png';
 import undo from '../../../../../assets/images/undo-icon.png';
 import redo from '../../../../../assets/images/redo-icon.png';
 import logo from '../../../../../assets/images/Pixel-style-logo.png';
+import uploadIcon from '../../../../../assets/images/upload-icon.png';
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useWindowSize } from "../../../../../hooks/useWindowSize";
@@ -18,6 +19,7 @@ import { useDispatch, useSelector } from "react-redux";
 // import { undoState, redoState } from "../../../templateStyleSlice";
 import { REDO, UNDO } from "../../../undoRedoMiddleware";
 import { clearProductList } from "../../../templateProductSlice";
+import { upload } from "@testing-library/user-event/dist/cjs/utility/upload.js";
 // import { saveProductEdit } from "../../../templateProductSlice";
 
 
@@ -133,8 +135,8 @@ export default function Header({handleLocalStorage, handleChangePage, handleShow
                         <SaveButton onClick={handleSaveData}>
                             {
                                 web_id === '*' ?
-                                <p>Publish</p> :
-                                <p>Save</p>
+                                <img src={uploadIcon} alt='upload button icon' />:
+                                <p>Save</p> 
                             }
                         </SaveButton>
                     </>:

@@ -59,7 +59,7 @@ export const ItemDetailsBox = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     overflow: hidden;
     // background: transparent;
     // background: blue;
@@ -79,8 +79,8 @@ export const ImageWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative;
     justify-content: center;
+    position: relative;
 `;
 
 export const ItemDetailsCircle = styled.div`
@@ -109,22 +109,23 @@ export const ItemDetailsImage = styled.div`
     z-index: 7;
     cursor: pointer;
     position: relative;
-`;
-        
+    `;
+    
 export const Image = styled.div`
-    z-index: -1;
-    width: 100%;
-    height: 100%;
+z-index: -1;
+width: 100%;
+height: 100%;
+background: rgba(158, 158, 158, 1);
     overflow: hidden;
     border-radius: 0 0 20px 20px;
-    background: white;
+    // background: white;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     img {
-        width: 100%;
-        height: auto;
+        width: auto;
+        height: 100%;
     }
 `;
 

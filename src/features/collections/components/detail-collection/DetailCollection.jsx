@@ -40,7 +40,6 @@ export default function DetailCollection({currentCollection, handleShowDetail, h
             inputLink.focus();
         } else {
             setEdit(false);
-            console.log(link);
             handleChangeLinkPage(link, currentCollection.web_id);
             setLink('https://infork.com/' + link);
             linkButton.innerHTML = 'Edit';
@@ -48,16 +47,13 @@ export default function DetailCollection({currentCollection, handleShowDetail, h
         }
     }
     const handleCopyLink = () => {
-        console.log('copy');
         navigator.clipboard.writeText(link);
     }
     const handleShareOnWA = () => {
-        console.log('share to wa');
         // window.location.href = `https://whatsapp://send?text=${link}`;
         window.open(`whatsapp://send?text=${link}`);
     }
     const handleShareFB = () => {
-        console.log('share to facebook');
         window.open(`https://www.facebook.com/sharer/sharer.php?u=${link}`, '_blank');
     }
     const handleDownloadImage = async () => {
@@ -111,8 +107,8 @@ export default function DetailCollection({currentCollection, handleShowDetail, h
             {/* <Line /> */}
             <SquareWrapper>
                 <HorizontalWrapper>
-                    <LabelText>Link</LabelText>
-                    <ActionText id="linkButton" onClick={handleClickLink}>Edit</ActionText>
+                    <LabelText>Share</LabelText>
+                    {/* <ActionText id="linkButton" onClick={handleClickLink}>Edit</ActionText> */}
                 </HorizontalWrapper>
                 <ActionButtonWrapper>
                     <ActionButtonIcon>

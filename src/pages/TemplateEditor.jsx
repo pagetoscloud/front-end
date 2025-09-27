@@ -257,6 +257,12 @@ export default function TemplateEditor(){
                                 editMode={editMode} 
                                 handleEditMode={handleEditMode}
                                 handleChangeComponents={handleChangeComponents}
+                                linkPage={linkPage}
+                                setLinkPage={setLinkPage}
+                                handleChangeLinkPage={handleChangeLinkPage}
+                                web_id={web_id}
+                                handleUploadImageCollection={uploadImageCollection}
+                                handleLoginPopUp={handleLoginPopUp}
                             />
                         </>
                     }

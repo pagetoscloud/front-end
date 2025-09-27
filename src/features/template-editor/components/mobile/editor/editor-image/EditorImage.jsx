@@ -6,6 +6,7 @@ import Opacity from "./opacity/Opacity";
 import Radius from "./radius/Radius";
 import Filter from "./filter/Filter";
 import Image from "./image/Image";
+import Blur from "./blur/Blur";
 
 export default function EditorImage({editMode, componentsMode}){
     const styleData = useSelector(state => state.templateStyle.current);
@@ -56,6 +57,14 @@ export default function EditorImage({editMode, componentsMode}){
                 <Radius 
                     imageBorderRadius={imageBorderRadius}
                     handleChangeImageBorderRadius={handleChangeImageBorderRadius}
+                />:
+                <></>
+            }
+            {
+                componentsMode === 'Blur' ?
+                <Blur 
+                   imageBlur={imageBlur}
+                   handleChangeImageBlur={handleChangeImageBlur}
                 />:
                 <></>
             }

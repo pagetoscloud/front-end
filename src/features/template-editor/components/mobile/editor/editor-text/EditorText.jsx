@@ -9,15 +9,16 @@ import Align from "./align/Align";
 
 export default function EditorText({editMode, componentsMode}){
     const styleData = useSelector(state => state.templateStyle.current);
-    const [
+    const {
         fontColor, handleChangeFontColor,
         opacity, handleChangeFontOpacity,
         fontSize, handleChangeFontSize,
         fontFamily, handleChangeFontFamily,
         fontStyle, handleChangeFontStyle,
         fontLineHeight, handleChangeFontLineHeight,
-        fontSpacing, handleChangeFontSpacing
-    ] = useDispatchTextStyle(styleData, editMode);
+        fontSpacing, handleChangeFontSpacing,
+        textAlign, handleChangeTextAlign
+     } = useDispatchTextStyle(styleData, editMode);
     // const [show, setShow] = useState();
     // const handleShowColorList = () => {
     //     if (show){
@@ -30,7 +31,10 @@ export default function EditorText({editMode, componentsMode}){
         <EditorTextContainer>
             {
                 componentsMode === 'Align' ?
-                <Align/>:
+                <Align
+                    textAlign={textAlign}    
+                    handleChangeTextAlign={handleChangeTextAlign}
+                />:
                 <></>
             }
             {

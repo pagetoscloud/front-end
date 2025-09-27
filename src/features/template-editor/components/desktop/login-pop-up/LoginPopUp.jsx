@@ -1,4 +1,9 @@
-import { CloseButton, GoogleButton, LoginButton, LoginPopUpBox, LoginPopUpContainer, SubParagraphText, TitleText } from "./LoginPopUp.styled";
+import { 
+        CloseButton, GoogleButton, 
+        LoginButton, LoginPopUpBox, 
+        LoginPopUpContainer, SubParagraphText, 
+        TitleText 
+} from "./LoginPopUp.styled";
 import googleIcon from "../../../../../assets/images/google-logo.png";
 import { useNavigate} from "react-router-dom";
 export default function LoginPopUp({handleCloseLoginPopUp}) {

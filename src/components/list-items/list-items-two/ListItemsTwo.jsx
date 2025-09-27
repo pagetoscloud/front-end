@@ -1,5 +1,5 @@
-import ListItemsTwoEdit from "./edit/ListItemsTwoEdit"
-import ListItemsTwoPreview from "./preview/ListItemsTwoPreview"
+import ListItemsTwoEdit from "./ListItemsTwoEdit"
+import ListItemsTwoPreview from "./ListItemsTwoPreview"
 
 
 export default function ListItemsTwo({data, handleEditMode, styleData, components, mode, handleChangePage, handleChangeCurrentItems, onEdit}){
