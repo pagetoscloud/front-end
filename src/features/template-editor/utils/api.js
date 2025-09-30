@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const uploadImageCollection = async (value) => {
-    let url = 'https://dummy-backend-500141028909.asia-southeast2.run.app/auth/change-profile-picture';
+    let url = 'https://pagetos-express-backend-v1-561278679973.asia-southeast2.run.app/auth/change-profile-picture';
     if (process.env.NODE_ENV === 'development'){
         url = 'http://localhost:5001/personal-area/upload-image-collection';
     }
@@ -23,12 +23,14 @@ export const uploadImageCollection = async (value) => {
     }
 }
 
+
+
 export const fetchThumbnailEdit = async (formData, changed, deleted) => {
     const data = formData.get('templateData');
     const parseData = JSON.parse(data);
     const web_id = parseData.id;
     try {
-        let url = 'https://dummy-backend-500141028909.asia-southeast2.run.app/personal-area/upload-last-edit-image';
+        let url = 'https://pagetos-express-backend-v1-561278679973.asia-southeast2.run.app/personal-area/upload-last-edit-image';
         if (process.env.NODE_ENV === 'development'){
             url = 'http://localhost:5001/personal-area/upload-last-edit-image';
         }

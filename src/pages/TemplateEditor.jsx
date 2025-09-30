@@ -177,7 +177,7 @@ export default function TemplateEditor(){
     }, [components, styleData, navigate, web_id, setLinkPage, dispatch]);
     useEffect(() => {
         const fetchingData = async () => {
-            let url = `https://dummy-backend-500141028909.asia-southeast2.run.app/personal-area/edit-website/${web_id}`;
+            let url = `https://pagetos-express-backend-v1-561278679973.asia-southeast2.run.app/personal-area/edit-website/${web_id}`;
             if (process.env.NODE_ENV === 'development'){
                 url = `http://localhost:5001/personal-area/edit-website/${web_id}`;
             }

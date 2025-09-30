@@ -38,7 +38,7 @@ export default function Analytics(){
     const handleCurrentCollection = (e) => {
         setCurrentCollection(e);
         const fetchingDataVisitor = async () => {
-            let url = 'https://dummy-backend-500141028909.asia-southeast2.run.app/personal-area/analytics';
+            let url = 'https://pagetos-express-backend-v1-561278679973.asia-southeast2.run.app/personal-area/analytics';
             if (process.env.NODE_ENV === 'development'){
                 url = 'http://localhost:5001/personal-area/analytics';
             }
@@ -71,7 +71,7 @@ export default function Analytics(){
         const changeCurrentCollection = (e) => {
             setCurrentCollection(e);
             const fetchingDataVisitor = async () => {
-                let url = 'https://dummy-backend-500141028909.asia-southeast2.run.app/personal-area/analytics';
+                let url = 'https://pagetos-express-backend-v1-561278679973.asia-southeast2.run.app/personal-area/analytics';
                 if (process.env.NODE_ENV === 'development'){
                     url = 'http://localhost:5001/personal-area/analytics';
                 }
@@ -95,7 +95,7 @@ export default function Analytics(){
         }
         const getCollectionData = async () => {
             setLoading(true);
-            let url = 'https://dummy-backend-500141028909.asia-southeast2.run.app/personal-area/collection';
+            let url = 'https://pagetos-express-backend-v1-561278679973.asia-southeast2.run.app/personal-area/collection';
             if (process.env.NODE_ENV === 'development'){
                 url = 'http://localhost:5001/personal-area/collection';
             }

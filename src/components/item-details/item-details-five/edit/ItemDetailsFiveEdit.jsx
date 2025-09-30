@@ -3,6 +3,7 @@ import {
     BoxEditWrapper,
     CloseButton,
     Image,
+    ImageBoxEditWrapper,
     ImageWrapper,
     ItemDetailsBox, ItemDetailsBoxHover, ItemDetailsButton, ItemDetailsImage, 
     ItemDetailslBoxBackground, 
@@ -73,7 +74,7 @@ export default function ItemDetailsFiveEdit({page, styleData, contentData, handl
                                     handleEditMode({mode: 'Image', type: 'image', component: 'itemDetails', image: contentData.banner.image})
                                 }}
                             >
-                                <BoxEditWrapper 
+                                <ImageBoxEditWrapper
                                     style={activeFour ? {boxShadow: '0px 0px 0px 1px blue inset'}: {}}
                                 />
                                 <Image 

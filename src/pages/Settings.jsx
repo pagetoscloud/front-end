@@ -21,7 +21,7 @@ export default function Settings(){
         const imageData = URL.createObjectURL(value);
         dispatch(changeProfilePicture(imageData));
         setProfilePicture(imageData);
-        let url = 'https://dummy-backend-500141028909.asia-southeast2.run.app/auth/change-profile-picture';
+        let url = 'https://pagetos-express-backend-v1-561278679973.asia-southeast2.run.app/auth/change-profile-picture';
         if (process.env.NODE_ENV === 'development'){
             url = 'http://localhost:5001/auth/change-profile-picture';
         }
@@ -83,7 +83,7 @@ export default function Settings(){
         }
     }
     const handleLogout = async () => {
-        let url = 'https://dummy-backend-500141028909.asia-southeast2.run.app/auth/logout';
+        let url = 'https://pagetos-express-backend-v1-561278679973.asia-southeast2.run.app/auth/logout';
         if (process.env.NODE_ENV === 'development'){
             url = 'http://localhost:5001/auth/logout';
         }

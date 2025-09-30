@@ -85,7 +85,7 @@ export default function Dashboard(){
     useEffect(() => {
         const getData = async () => {
             // const url = 'http://localhost:5001/auth/profile-data';
-            let url = 'https://dummy-backend-500141028909.asia-southeast2.run.app/auth/profile-data';
+            let url = 'https://pagetos-express-backend-v1-561278679973.asia-southeast2.run.app/auth/profile-data';
             if (process.env.NODE_ENV === 'development'){
                 url = 'http://localhost:5001/auth/profile-data';
             }
@@ -129,7 +129,7 @@ export default function Dashboard(){
         }
         const getCollectionData = async () => {
             // const url = 'http://localhost:5001/personal-area/collection';
-            let url = 'https://dummy-backend-500141028909.asia-southeast2.run.app/personal-area/collection';
+            let url = 'https://pagetos-express-backend-v1-561278679973.asia-southeast2.run.app/personal-area/collection';
             if (process.env.NODE_ENV === 'development'){
                 url = 'http://localhost:5001/personal-area/collection';
             }
@@ -166,7 +166,7 @@ export default function Dashboard(){
             unsaveFormData.append('file', myFile);
             unsaveFormData.append('templateData', templateData);
             try {
-                let url = 'https://dummy-backend-500141028909.asia-southeast2.run.app/personal-area/upload-last-edit-image';
+                let url = 'https://pagetos-express-backend-v1-561278679973.asia-southeast2.run.app/personal-area/upload-last-edit-image';
                 if (process.env.NODE_ENV === 'development'){
                     url = 'http://localhost:5001/personal-area/upload-last-edit-image';
                 }

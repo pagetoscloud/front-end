@@ -20,8 +20,8 @@ export const ItemsWrapper = styled.div`
 `;
 
 export const ItemsImage = styled.div`
-    width: 130px;
-    height: 130px;
+    width: 120px;
+    height: 120px;
     margin: 5px 0;
     display: flex;
     flex-direction: row;

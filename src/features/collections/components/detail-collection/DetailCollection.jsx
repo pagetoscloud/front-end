@@ -27,7 +27,7 @@ export default function DetailCollection({currentCollection, handleShowDetail, h
     // const [linkPage, setLinkPage] = useState(currentCollection ? currentCollection.link : '');
     const pageName = currentCollection ? currentCollection.name : 'infork';
     const ToCaptureRef = React.useRef();
-    const [link, setLink] = useState('https://infork.com/'+ currentCollection.link);
+    const [link, setLink] = useState('https://pagetos.com/'+ currentCollection.link);
     const [edit, setEdit] = useState(false);
     const handleClickLink = () => {
         const inputLink = document.getElementById('inputLink');
@@ -41,7 +41,7 @@ export default function DetailCollection({currentCollection, handleShowDetail, h
         } else {
             setEdit(false);
             handleChangeLinkPage(link, currentCollection.web_id);
-            setLink('https://infork.com/' + link);
+            setLink('https://pagetos.com/' + link);
             linkButton.innerHTML = 'Edit';
             inputLink.disabled = true;
         }
@@ -80,7 +80,7 @@ export default function DetailCollection({currentCollection, handleShowDetail, h
 
     useEffect(() => {
         if (currentCollection){
-            setLink('https://infork.com/' + currentCollection.link);
+            setLink('https://pagetos.com/' + currentCollection.link);
         }
     }, [currentCollection]);
     return (

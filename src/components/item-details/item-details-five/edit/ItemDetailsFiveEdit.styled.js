@@ -202,3 +202,13 @@ export const BoxEditWrapper = styled.div`
         box-shadow: 0px 0px 0px 1px blue inset;
     }
 `;
+
+export const ImageBoxEditWrapper = styled.div`
+    width: 95%;
+    height: 95%;
+    position: absolute;
+    padding: 2px;
+    &:hover {
+        box-shadow: 0px 0px 0px 1px blue inset;
+    }
+`;

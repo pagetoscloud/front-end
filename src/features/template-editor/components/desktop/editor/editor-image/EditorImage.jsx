@@ -59,6 +59,7 @@ export default function EditorImage({handleEditMode, editMode, handleUploadImage
         // prevData.push({image_link: URL.createObjectURL(e), name: 'New Image'});
         // setUploadImageList(prevData);
     }
+    console.log(editMode);
     const {
         imageOpacity, handleChangeImageOpacity,
         imageBlur, handleChangeImageBlur,
@@ -68,7 +69,8 @@ export default function EditorImage({handleEditMode, editMode, handleUploadImage
     const {
         browserImage, handleChangeImageBrowser,
         selectedUploadImage, handleChangeImageUpload
-    } = useDispatchImageContent(contentData, editMode);
+    } = useDispatchImageContent(editMode);
+
     useEffect(() => {
         const fetchImageCollection = async () => {
             let url = 'https://dummy-backend-500141028909.asia-southeast2.run.app/personal-area/collection-image';

@@ -5,7 +5,7 @@ import { ImageListData } from "../../../data/ImageListData";
 import { editProduct } from "../templateProductSlice";
 
 
-export function useDispatchImageContent(data, editMode){
+export function useDispatchImageContent(editMode){
     const [browserImage, setBrowserImage] = useState(editMode.image);
     const [selectedUploadImage, setSelectedUploadImage] = useState(editMode.image);
     const dispatch = useDispatch();
@@ -15,7 +15,7 @@ export function useDispatchImageContent(data, editMode){
     }, [editMode]);
     const handleChangeImageBrowser = (e) => {
         const imageData = ImageListData.filter(data => data.id === e);
-        if (editMode.component === 'product'){
+        if (editMode.component === 'product' || editMode.component === 'specialItems'){
             dispatch({
                 ...editProduct({
                     items: 'image',

@@ -3,14 +3,14 @@ import styled from "styled-components";
 export const DetailCollectionWrapper = styled.div`
     width: 90%;
     margin: 0 5%;
-    background: pink;
-    height: 100%;
+    height: auto;
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: auto;
-    column-gap: 10%;    
+    column-gap: 10%;
+    row-gap: 20px;    
     z-index: 1;
-    background: white;
+    // background: blue;
     margin-top: 20px;
     @media only screen and (min-width: 600px){
         padding: 0 1%;

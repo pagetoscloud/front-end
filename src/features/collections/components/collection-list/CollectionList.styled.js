@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const CollectionListWrapper = styled.div`
     width: 98%;
     padding: 0 1%;
-    height: 450px;
+    height: auto;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -15,7 +15,7 @@ export const CollectionListWrapper = styled.div`
     scroll-behavior: smooth;
     // background: pink;
     @media only screen and (min-width: 600px){
-        height: 700px;
+        height: auto;
         // background: blue;
         // padding-right: 20px
     }

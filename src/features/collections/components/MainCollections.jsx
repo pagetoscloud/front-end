@@ -1,10 +1,11 @@
 import CollectionList from "./collection-list/CollectionList";
 import MainContentLayout from "../../../layouts/personal-area-layout/MainContentLayout";
-import { MainCollectionWrapper} from "./MainCollections.styled";
+import { DeleteButton, MainCollectionWrapper} from "./MainCollections.styled";
 import { useState } from "react";
 import DetailCollection from "./detail-collection/DetailCollection";
 import { useDispatch, useSelector } from "react-redux";
 import { changePage } from "../../template-editor/templatePagePositionSlice";
+import { deletePageCollection } from "../utils/api";
 // import { TitlePageH2 } from "../../../assets/Global.styled";
 // import { collectionListData } from "../../../data/CollectionListData";
 // import { useWindowSize } from "../../../hooks/useWindowSize";
@@ -54,6 +55,7 @@ export default function MainCollections({showNavigation, handleChangeLinkPage}){
                     />: 
                     <></>
                 }
+                <DeleteButton onClick={() => deletePageCollection(currentCollection.web_id)}>Delete Page</DeleteButton>
                 </MainCollectionWrapper>
             </MainContentLayout>
         </>

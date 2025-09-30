@@ -1119,7 +1119,7 @@ export const templateListData = [
         },
         content: {
             header: {
-                logo: {type: 'text', text: 'King Kebab.'}
+                logo: {type: 'text', text: 'Asian Bite'}
             },
             banner: {
                 image: 'https://storage.googleapis.com/pagetos_template_image/asian-bite-hero.png',
@@ -1159,19 +1159,6 @@ export const templateListData = [
                     listItems: [
                         {id: 1, name: 'Ice Coke', price: 14000, description: 'Best drinks for any food.', image: iceCoke},
                         {id: 2, name: 'Ice Pesi', price: 14000, description: 'Best drinks for any food.', image: icePepsi}
-                    ]
-                },
-                {
-                    id: 4,
-                    name: 'Popular Menu',
-                    listItems: [
-                        {id: 1, name: 'Bibimbap', price: 'Rp 24.000', description: 'Best beef combine with best import cheese.', image: 'https://storage.googleapis.com/pagetos_template_image/Avocado-Toast.jpg'},
-                        {id: 2, name: 'Beef Bulgogi', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Grilled-Chicken.jpg'},
-                        {id: 3, name: 'Pho Bo', price: 'Rp 24.000', description: 'Fresh vegetable combine with juicy mean.', image: 'https://storage.googleapis.com/pagetos_template_image/Golden-Turmeric.jpg'},
-                        {id: 4, name: 'Teriyaki Salmon', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Salmon-Potato.jpg'},
-                        {id: 5, name: 'Beef Bulgogi', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Spinach-Feta.jpg'},
-                        // {id: 5, name: 'Spicy Tuna Sushi', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: ''},
-                        // {id: 6, name: 'Chicken Katsu Curry', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: ''},
                     ]
                 },
             ],
@@ -1304,24 +1291,6 @@ export const templateListData = [
                     button: {background: '#000000', color: '#FFFFFF', fontSize: 16, fontWeight: 700, border: 'none', opacity: 100, borderRadius: 20, filter: 'none', effect: []},
                 }
             },
-            // specialItems: {
-            //     data: {
-            //         title: {fontSize: 12, color: '#000000', textDecoration: 'none', fontWeight: 700, fontFamily: 'Roboto, serif', opacity: 100, textAlign: 'center'},
-            //         paragraph: {fontSize: 11, color: '#7D7D7D', textDecoration: 'none', fontWeight: 800, fontFamily: 'Roboto, serif', opacity: 100, textAlign: 'center'},
-            //         category: {fontSize: 14, color: '#000000', textDecoration: 'none', fontWeight: 800, fontFamily: 'Roboto, serif', opacity: 100, textAlign: 'center'},
-            //         price: {fontSize: 12, color: '#000000', textDecoration: 'none', fontWeight: 800, fontFamily: 'Roboto, serif', opacity: 100, textAlign: 'center'},
-            //         image: {borderRadius: 10, opacity: 100, filter: {type: 'blur', value: 0}},
-            //         background: {type: 'solid', color: '#FFFFFF', border: {size: 0, color: "#000000", type: 'none'}, opacity: 100, borderRadius: 0, filter: {type: 'blur', value: 0}, effect: []},
-            //     },
-            //     style: {
-            //         title: {fontSize: 12, color: '#000000', textDecoration: 'none', fontWeight: 700, fontFamily: 'Roboto, serif', opacity: '100%', textAlign: 'center'},
-            //         paragraph: {fontSize: 11, color: '#7D7D7D',  textDecoration: 'none', fontWeight: 400, fontFamily: 'Roboto, serif', opacity: '100%', textAlign: 'center'},
-            //         category: {fontSize: 14, color: '#000000',  textDecoration: 'none', fontWeight: 800, fontFamily: 'Roboto, serif', opacity: '100%', textAlign: 'center'},
-            //         price: {fontSize: 12, color: '#000000', textDecoration: 'none', fontWeight: 800, fontFamily: 'Roboto, serif', opacity: '100%', textAlign: 'center'},
-            //         image: {borderRadius: '10px', opacity: '100%', filter: 'blur(0)'},
-            //         background: {background: 'rgba(255, 255, 255, 0)', borderRadius: 0, border: 'none', opacity: "100%", filter: 'none', backdropFilter: 'none', boxShadow: 'none'}
-            //     }
-            // },
             specialItems: {
                 data: {
                     title: {fontSize: 14, color: '#000000', textDecoration: 'none', fontWeight: 700, fontFamily: 'Roboto, serif', opacity: 100, textAlign: 'center'},
@@ -1407,34 +1376,32 @@ export const templateListData = [
                     id: 1,
                     name: 'Popular Menu',
                     listItems: [
-                        {id: 1, name: 'Bibimbap', price: 'Rp 24.000', description: 'Best beef combine with best import cheese.', image: 'https://storage.googleapis.com/pagetos_template_image/Avocado-Toast.jpg'},
-                        {id: 2, name: 'Beef Bulgogi', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Grilled-Chicken.jpg'},
-                        {id: 3, name: 'Pho Bo', price: 'Rp 24.000', description: 'Fresh vegetable combine with juicy mean.', image: 'https://storage.googleapis.com/pagetos_template_image/Golden-Turmeric.jpg'},
-                        {id: 4, name: 'Teriyaki Salmon', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Salmon-Potato.jpg'},
-                        {id: 5, name: 'Beef Bulgogi', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Spinach-Feta.jpg'},
-                        // {id: 5, name: 'Spicy Tuna Sushi', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: ''},
-                        // {id: 6, name: 'Chicken Katsu Curry', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: ''},
+                        {id: 1, name: 'Avocado Toast', price: 'Rp 24.000', description: 'Best beef combine with best import cheese.', image: 'https://storage.googleapis.com/pagetos_template_image/Avocado-Toast.jpg'},
+                        {id: 2, name: 'Grilled Chicken', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Grilled-Chicken.jpg'},
+                        {id: 3, name: 'Golden Turmeric', price: 'Rp 24.000', description: 'Fresh vegetable combine with juicy mean.', image: 'https://storage.googleapis.com/pagetos_template_image/Golden-Turmeric.jpg'},
+                        {id: 4, name: 'Salmon Potato', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Salmon-Potato.jpg'},
+                        {id: 5, name: 'Spinach-Feta', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Spinach-Feta.jpg'},
                     ]
                 },
                                 {
                     id: 2,
                     name: 'Food',
                     listItems: [
-                        {id: 1, name: 'Bibimbap', price: 'Rp 24.000', description: 'Best beef combine with best import cheese.', image: 'https://storage.googleapis.com/pagetos_template_image/Avocado-Toast.jpg'},
-                        {id: 2, name: 'Pho Bo', price: 'Rp 24.000', description: 'Fresh vegetable combine with juicy mean.', image: 'https://storage.googleapis.com/pagetos_template_image/Salmon-Potato.jpg'},
-                        {id: 3, name: 'Pad Thai', price: 'Rp 24.000', description: 'Cruncy bacon with special double beef.', image: 'https://storage.googleapis.com/pagetos_template_image/Grilled-Chicken.jpg'},
-                        {id: 4, name: 'Beef Bulgogi', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Spinach-Feta.jpg'},
-                        {id: 5, name: 'Teriyaki Salmon', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Vegetable-Wrap.jpg'},
+                        {id: 1, name: 'Avocado Toast', price: 'Rp 24.000', description: 'Best beef combine with best import cheese.', image: 'https://storage.googleapis.com/pagetos_template_image/Avocado-Toast.jpg'},
+                        {id: 2, name: 'Salmon Potato', price: 'Rp 24.000', description: 'Fresh vegetable combine with juicy mean.', image: 'https://storage.googleapis.com/pagetos_template_image/Salmon-Potato.jpg'},
+                        {id: 3, name: 'Grilled Chicken', price: 'Rp 24.000', description: 'Cruncy bacon with special double beef.', image: 'https://storage.googleapis.com/pagetos_template_image/Grilled-Chicken.jpg'},
+                        {id: 4, name: 'Spinach Feta', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Spinach-Feta.jpg'},
+                        {id: 5, name: 'Vegetable Wrap', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Vegetable-Wrap.jpg'},
                     ]
                 },
                 {
                     id: 3,
                     name: 'Drinks',
                     listItems: [
-                        {id: 1, name: 'Ice Coke', price: 14000, description: 'Best drinks for any food.', image: 'https://storage.googleapis.com/pagetos_template_image/Golden-Turmeric.jpg'},
-                        {id: 2, name: 'Ice Pesi', price: 14000, description: 'Best drinks for any food.', image: 'https://storage.googleapis.com/pagetos_template_image/Orange-Carrot.jpg'},
-                        {id: 3, name: 'Ice Pesi', price: 14000, description: 'Best drinks for any food.', image: 'https://storage.googleapis.com/pagetos_template_image/Green-Smoothie.jpg'},
-                        {id: 4, name: 'Ice Pesi', price: 14000, description: 'Best drinks for any food.', image: 'https://storage.googleapis.com/pagetos_template_image/Coconut-Lime.jpg'},
+                        {id: 1, name: 'Golden Turmeric', price: 14000, description: 'Best drinks for any food.', image: 'https://storage.googleapis.com/pagetos_template_image/Golden-Turmeric.jpg'},
+                        {id: 2, name: 'Orange Carrot', price: 14000, description: 'Best drinks for any food.', image: 'https://storage.googleapis.com/pagetos_template_image/Orange-Carrot.jpg'},
+                        {id: 3, name: 'Green Smoothie', price: 14000, description: 'Best drinks for any food.', image: 'https://storage.googleapis.com/pagetos_template_image/Green-Smoothie.jpg'},
+                        {id: 4, name: 'Coconut Lime', price: 14000, description: 'Best drinks for any food.', image: 'https://storage.googleapis.com/pagetos_template_image/Coconut-Lime.jpg'},
                     ]
                 },
             ] ,

@@ -21,7 +21,7 @@ export default function SettingForm({personalData, handleChangeShowSelectProfile
     const dispatch = useDispatch();
     const handleClickUsername = async () => {
         try {
-            let url = 'https://dummy-backend-500141028909.asia-southeast2.run.app/auth/change-username';
+            let url = 'https://pagetos-express-backend-v1-561278679973.asia-southeast2.run.app/auth/change-username';
             if (process.env.NODE_ENV === 'development'){
                 url = 'http://localhost:5001/auth/change-username';
             }

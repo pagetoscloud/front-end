@@ -25,7 +25,7 @@ export default function Navigation({currentPage}){
         {name: 'Setting', link: '/setting', image: setting}
     ];
     const handleLogout = async () => {
-        let url = 'https://dummy-backend-500141028909.asia-southeast2.run.app/auth/logout';
+        let url = 'https://pagetos-express-backend-v1-561278679973.asia-southeast2.run.app/auth/logout';
         if (process.env.NODE_ENV === 'development'){
             url = 'http://localhost:5001/auth/logout';
         }

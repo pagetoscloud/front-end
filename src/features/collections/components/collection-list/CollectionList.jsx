@@ -42,7 +42,7 @@ export default function CollectionList({collectionData, handleCurrentCollection,
         if (process.env.NODE_ENV === 'development'){
             window.open(`http://localhost:3000/${list.link}`, "_blank")
         } else {
-            window.open(`https://infork.netlify.app/${list.link}`, "_blank")
+            window.open(`https://pagetos.com/${list.link}`, "_blank")
         }
     }
     useEffect(() => {

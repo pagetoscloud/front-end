@@ -66,7 +66,7 @@ export default function LoginForm({authenticationProcess, status}){
     const size = useWindowSize();
     const height = size[0];
     const handleGoogleAuth = async () => {
-        let redirectUrl = 'https://dummy-backend-500141028909.asia-southeast2.run.app/auth/google';
+        let redirectUrl = 'https://pagetos-express-backend-v1-561278679973.asia-southeast2.run.app/auth/google';
         if (process.env.NODE_ENV === 'development'){
             redirectUrl = 'http://localhost:5001/auth/google';
         }
