@@ -25,10 +25,10 @@ export default function Navigation({currentPage}){
         {name: 'Setting', link: '/setting', image: setting}
     ];
     const handleLogout = async () => {
-        let url = 'https://pagetos-express-backend-v1-561278679973.asia-southeast2.run.app/auth/logout';
-        if (process.env.NODE_ENV === 'development'){
-            url = 'http://localhost:5001/auth/logout';
-        }
+        const url = process.env.NODE_ENV !== 'development' 
+            ? `${process.env.API_URL}/auth/logout` 
+            : 'http://localhost:5001/auth/logout';
+
         try {
             const response = await fetch(url, {
                 method: "GET",

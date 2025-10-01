@@ -21,10 +21,14 @@ export default function SettingForm({personalData, handleChangeShowSelectProfile
     const dispatch = useDispatch();
     const handleClickUsername = async () => {
         try {
-            let url = 'https://pagetos-express-backend-v1-561278679973.asia-southeast2.run.app/auth/change-username';
-            if (process.env.NODE_ENV === 'development'){
-                url = 'http://localhost:5001/auth/change-username';
-            }
+            // let url = 'https://pagetos-express-backend-v1-561278679973.asia-southeast2.run.app/auth/change-username';
+            // if (process.env.NODE_ENV === 'development'){
+            //     url = 'http://localhost:5001/auth/change-username';
+            // }
+            const url = process.env.NODE_ENV !== 'development' 
+                ? `${process.env.API_URL}/auth/change-username` 
+                : 'http://localhost:5001/auth/change-username';
+
             const response = await fetch(url, {
                 method: "POST",
                 mode: 'cors',

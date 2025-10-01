@@ -1,8 +1,12 @@
 export const deletePageCollection = async (value) => {
-    let url = 'https://dummy-backend-500141028909.asia-southeast2.run.app/auth/change-profile-picture';
-    if (process.env.NODE_ENV === 'development'){
-        url = 'http://localhost:5001/personal-area/template-editor/delete-collection';
-    }
+    // let url = 'https://dummy-backend-500141028909.asia-southeast2.run.app/auth/change-profile-picture';
+    // if (process.env.NODE_ENV === 'development'){
+    //     url = 'http://localhost:5001/personal-area/template-editor/delete-collection';
+    // }
+    const url = process.env.NODE_ENV !== 'development' 
+      ? `${process.env.API_URL}/template-editor/delete-collection` 
+      : 'http://localhost:5001/template-editor/delete-collection';
+
     try {
         const response = await fetch(url, {
             method: 'DELETE',
@@ -22,7 +26,11 @@ export const deletePageCollection = async (value) => {
         const json = await response.json();
         if (json.status === 'ok') {
             // console.log('Deleted successfully');
-            window.location.replace(`http://localhost:3000/collection`);
+            if (process.env.NODE_ENV === 'development'){
+                window.location.replace(`http://localhost:3000/collection`);
+            } else {
+                window.location.replace(`http://pagetos/collection`);
+            }
         } else {
             console.error('Delete failed:', json);
         }

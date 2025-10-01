@@ -83,56 +83,65 @@ export default function Dashboard(){
         // }
     }
     useEffect(() => {
-        const getData = async () => {
-            // const url = 'http://localhost:5001/auth/profile-data';
-            let url = 'https://pagetos-express-backend-v1-561278679973.asia-southeast2.run.app/auth/profile-data';
-            if (process.env.NODE_ENV === 'development'){
-                url = 'http://localhost:5001/auth/profile-data';
-            }
-            try {
-                const response = await fetch(url, {
-                    method: "GET",
-                    credentials: "include",
-                    mode: 'cors',
-                    // headers: {
-                    //     'Content-Type': 'application/json'
-                    // }
-                });
-                if (!response.ok){
-                    throw new Error('fail to fetch');
-                }
-                const json = await response.json();
-                if (json.status === 'ok'){
-                    if (json.data.profile_picture === null){
-                        dispatch(changeAllData({
-                            username: json.data.username,
-                            email: json.data.email,
-                            password: '****',
-                            profilePicture: null,
-                            accountType: json.data.account_type,
-                        }));
-                    } else {
-                        dispatch(changeAllData({
-                            username: json.data.username,
-                            email: json.data.email,
-                            password: '****',
-                            profilePicture: json.data.profile_picture.link,
-                            accountType: json.data.account_type,
-                        }));
-                    }
-                } else {
-                    navigate('/login');
-                }
-            } catch (error) {
-                // navigate('/login');
-            }
-        }
+        // const getData = async () => {
+        //     // const url = 'http://localhost:5001/auth/profile-data';
+        //     // let url = 'https://pagetos-express-backend-v1-561278679973.asia-southeast2.run.app/auth/profile-data';
+        //     // if (process.env.NODE_ENV === 'development'){
+        //     //     url = 'http://localhost:5001/auth/profile-data';
+        //     // }
+
+        //     const url = process.env.NODE_ENV !== 'development' 
+        //         ? `${process.env.API_URL}/auth/profile-data` 
+        //         : 'http://localhost:5001/auth/profile-data';
+
+        //     try {
+        //         const response = await fetch(url, {
+        //             method: "GET",
+        //             credentials: "include",
+        //             mode: 'cors',
+        //             // headers: {
+        //             //     'Content-Type': 'application/json'
+        //             // }
+        //         });
+        //         if (!response.ok){
+        //             throw new Error('fail to fetch');
+        //         }
+        //         const json = await response.json();
+        //         if (json.status === 'ok'){
+        //             if (json.data.profile_picture === null){
+        //                 dispatch(changeAllData({
+        //                     username: json.data.username,
+        //                     email: json.data.email,
+        //                     password: '****',
+        //                     profilePicture: null,
+        //                     accountType: json.data.account_type,
+        //                 }));
+        //             } else {
+        //                 dispatch(changeAllData({
+        //                     username: json.data.username,
+        //                     email: json.data.email,
+        //                     password: '****',
+        //                     profilePicture: json.data.profile_picture.link,
+        //                     accountType: json.data.account_type,
+        //                 }));
+        //             }
+        //         } else {
+        //             navigate('/login');
+        //         }
+        //     } catch (error) {
+        //         // navigate('/login');
+        //     }
+        // }
         const getCollectionData = async () => {
             // const url = 'http://localhost:5001/personal-area/collection';
-            let url = 'https://pagetos-express-backend-v1-561278679973.asia-southeast2.run.app/personal-area/collection';
-            if (process.env.NODE_ENV === 'development'){
-                url = 'http://localhost:5001/personal-area/collection';
-            }
+            // let url = 'https://pagetos-express-backend-v1-561278679973.asia-southeast2.run.app/personal-area/collection';
+            // if (process.env.NODE_ENV === 'development'){
+            //     url = 'http://localhost:5001/personal-area/collection';
+            // }
+            const url = process.env.NODE_ENV !== 'development' 
+                ? `${process.env.API_URL}/personal-area/personal-area/collection` 
+                : 'http://localhost:5001/personal-area/collection';
+
             try {
                 const response = await fetch(url, {
                     method: "GET",
@@ -166,10 +175,14 @@ export default function Dashboard(){
             unsaveFormData.append('file', myFile);
             unsaveFormData.append('templateData', templateData);
             try {
-                let url = 'https://pagetos-express-backend-v1-561278679973.asia-southeast2.run.app/personal-area/upload-last-edit-image';
-                if (process.env.NODE_ENV === 'development'){
-                    url = 'http://localhost:5001/personal-area/upload-last-edit-image';
-                }
+                // let url = 'https://pagetos-express-backend-v1-561278679973.asia-southeast2.run.app/personal-area/upload-last-edit-image';
+                // if (process.env.NODE_ENV === 'development'){
+                //     url = 'http://localhost:5001/personal-area/upload-last-edit-image';
+                // }
+                const url = process.env.NODE_ENV !== 'development' 
+                    ? `${process.env.API_URL}/personal-area/upload-last-edit-image` 
+                    : 'http://localhost:5001/personal-area/upload-last-edit-image';
+
                 const response = await fetch(url, {
                     method: "POST",
                     credentials: 'include',
@@ -188,7 +201,7 @@ export default function Dashboard(){
             localStorage.removeItem('unsave-thumbnail-progress');
             localStorage.removeItem('unsave-template-progress');
         }
-        getData();
+        // getData();
         getCollectionData();
     }, [navigate, dispatch]);
     return (

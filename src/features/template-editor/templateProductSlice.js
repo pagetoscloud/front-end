@@ -55,7 +55,10 @@ function convertToFlatStructure(changedData) {
 export const fetchProducts = createAsyncThunk(
   'product/fetchProducts',
   async (web_id) => {
-    const res = await axios(`http://localhost:5001/personal-area/product-list/${web_id}`);
+    const url = process.env.NODE_ENV !== 'development' 
+    ? `${process.env.API_URL}/personal-area/product-list/${web_id}` 
+    : `http://localhost:5001/personal-area/product-list/${web_id}`;
+    const res = await axios(url);
     return res.data.product; // Expecting backend returns { product: [ ... ] }
   }
 );
@@ -68,7 +71,11 @@ export const saveProductEdit = createAsyncThunk(
     const state = getState().product; // <-- access your slice state
     const { changed } = state.product;
     try {
-        const res = await axios.post('http://localhost:5001/personal-area/product-list/edit', {changed, web_id});
+      const url = process.env.NODE_ENV !== 'development' 
+        ? `${process.env.API_URL}/personal-area/product-list/edit` 
+        : `http://localhost:5001/personal-area/product-list/edit`;
+
+      const res = await axios.post(url, {changed, web_id});
       return res.data;
     } catch (err) {
       return rejectWithValue(err.response?.data || 'Server error');
@@ -82,7 +89,11 @@ export const saveProductNew = createAsyncThunk(
     const state = getState().product; // <-- access your slice state
     const { changed } = state.product;
     try {
-        const res = await axios.post('http://localhost:5001/personal-area/product-list/edit', {changed});
+      const url = process.env.NODE_ENV !== 'development'
+        ? `${process.env.API_URL}/personal-area/product-list/edit` 
+        : `http://localhost:5001/personal-area/product-list/edit`;
+
+      const res = await axios.post(url, {changed});
       return res.data;
     } catch (err) {
       return rejectWithValue(err.response?.data || 'Server error');

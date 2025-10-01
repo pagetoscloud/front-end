@@ -4,10 +4,11 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 export const fetchAuthStatus = createAsyncThunk(
   'auth/fetchStatus',
   async () => {
-    let url = 'https://dummy-backend-500141028909.asia-southeast2.run.app/auth/login-status';
-    if (process.env.NODE_ENV === 'development'){
-        url = 'http://localhost:5001/auth/login-status';
-    }
+
+    const url = process.env.NODE_ENV !== 'development' 
+      ? `${process.env.API_URL}/auth/login-status` 
+      : 'http://localhost:5001/auth/login-status';
+
     const res = await fetch(url, {
         method: "GET",
         credentials: 'include',
@@ -20,7 +21,6 @@ export const fetchAuthStatus = createAsyncThunk(
     //   credentials: 'include',
     // });
     const data = await res.json();
-    console.log(data);
     return data;
   }
 );

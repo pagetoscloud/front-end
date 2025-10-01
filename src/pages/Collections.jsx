@@ -50,10 +50,15 @@ export default function Collections(){
     useEffect(() => {
         const getCollectionData = async () => {
             setCollection(true);
-            let url = 'https://pagetos-express-backend-v1-561278679973.asia-southeast2.run.app/personal-area/collection';
-            if (process.env.NODE_ENV === 'development'){
-                url = 'http://localhost:5001/personal-area/collection';
-            }
+            // let url = 'https://pagetos-express-backend-v1-561278679973.asia-southeast2.run.app/personal-area/collection';
+            // if (process.env.NODE_ENV === 'development'){
+            //     url = 'http://localhost:5001/personal-area/collection';
+            // }
+
+            const url = process.env.NODE_ENV !== 'development' 
+                ? `${process.env.API_URL}/personal-area/personal-area/collection` 
+                : 'http://localhost:5001/personal-area/collection';
+                
             try {
                 const response = await fetch(url, {
                     method: "GET",

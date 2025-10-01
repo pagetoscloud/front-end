@@ -21,6 +21,7 @@ import { handleSave, randomId} from "../features/template-editor/utils/utils";
 import { fetchProducts} from "../features/template-editor/templateProductSlice";
 import { changePage } from "../features/template-editor/templatePagePositionSlice";
 export default function TemplateEditor(){
+    console.log(process.env.NODE_ENV);
     const [isLoading, setLoading] = useState(true);
     const changed = useSelector(state => state.product.product.changed);
     const deleted = useSelector(state => state.product.product.deleted);
@@ -177,10 +178,15 @@ export default function TemplateEditor(){
     }, [components, styleData, navigate, web_id, setLinkPage, dispatch]);
     useEffect(() => {
         const fetchingData = async () => {
-            let url = `https://pagetos-express-backend-v1-561278679973.asia-southeast2.run.app/personal-area/edit-website/${web_id}`;
-            if (process.env.NODE_ENV === 'development'){
-                url = `http://localhost:5001/personal-area/edit-website/${web_id}`;
-            }
+            // let url = `https://pagetos-express-backend-v1-561278679973.asia-southeast2.run.app/personal-area/edit-website/${web_id}`;
+            // if (process.env.NODE_ENV === 'development'){
+            //     url = `http://localhost:5001/personal-area/edit-website/${web_id}`;
+            // }
+
+            const url = process.env.NODE_ENV !== 'development' 
+                ? `${process.env.API_URL}/personal-area/edit-website/${web_id}` 
+                : `http://localhost:5001/personal-area/edit-website/${web_id}`;
+
             try {
                 const response = await fetch(url);
                 if (!response.ok) {

@@ -21,10 +21,15 @@ export default function Settings(){
         const imageData = URL.createObjectURL(value);
         dispatch(changeProfilePicture(imageData));
         setProfilePicture(imageData);
-        let url = 'https://pagetos-express-backend-v1-561278679973.asia-southeast2.run.app/auth/change-profile-picture';
-        if (process.env.NODE_ENV === 'development'){
-            url = 'http://localhost:5001/auth/change-profile-picture';
-        }
+        // let url = 'https://pagetos-express-backend-v1-561278679973.asia-southeast2.run.app/auth/change-profile-picture';
+        // if (process.env.NODE_ENV === 'development'){
+        //     url = 'http://localhost:5001/auth/change-profile-picture';
+        // }
+
+        const url = process.env.NODE_ENV !== 'development' 
+            ? `${process.env.API_URL}/auth/change-profile-picture}` 
+            : 'http://localhost:5001/auth/change-profile-picture';
+
         const formData = new FormData();
         formData.append('file', value);
         try {
@@ -83,10 +88,14 @@ export default function Settings(){
         }
     }
     const handleLogout = async () => {
-        let url = 'https://pagetos-express-backend-v1-561278679973.asia-southeast2.run.app/auth/logout';
-        if (process.env.NODE_ENV === 'development'){
-            url = 'http://localhost:5001/auth/logout';
-        }
+        // let url = 'https://pagetos-express-backend-v1-561278679973.asia-southeast2.run.app/auth/logout';
+        // if (process.env.NODE_ENV === 'development'){
+        //     url = 'http://localhost:5001/auth/logout';
+        // }
+        const url = process.env.NODE_ENV !== 'development' 
+            ? `${process.env.API_URL}/auth/logout}` 
+            : 'http://localhost:5001/auth/logout';
+
         try {
             const response = await fetch(url, {
                 method: "GET",

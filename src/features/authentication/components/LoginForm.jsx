@@ -66,10 +66,10 @@ export default function LoginForm({authenticationProcess, status}){
     const size = useWindowSize();
     const height = size[0];
     const handleGoogleAuth = async () => {
-        let redirectUrl = 'https://pagetos-express-backend-v1-561278679973.asia-southeast2.run.app/auth/google';
-        if (process.env.NODE_ENV === 'development'){
-            redirectUrl = 'http://localhost:5001/auth/google';
-        }
+        const redirectUrl = process.env.NODE_ENV !== 'development' 
+            ? `${process.env.API_URL}/auth/google` 
+            : 'http://localhost:5001/auth/google';
+
         window.location = redirectUrl;
         // Uncomment this code if you want to use fetch to handle Google authentication
         // const url = 'http://localhost:5000/auth/google';
