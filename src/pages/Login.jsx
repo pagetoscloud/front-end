@@ -6,12 +6,12 @@ export default function Login(){
     const navigate = useNavigate();
     const authenticationProcess = async (data) => {
         // let url = 'https://pagetos-express-backend-v1-561278679973.asia-southeast2.run.app/auth/login';
-        // if (process.env.NODE_ENV === 'development'){
+        // if (import.meta.env.VITE_NODE_ENV === 'development'){
         //     url = 'http://localhost:5001/auth/login'
         // }
 
-        const url = process.env.NODE_ENV !== 'development' 
-            ? `${process.env.API_URL}/auth/login}` 
+        const url = import.meta.env.VITE_NODE_ENV !== 'development' 
+            ? `${import.meta.env.VITE_API_URL}/auth/login}` 
             : 'http://localhost:5001/auth/login';
 
         try {

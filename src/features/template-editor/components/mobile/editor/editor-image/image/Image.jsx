@@ -3,23 +3,18 @@ import { ImageListData } from "../../../../../../../data/ImageListData";
 import { ImageWrapper, SelectImageContent, SelectTypeImageButton, UploadImageButton } from "./Image.styled";
 
 
-export default function Image({browserImage, handleChangeImageBrowser, selectedUploadImage, handleChangeImageUpload}){
-    const [condition, setCondition] = useState('browse');
-    const [uploadImageList, setUploadImageList] = useState([]);
-    const handleChangeUploadImage = (e) => {
-        const prevData = [...uploadImageList];
-        prevData.push(e);
-        setUploadImageList(prevData);
-    }
+export default function Image({loggedIn, browserImage, handleChangeImageBrowser, uploadImageList, selectedUploadImage, handleChangeImageUpload, handleChangeUploadImage, handleLoginPopUp}){
+    const [selectImageType, setSelectImageType] = useState('browse');
+    console.log(loggedIn);
     return (
         <ImageWrapper>
             <SelectTypeImageButton>
-                <p style={condition === 'browse' ? {fontWeight: 800}: {}} onClick={() => setCondition('browse')}>Browse</p>
-                <p style={condition === 'upload' ? {fontWeight: 800}: {}} onClick={() => setCondition('upload')}>Upload</p>
+                <p style={selectImageType === 'browse' ? {fontWeight: 800}: {}} onClick={() => setSelectImageType('browse')}>Browse</p>
+                <p style={selectImageType === 'upload' ? {fontWeight: 800}: {}} onClick={() => setSelectImageType('upload')}>Upload</p>
             </SelectTypeImageButton>
             <SelectImageContent>
                 {
-                    condition === 'browse' ?
+                    selectImageType === 'browse' ?
                     ImageListData.map((img, index) => {
                         if (img.image === browserImage){
                             return (
@@ -46,8 +41,9 @@ export default function Image({browserImage, handleChangeImageBrowser, selectedU
                                     return (
                                         <img 
                                             style={{boxShadow: '0px 0px 0px 2px blue inset'}}
-                                            onClick={() => {handleChangeImageUpload(image)}} 
-                                            src={image} 
+                                            onClick={() => {handleChangeImageUpload(image.image_link)}} 
+                                            // src={image} 
+                                            src={image.image_link}
                                             alt="upload" 
                                         />
                                     )
@@ -55,7 +51,8 @@ export default function Image({browserImage, handleChangeImageBrowser, selectedU
                                     return (
                                         <img 
                                             onClick={() => {handleChangeImageUpload(image)}} 
-                                            src={image} 
+                                            // src={image} 
+                                            src={image.image_link}
                                             alt="upload" 
                                         />
                                     )
@@ -63,13 +60,17 @@ export default function Image({browserImage, handleChangeImageBrowser, selectedU
                             })
                         }
                         <input 
-                            onChange={(e) => handleChangeUploadImage(URL.createObjectURL(e.target.files[0]))}
+                            onChange={(e) => handleChangeUploadImage(e.target.files[0])}
                             style={{display: 'none'}}
                             id="inputNewImage" 
                             type='file' 
                         />
                         <UploadImageButton
-                            onClick={() => document.getElementById('inputNewImage').click()}
+                            onClick={() => {
+                                loggedIn ? 
+                                document.getElementById('inputNewImage').click():
+                                handleLoginPopUp();
+                            }}
                         >Upload Image</UploadImageButton>
                     </>
 

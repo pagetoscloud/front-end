@@ -6,6 +6,8 @@ import {
         ItemsInput, ItemsText, 
         ItemsWrapper 
 } from "./ItemOneEdit.styled";
+import CurrencyInput from "react-currency-input-field";
+import PriceInput from "../../others/price-input/PriceInput";
 
 export default function ItemOneEdit({items, productRef, imageRef, activeBox, activeImageBox, title, description, price, data, styleData, paragraphShorter, showDetail, handleShow, handleEditMode, handleChangeTitle, handleChangePrice, handleChangeDescription, handleClickActiveBox, handleClickActiveImageBox, handleDeleteProduct, onEdit}){
     return (
@@ -65,11 +67,18 @@ export default function ItemOneEdit({items, productRef, imageRef, activeBox, act
                             value={showDetail ? description: paragraphShorter(description)}
                             onChange={(e) => handleChangeDescription(e.target.value)}
                         />
-                        <ItemsInput
+                        {/* <ItemsInput
                             onClick={() => handleEditMode({mode: 'Text', type: 'price', component: 'product'})}
                             style={styleData.product.style.price}
                             value={price}
                             onChange={(e) => handleChangePrice(e.target.value)}
+                        /> */}
+                        <PriceInput
+                            handleEditMode={handleEditMode}
+                            handleChangePrice={handleChangePrice}
+                            style={styleData.product.style.price} 
+                            prefix="Rp"
+                            price={price}
                         />
                     </>:
                     <>

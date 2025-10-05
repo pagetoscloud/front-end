@@ -5,7 +5,7 @@
 //     const handleChangeLinkPage = async (value) => {
 //         setLinkPage(value);
 //         let url = 'https://dummy-backend-500141028909.asia-southeast2.run.app/personal-area/change-link';
-//         if (process.env.NODE_ENV === 'development'){
+//         if (import.meta.env.VITE_NODE_ENV === 'development'){
 //             url = 'http://localhost:5001/personal-area/change-link';
 //         }
 //         try {

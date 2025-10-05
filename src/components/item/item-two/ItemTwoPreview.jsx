@@ -5,6 +5,7 @@ import {
     ShowButton 
 } from "./ItemTwoPreview.styled";
 import arrowUp from '../../../assets/images/arrow-up-white.png';
+import { toCurrency } from "../../../utils/utils";
 
 export default function ItemsTwoPreview({styleData, data, title, price, description, showDetail, handleShow, paragraphShorter, handleChangeCurrentItems, handleChangePage}){
     return (
@@ -26,7 +27,7 @@ export default function ItemsTwoPreview({styleData, data, title, price, descript
             <ItemsText>
                 <ItemsTitle style={styleData.product.style.title}>{title}</ItemsTitle>
                 <ItemsDescription style={styleData.product.style.paragraph}>{description}</ItemsDescription>
-                <ItemsPrice style={styleData.product.style.price}>{price}</ItemsPrice>
+                <ItemsPrice style={styleData.product.style.price}>{toCurrency(price)}</ItemsPrice>
             </ItemsText>
             <ShowButton>
                 <img src={arrowUp} alt="show button" />

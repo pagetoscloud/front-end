@@ -1,10 +1,9 @@
 import axios from "axios";
 
 export const uploadImageCollection = async (value) => {
-    let url = 'https://pagetos-express-backend-v1-561278679973.asia-southeast2.run.app/auth/change-profile-picture';
-    if (process.env.NODE_ENV === 'development'){
-        url = 'http://localhost:5001/personal-area/upload-image-collection';
-    }
+    const url = import.meta.env.VITE_NODE_ENV !== 'development' 
+        ? `${import.meta.env.VITE_API_URL}/personal-area/upload-image-collection` 
+        : 'http://localhost:5001/personal-area/upload-image-collection';
     const formData = new FormData();
     formData.append('file', value);
     try {
@@ -23,17 +22,15 @@ export const uploadImageCollection = async (value) => {
     }
 }
 
-
-
 export const fetchThumbnailEdit = async (formData, changed, deleted) => {
     const data = formData.get('templateData');
     const parseData = JSON.parse(data);
     const web_id = parseData.id;
     try {
-        let url = 'https://pagetos-express-backend-v1-561278679973.asia-southeast2.run.app/personal-area/upload-last-edit-image';
-        if (process.env.NODE_ENV === 'development'){
-            url = 'http://localhost:5001/personal-area/upload-last-edit-image';
-        }
+        const url = import.meta.env.VITE_NODE_ENV !== 'development' 
+        ? `${import.meta.env.VITE_API_URL}/personal-area/upload-last-edit-image` 
+        : 'http://localhost:5001/personal-area/upload-last-edit-image';
+
         const response = await fetch(url, {
             method: "POST",
             mode: 'cors',
@@ -42,19 +39,61 @@ export const fetchThumbnailEdit = async (formData, changed, deleted) => {
         });
         const json = await response.json();
         if (json.status === 'ok'){
+            const urlUpdate  = import.meta.env.VITE_NODE_ENV !== 'development' 
+            ? `${import.meta.env.VITE_API_URL}` 
+            : 'http://localhost:5001';
+
             if (changed.categories.length === 0 && changed.products.length === 0 && deleted.categories.length === 0 && deleted.products.length === 0){
                 console.log('No changes to save');
                 return;
             } 
-            if (changed.categories.length > 0 || changed.products.length > 0){
-                await axios.post('http://localhost:5001/personal-area/product-list/edit', {changed, web_id});
-                console.log('There are changes to save');
+            // if (changed.categories.length > 0 || changed.products.length > 0){
+            //     await axios.post(`${urlUpdate}/personal-area/product-list/edit`, {changed, web_id});
+            //     console.log('There are changes to save');
+            // }
+            // if (deleted.categories.length > 0 || deleted.products.length > 0){
+            //     await axios.post(`${urlUpdate}/personal-area/product-list/delete`, {deleted, web_id});
+            //     console.log('There are deletions to save');
+            // }
+        if (changed.categories.length > 0 || changed.products.length > 0) {
+            const response = await fetch(`${urlUpdate}/personal-area/product-list/edit`, {
+                method: "POST",
+                mode: "cors",
+                credentials: "include", // if you need cookies
+                body: JSON.stringify({ changed, web_id }),
+                headers: { "Content-Type": "application/json" },
+            });
+
+            if (!response.ok) {
+                throw new Error(`Edit request failed: ${response.status}`);
             }
-            if (deleted.categories.length > 0 || deleted.products.length > 0){
-                await axios.post('http://localhost:5001/personal-area/product-list/delete', {deleted, web_id});
-                console.log('There are deletions to save');
+
+            const data = await response.json();
+            console.log("Changes saved:", data);
+        }
+
+        // Handle deletions
+        if (deleted.categories.length > 0 || deleted.products.length > 0) {
+            const response = await fetch(`${urlUpdate}/personal-area/product-list/delete`, {
+                method: "POST",
+                mode: "cors",
+                credentials: "include",
+                body: JSON.stringify({ deleted, web_id }),
+                headers: { "Content-Type": "application/json" },
+            });
+
+            if (!response.ok) {
+                throw new Error(`Delete request failed: ${response.status}`);
             }
-            window.location.replace(`http://localhost:3000/editor/${web_id}`);
+
+            const data = await response.json();
+            console.log("Deletions saved:", data);
+        }
+            if (import.meta.env.VITE_NODE_ENV === 'development'){
+                window.location.replace(`http://localhost:3000/editor/${web_id}`);
+            } else {
+                window.location.replace(`https://pagetos.com/editor/${web_id}`)
+            }
             console.log('Thumbnail updated successfully');
         } else {
             console.error('Failed to update thumbnail:', json.message);

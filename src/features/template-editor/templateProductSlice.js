@@ -55,8 +55,8 @@ function convertToFlatStructure(changedData) {
 export const fetchProducts = createAsyncThunk(
   'product/fetchProducts',
   async (web_id) => {
-    const url = process.env.NODE_ENV !== 'development' 
-    ? `${process.env.API_URL}/personal-area/product-list/${web_id}` 
+    const url = import.meta.env.VITE_NODE_ENV !== 'development' 
+    ? `${import.meta.env.VITE_API_URL}/personal-area/product-list/${web_id}` 
     : `http://localhost:5001/personal-area/product-list/${web_id}`;
     const res = await axios(url);
     return res.data.product; // Expecting backend returns { product: [ ... ] }
@@ -71,8 +71,8 @@ export const saveProductEdit = createAsyncThunk(
     const state = getState().product; // <-- access your slice state
     const { changed } = state.product;
     try {
-      const url = process.env.NODE_ENV !== 'development' 
-        ? `${process.env.API_URL}/personal-area/product-list/edit` 
+      const url = import.meta.env.VITE_NODE_ENV !== 'development' 
+        ? `${import.meta.env.VITE_API_URL}/personal-area/product-list/edit` 
         : `http://localhost:5001/personal-area/product-list/edit`;
 
       const res = await axios.post(url, {changed, web_id});
@@ -89,8 +89,8 @@ export const saveProductNew = createAsyncThunk(
     const state = getState().product; // <-- access your slice state
     const { changed } = state.product;
     try {
-      const url = process.env.NODE_ENV !== 'development'
-        ? `${process.env.API_URL}/personal-area/product-list/edit` 
+      const url = import.meta.env.VITE_NODE_ENV !== 'development'
+        ? `${import.meta.env.VITE_API_URL}/personal-area/product-list/edit` 
         : `http://localhost:5001/personal-area/product-list/edit`;
 
       const res = await axios.post(url, {changed});
@@ -123,7 +123,6 @@ const productSlice = createSlice({
         initialDataLocally : (state, action) => {
             const list = changeIdsInOriginalData(action.payload);
             const changed =  convertToFlatStructure(list);
-            console.log(list, changed);
             state.product = {...state.product, list, changed};
         },
         clearProductList : (state, action) => {
@@ -152,7 +151,6 @@ const productSlice = createSlice({
             state.product.changed.products = [...state.product.changed.products, newProduct]
             state.product.list.map(items => {
                 if (items.name === action.payload.category.name){
-                    console.log('found category');
                     const updateProduct = [...items.listItems, newProduct];
                     return items.listItems = updateProduct;
                 }
@@ -162,7 +160,6 @@ const productSlice = createSlice({
         deleteProduct: (state, action) => {
             state.product.list.map(items => {
                 if (items.name === action.payload.category){
-                    console.log('found category');
                     const updateProduct = items.listItems.filter(list => list.id !== action.payload.id);
                     const deletedProduct = items.listItems.filter(list => list.id === action.payload.id);
                     if (deletedProduct.length > 0){
@@ -174,7 +171,6 @@ const productSlice = createSlice({
             });
         },
         editCategory: (state, action) => {
-            console.log('edit category', action.payload.id);
             const storeUpdateInChanged = ((data) => {
               if (state.product.changed.categories.length === 0){
                   state.product.changed.categories.push(data);
@@ -243,8 +239,17 @@ const productSlice = createSlice({
         state.loading = true;
       })
       .addCase(fetchProducts.fulfilled, (state, action) => {
-        state.loading = false;
+        console.log(action.payload);
         state.product.list = action.payload;
+        state.product.changed = {
+            categories: [],
+            products: []
+        };
+        state.product.deleted = {
+            categories: [],
+            products: []
+        };
+        state.loading = false;
       })
       .addCase(fetchProducts.rejected, (state, action) => {
         state.loading = false;
@@ -257,6 +262,7 @@ const productSlice = createSlice({
       })
       .addCase(saveProductEdit.fulfilled, (state) => {
         state.loading = false;
+        
         // state.product.list = action.payload;
       })
       .addCase(saveProductEdit.rejected, (state, action) => {

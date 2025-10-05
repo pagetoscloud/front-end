@@ -52,6 +52,8 @@ export default function Editor({editMode, handleEditMode, handleChangeComponents
                     handleChangeComponents={handleChangeComponents}
                     handleComponentsMode={handleComponentsMode}
                     componentsMode={componentsMode}
+                    handleLoginPopUp={handleLoginPopUp}
+                    handleUploadImageCollection={handleUploadImageCollection}
                 /> :
                 <></>
             }

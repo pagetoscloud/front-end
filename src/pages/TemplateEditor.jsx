@@ -21,10 +21,10 @@ import { handleSave, randomId} from "../features/template-editor/utils/utils";
 import { fetchProducts} from "../features/template-editor/templateProductSlice";
 import { changePage } from "../features/template-editor/templatePagePositionSlice";
 export default function TemplateEditor(){
-    console.log(process.env.NODE_ENV);
     const [isLoading, setLoading] = useState(true);
     const changed = useSelector(state => state.product.product.changed);
     const deleted = useSelector(state => state.product.product.deleted);
+    console.log(changed, deleted);
     const size = useWindowSize();
     const [image, setImage] = useState(false);
     const [documentName, setDocumentName] = useState('new document');
@@ -67,14 +67,6 @@ export default function TemplateEditor(){
                 let img = new Image();
                 img.src = dataURL;
                 img.download = `last-design-template.png`;
-                // let a = document.createElement("a");
-                // a.innerHTML = "DOWNLOAD";
-                // a.target = "_blank";
-                // a.href = img.src;
-                // a.download = img.download;
-                // document.body.appendChild(a);
-                // a.click();
-                // document.body.removeChild(a);
                 const base64Data = dataURL.split(',')[1];
                 const binaryString = atob(base64Data);
                 const len = binaryString.length;
@@ -96,14 +88,6 @@ export default function TemplateEditor(){
                 }
             });
         }, 200);
-        // setTimeout(async () => {
-        //     if (web_id !== '*' && web_id !== undefined && web_id.length === 0 && web_id){
-        //         console.log('haha');
-        //         dispatch(saveProductEdit(web_id));
-        //     } else {
-        //         dispatch(saveProductEdit(randomWebId));
-        //     }
-        // }, 2000);
     };
 
     // console.log(components.components.data);
@@ -178,13 +162,8 @@ export default function TemplateEditor(){
     }, [components, styleData, navigate, web_id, setLinkPage, dispatch]);
     useEffect(() => {
         const fetchingData = async () => {
-            // let url = `https://pagetos-express-backend-v1-561278679973.asia-southeast2.run.app/personal-area/edit-website/${web_id}`;
-            // if (process.env.NODE_ENV === 'development'){
-            //     url = `http://localhost:5001/personal-area/edit-website/${web_id}`;
-            // }
-
-            const url = process.env.NODE_ENV !== 'development' 
-                ? `${process.env.API_URL}/personal-area/edit-website/${web_id}` 
+            const url = import.meta.env.VITE_NODE_ENV !== 'development' 
+                ? `${import.meta.env.VITE_API_URL}/personal-area/edit-website/${web_id}` 
                 : `http://localhost:5001/personal-area/edit-website/${web_id}`;
 
             try {

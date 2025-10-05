@@ -1,3 +1,4 @@
+import PriceInput from "../../others/price-input/PriceInput";
 import { 
     DeleteItemsButton,
     ItemsBackground, ItemsClick, 
@@ -63,11 +64,19 @@ export default function ItemFourEdit({items, productRef, imageRef, activeBox, ac
                         value={showDetail ? description: paragraphShorter(description)}
                         onChange={(e) => handleChangeDescription(e.target.value)}
                     />
-                    <ItemsInput
+                    {/* <ItemsInput
                         onClick={() => handleEditMode({mode: 'Text', type: 'price', component: 'specialItems'})}
                         style={styleData.specialItems.style.price}
                         value={price}
                         onChange={(e) => handleChangePrice(e.target.value)}
+                    /> */}
+                    <PriceInput
+                        handleEditMode={handleEditMode}
+                        handleChangePrice={handleChangePrice}
+                        style={styleData.specialItems.style.price} 
+                        prefix="Rp"
+                        price={price}
+                        componentType="specialItems"
                     />
                 </ItemsText>:
                 <ItemsText>

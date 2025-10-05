@@ -35,14 +35,14 @@ export default function DigitalPage(){
     useEffect(() => {
         const fetchingData = async () => {
             // let url = `https://pagetos-express-backend-v1-561278679973.asia-southeast2.run.app/personal-area/website-list/${link}`;
-            // if (process.env.NODE_ENV !== 'development'){
+            // if (import.meta.env.VITE_NODE_ENV !== 'development'){
             //     url = `http://localhost:5001/personal-area/website-list/${link}`;
             // }
 
-            const url = process.env.NODE_ENV !== 'development' 
-            ? `${process.env.API_URL}/personal-area/website-list/${link}` 
+            const url = import.meta.env.VITE_NODE_ENV !== 'development' 
+            ? `${import.meta.env.VITE_API_URL}/personal-area/website-list/${link}` 
             : `http://localhost:5001/personal-area/website-list/${link}`;
-            
+
             try {
                 const response = await fetch(url);
                 if (!response.ok) {

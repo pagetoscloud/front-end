@@ -28,15 +28,15 @@ export default function EditorImage({handleEditMode, editMode, handleUploadImage
     const size = useWindowSize();
     const height = size[0] - (130);
     const styleData = useSelector(state => state.templateStyle.current);
-    const contentData = useSelector(state => state.templateContent);
+    // const contentData = useSelector(state => state.templateContent);
     const [selectImageType, setSelectImageType] = useState('browse');
     const [uploadImageList, setUploadImageList] = useState([]);
     const {loggedIn} = useSelector(state => state.authentication);
     const fetchImageCollection = async () => {
-        let url = 'https://dummy-backend-500141028909.asia-southeast2.run.app/personal-area/collection-image';
-        if (process.env.NODE_ENV === 'development'){
-            url = 'http://localhost:5001/personal-area/collection-image';
-        }
+        const url = import.meta.env.VITE_NODE_ENV !== 'development' 
+          ? `${import.meta.env.VITE_API_URL}/personal-area/collection-image` 
+          : 'http://localhost:5001/personal-area/collection-image';
+
         try {
             const response = await fetch(url, {
                 method: "GET",
@@ -54,12 +54,8 @@ export default function EditorImage({handleEditMode, editMode, handleUploadImage
     }
     const handleChangeUploadImage = async (e) => {
         await handleUploadImageCollection(e);
-        await fetchImageCollection()
-        // const prevData = [...uploadImageList];
-        // prevData.push({image_link: URL.createObjectURL(e), name: 'New Image'});
-        // setUploadImageList(prevData);
+        await fetchImageCollection();
     }
-    console.log(editMode);
     const {
         imageOpacity, handleChangeImageOpacity,
         imageBlur, handleChangeImageBlur,
@@ -73,10 +69,10 @@ export default function EditorImage({handleEditMode, editMode, handleUploadImage
 
     useEffect(() => {
         const fetchImageCollection = async () => {
-            let url = 'https://dummy-backend-500141028909.asia-southeast2.run.app/personal-area/collection-image';
-            if (process.env.NODE_ENV === 'development'){
-                url = 'http://localhost:5001/personal-area/collection-image';
-            }
+            const url = import.meta.env.VITE_NODE_ENV !== 'development' 
+              ? `${import.meta.env.VITE_API_URL}/personal-area/collection-image` 
+              : 'http://localhost:5001/personal-area/collection-image';
+
             try {
                 const response = await fetch(url, {
                     method: "GET",
@@ -139,7 +135,7 @@ export default function EditorImage({handleEditMode, editMode, handleUploadImage
                                                     <img 
                                                         style={{boxShadow: '0px 0px 0px 2px blue inset'}}
                                                         onClick={() => {handleChangeImageUpload(image.image_link)}} 
-                                                        src={image.image_link} 
+                                                        src={image.image_link}
                                                         alt="upload" 
                                                     />
                                                 )

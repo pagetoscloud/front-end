@@ -7,6 +7,7 @@ import {
     ShowButton 
 } from "./ItemTwoEdit.styled";
 import arrowUp from '../../../assets/images/arrow-up-white.png';
+import PriceInput from "../../others/price-input/PriceInput";
 // import { useState } from "react";
 
 export default function ItemTwoEdit({styleData, data, items, title, price, description, showDetail, handleEditMode, handleShow,  handleChangeTitle, handleChangeDescription, handleChangePrice, paragraphShorter, onEdit}){
@@ -46,11 +47,18 @@ export default function ItemTwoEdit({styleData, data, items, title, price, descr
                         value={showDetail ? description: paragraphShorter(description)}
                         onChange={(e) => handleChangeDescription(e.target.value)}
                     />
-                    <ItemsInput
+                    {/* <ItemsInput
                         onClick={() => handleEditMode({mode: 'Text', type: 'price', component: 'product'})}
                         style={styleData.product.style.price}
                         value={price}
                         onChange={(e) => handleChangePrice(e.target.value)}
+                    /> */}
+                    <PriceInput
+                        handleEditMode={handleEditMode}
+                        handleChangePrice={handleChangePrice}
+                        style={styleData.product.style.price} 
+                        prefix="Rp"
+                        price={price}
                     />
                 </ItemsText>:
                 <ItemsText>

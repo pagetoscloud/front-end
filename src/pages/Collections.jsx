@@ -17,8 +17,7 @@ export default function Collections(){
     const handleChangeLinkPage = async (value, web_id) => {
         setLinkPage(value);
         let url = 'https://pagetos-express-backend-v1-561278679973.asia-southeast2.run.app/personal-area/change-link';
-        // let url = 'https://dummy-backend-500141028909.asia-southeast2.run.app/personal-area/collection';
-        if (process.env.NODE_ENV === 'development'){
+        if (import.meta.env.VITE_NODE_ENV === 'development'){
             url = 'http://localhost:5001/personal-area/change-link';
         }
         try {
@@ -51,14 +50,14 @@ export default function Collections(){
         const getCollectionData = async () => {
             setCollection(true);
             // let url = 'https://pagetos-express-backend-v1-561278679973.asia-southeast2.run.app/personal-area/collection';
-            // if (process.env.NODE_ENV === 'development'){
+            // if (import.meta.env.VITE_NODE_ENV === 'development'){
             //     url = 'http://localhost:5001/personal-area/collection';
             // }
 
-            const url = process.env.NODE_ENV !== 'development' 
-                ? `${process.env.API_URL}/personal-area/personal-area/collection` 
+            const url = import.meta.env.VITE_NODE_ENV !== 'development' 
+                ? `${import.meta.env.VITE_API_URL}/personal-area/collection` 
                 : 'http://localhost:5001/personal-area/collection';
-                
+
             try {
                 const response = await fetch(url, {
                     method: "GET",

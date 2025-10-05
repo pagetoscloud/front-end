@@ -9,6 +9,10 @@ export const MainSettingWrapper = styled.div`
     justify-content: flex-start;
     margin-top: 40px;
     padding-bottom: 40px;
+    background: pink;
+    @media only screen and (max-height: 800px){
+        padding-bottom: 120px;
+    }
     @media only screen and (min-width: 1080px){
         width: 820px;
     }

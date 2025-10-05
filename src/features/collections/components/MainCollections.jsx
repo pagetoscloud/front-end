@@ -6,15 +6,12 @@ import DetailCollection from "./detail-collection/DetailCollection";
 import { useDispatch, useSelector } from "react-redux";
 import { changePage } from "../../template-editor/templatePagePositionSlice";
 import { deletePageCollection } from "../utils/api";
-// import { TitlePageH2 } from "../../../assets/Global.styled";
-// import { collectionListData } from "../../../data/CollectionListData";
-// import { useWindowSize } from "../../../hooks/useWindowSize";
 
 export default function MainCollections({showNavigation, handleChangeLinkPage}){
     const [showDetail, setShowDetail] = useState(true);
     const collectionData = useSelector(state => state.collection);
     const dispatch = useDispatch();
-    const [currentCollection, setCurrentCollection] = useState(collectionData[0]);
+    const [currentCollection, setCurrentCollection] = useState(collectionData.length > 0 ? collectionData[0] : []);
     const handleCondition = () => {
         return collectionData.length !== 0;
     }
@@ -55,7 +52,10 @@ export default function MainCollections({showNavigation, handleChangeLinkPage}){
                     />: 
                     <></>
                 }
-                <DeleteButton onClick={() => deletePageCollection(currentCollection.web_id)}>Delete Page</DeleteButton>
+                {
+                    currentCollection.length > 0 &&
+                    <DeleteButton onClick={() => deletePageCollection(currentCollection.web_id)}>Delete Page</DeleteButton>
+                }
                 </MainCollectionWrapper>
             </MainContentLayout>
         </>

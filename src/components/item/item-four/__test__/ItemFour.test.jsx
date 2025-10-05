@@ -31,7 +31,7 @@ const mockStyleData = {
 const mockContentData = {
   name: 'Mock Item Four',
   description: 'This is a mock description for the fourth item.',
-  price: 'IDR 75.000',
+  price: 75000,
   image: 'mock-item-four.jpg',
   id: 'item-4',
 };
@@ -81,7 +81,7 @@ describe('ItemFour Components', () => {
       );
 
       const titleInput = screen.getByDisplayValue(mockContentData.name);
-      const priceInput = screen.getByDisplayValue(mockContentData.price);
+      const priceInput = screen.getByDisplayValue('Rp75.000');
       const descriptionInput = screen.getByDisplayValue(
         mockParagraphShorter(mockContentData.description)
       );
@@ -89,8 +89,8 @@ describe('ItemFour Components', () => {
       fireEvent.change(titleInput, { target: { value: 'New Title' } });
       expect(mockHandleChangeTitle).toHaveBeenCalledWith('New Title');
 
-      fireEvent.change(priceInput, { target: { value: 'IDR 100.000' } });
-      expect(mockHandleChangePrice).toHaveBeenCalledWith('IDR 100.000');
+      fireEvent.change(priceInput, { target: { value: 100000 } });
+      expect(mockHandleChangePrice).toHaveBeenCalledWith('100000');
 
       fireEvent.change(descriptionInput, { target: { value: 'New Description' } });
       expect(mockHandleChangeDescription).toHaveBeenCalledWith('New Description');
@@ -162,7 +162,7 @@ describe('ItemFour Components', () => {
 
       expect(screen.getByText('Mock Item Four')).toBeInTheDocument();
       expect(screen.getByText('This...')).toBeInTheDocument();
-      expect(screen.getByText('IDR 75.000')).toBeInTheDocument();
+      expect(screen.getByText('Rp 75.000,00')).toBeInTheDocument();
       expect(screen.getByAltText('Mock Item Four')).toHaveAttribute('src', 'mock-item-four.jpg');
     });
 

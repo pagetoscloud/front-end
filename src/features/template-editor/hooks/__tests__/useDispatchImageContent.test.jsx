@@ -25,12 +25,12 @@ describe("useDispatchImageContent", () => {
   });
 
   const baseData = {}; // not used inside hook directly
-  const productEditMode = { component: "product", id: "p1", category: "cat1", image: "old-product.png" };
+  const productEditMode = { mode: 'Image', type: 'image', component: "product", id: "p1", category: "cat1", image: "old-product.png" };
   const bannerEditMode = { component: "banner", image: "old-banner.png" };
 
   it("should initialize state correctly", () => {
     const { result } = renderHook(() =>
-      useDispatchImageContent(baseData, bannerEditMode)
+      useDispatchImageContent(bannerEditMode)
     );
 
     expect(result.current.browserImage).toBe("old-banner.png");
@@ -39,7 +39,7 @@ describe("useDispatchImageContent", () => {
 
   it("should handleChangeImageBrowser for product", () => {
     const { result } = renderHook(() =>
-      useDispatchImageContent(baseData, productEditMode)
+      useDispatchImageContent(productEditMode)
     );
 
     act(() => {
@@ -61,7 +61,7 @@ describe("useDispatchImageContent", () => {
 
   it("should handleChangeImageBrowser for banner", () => {
     const { result } = renderHook(() =>
-      useDispatchImageContent(baseData, bannerEditMode)
+      useDispatchImageContent(bannerEditMode)
     );
 
     act(() => {
@@ -82,7 +82,7 @@ describe("useDispatchImageContent", () => {
 
   it("should handleChangeImageUpload for product", () => {
     const { result } = renderHook(() =>
-      useDispatchImageContent(baseData, productEditMode)
+      useDispatchImageContent(productEditMode)
     );
 
     act(() => {
@@ -102,7 +102,7 @@ describe("useDispatchImageContent", () => {
 
   it("should handleChangeImageUpload for banner", () => {
     const { result } = renderHook(() =>
-      useDispatchImageContent(baseData, bannerEditMode)
+      useDispatchImageContent(bannerEditMode)
     );
 
     act(() => {

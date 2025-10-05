@@ -86,12 +86,12 @@ export default function Dashboard(){
         // const getData = async () => {
         //     // const url = 'http://localhost:5001/auth/profile-data';
         //     // let url = 'https://pagetos-express-backend-v1-561278679973.asia-southeast2.run.app/auth/profile-data';
-        //     // if (process.env.NODE_ENV === 'development'){
+        //     // if (import.meta.env.VITE_NODE_ENV === 'development'){
         //     //     url = 'http://localhost:5001/auth/profile-data';
         //     // }
 
-        //     const url = process.env.NODE_ENV !== 'development' 
-        //         ? `${process.env.API_URL}/auth/profile-data` 
+        //     const url = import.meta.env.VITE_NODE_ENV !== 'development' 
+        //         ? `${import.meta.env.VITE_API_URL}/auth/profile-data` 
         //         : 'http://localhost:5001/auth/profile-data';
 
         //     try {
@@ -135,11 +135,11 @@ export default function Dashboard(){
         const getCollectionData = async () => {
             // const url = 'http://localhost:5001/personal-area/collection';
             // let url = 'https://pagetos-express-backend-v1-561278679973.asia-southeast2.run.app/personal-area/collection';
-            // if (process.env.NODE_ENV === 'development'){
+            // if (import.meta.env.VITE_NODE_ENV === 'development'){
             //     url = 'http://localhost:5001/personal-area/collection';
             // }
-            const url = process.env.NODE_ENV !== 'development' 
-                ? `${process.env.API_URL}/personal-area/personal-area/collection` 
+            const url = import.meta.env.VITE_NODE_ENV !== 'development' 
+                ? `${import.meta.env.VITE_API_URL}/personal-area/collection` 
                 : 'http://localhost:5001/personal-area/collection';
 
             try {
@@ -176,11 +176,11 @@ export default function Dashboard(){
             unsaveFormData.append('templateData', templateData);
             try {
                 // let url = 'https://pagetos-express-backend-v1-561278679973.asia-southeast2.run.app/personal-area/upload-last-edit-image';
-                // if (process.env.NODE_ENV === 'development'){
+                // if (import.meta.env.VITE_NODE_ENV === 'development'){
                 //     url = 'http://localhost:5001/personal-area/upload-last-edit-image';
                 // }
-                const url = process.env.NODE_ENV !== 'development' 
-                    ? `${process.env.API_URL}/personal-area/upload-last-edit-image` 
+                const url = import.meta.env.VITE_NODE_ENV !== 'development' 
+                    ? `${import.meta.env.VITE_API_URL}/personal-area/upload-last-edit-image` 
                     : 'http://localhost:5001/personal-area/upload-last-edit-image';
 
                 const response = await fetch(url, {

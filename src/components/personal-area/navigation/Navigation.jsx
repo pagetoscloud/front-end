@@ -25,8 +25,8 @@ export default function Navigation({currentPage}){
         {name: 'Setting', link: '/setting', image: setting}
     ];
     const handleLogout = async () => {
-        const url = process.env.NODE_ENV !== 'development' 
-            ? `${process.env.API_URL}/auth/logout` 
+        const url = import.meta.env.VITE_NODE_ENV !== 'development' 
+            ? `${import.meta.env.VITE_API_URL}/auth/logout` 
             : 'http://localhost:5001/auth/logout';
 
         try {

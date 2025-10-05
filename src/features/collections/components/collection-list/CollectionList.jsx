@@ -39,7 +39,7 @@ export default function CollectionList({collectionData, handleCurrentCollection,
             setScrollPosition(scrollPosition + value);
     }
     const handlePreviewPage = (list) => {
-        if (process.env.NODE_ENV === 'development'){
+        if (import.meta.env.VITE_NODE_ENV === 'development'){
             window.open(`http://localhost:3000/${list.link}`, "_blank")
         } else {
             window.open(`https://pagetos.com/${list.link}`, "_blank")
@@ -51,83 +51,83 @@ export default function CollectionList({collectionData, handleCurrentCollection,
     }, [showDetail, showNavigation, currentWidth, collectionWidthWrapper])
     return (
         <>
-        <TitleWrapper>
-            <TitlePageH2>Collection</TitlePageH2>
-            <SlideButton>
-                {
-                    leftSpace > 0 ?
-                    <img onClick={() => handleClickScroll(-140)} src={leftArrow} alt="left arrow" />: 
-                    <img style={{opacity: '30%'}} src={leftArrow} alt="left arrow" />
-                }
-                {
-                    rightSpace > 0 ?
-                    <img onClick={() => handleClickScroll(scrollValue)} src={rightArrow} alt="right arrow" />: 
-                    <img style={{opacity: '30%'}} src={rightArrow} alt="right arrow" />
-                }
-            </SlideButton>
-        </TitleWrapper>
-        <CollectionListWrapper  
-            onScroll={handleChangeScroll} 
-            id="containerScroll" 
-            ref={containerRef}
-        >
-            <CollectionListHorizontalScroll>
-                {
-                    collectionData &&
-                    collectionData.map((list, index) => {
-                        if (index === active){
+            <TitleWrapper>
+                <TitlePageH2>Collection</TitlePageH2>
+                <SlideButton>
+                    {
+                        leftSpace > 0 ?
+                        <img onClick={() => handleClickScroll(-140)} src={leftArrow} alt="left arrow" />: 
+                        <img style={{opacity: '30%'}} src={leftArrow} alt="left arrow" />
+                    }
+                    {
+                        rightSpace > 0 ?
+                        <img onClick={() => handleClickScroll(scrollValue)} src={rightArrow} alt="right arrow" />: 
+                        <img style={{opacity: '30%'}} src={rightArrow} alt="right arrow" />
+                    }
+                </SlideButton>
+            </TitleWrapper>
+            <CollectionListWrapper  
+                onScroll={handleChangeScroll} 
+                id="containerScroll" 
+                ref={containerRef}
+            >
+                <CollectionListHorizontalScroll>
+                    {
+                        collectionData &&
+                        collectionData.map((list, index) => {
+                            if (index === active){
+                                return (
+                                    <CollectionThumbnailActive key={`${index}-collection-list-active`}>
+                                        <img 
+                                            onClick={() => handleShowDetail(true)}
+                                            src={list.image_link} 
+                                            alt="template thumbnail"
+                                        />
+                                        <p>{list.name}</p>
+                                        <ButtonWrapper>
+                                            {/* <PreviewButton onClick={() => handlePreviewPage(list)}><p>Preview</p></PreviewButton> */}
+                                            <EditButton onClick={() => handlePreviewPage(list)}><img src={viewIcon} alt="view icon"/></EditButton>
+                                            <EditButton onClick={() => {
+                                                handleChangePage();
+                                                navigate(`/editor/${list.web_id}`);
+                                            }}><img src={editIcon} alt="edit icon"/></EditButton>
+                                        </ButtonWrapper>
+                                    </CollectionThumbnailActive>
+                                )
+                            }
                             return (
-                                <CollectionThumbnailActive key={`${index}-collection-list-active`}>
+                                <CollectionThumbnail 
+                                    key={`${index}-collection-list`}
+                                    onClick={() => {
+                                        setActive(index)
+                                        handleCurrentCollection(collectionData[index]);
+                                    }}>
                                     <img 
                                         onClick={() => handleShowDetail(true)}
                                         src={list.image_link} 
                                         alt="template thumbnail"
                                     />
                                     <p>{list.name}</p>
-                                    <ButtonWrapper>
-                                        {/* <PreviewButton onClick={() => handlePreviewPage(list)}><p>Preview</p></PreviewButton> */}
-                                        <EditButton onClick={() => handlePreviewPage(list)}><img src={viewIcon} alt="view icon"/></EditButton>
-                                        <EditButton onClick={() => {
-                                            handleChangePage();
-                                            navigate(`/editor/${list.web_id}`);
-                                        }}><img src={editIcon} alt="edit icon"/></EditButton>
-                                    </ButtonWrapper>
-                                </CollectionThumbnailActive>
+                                </CollectionThumbnail>
                             )
-                        }
-                        return (
-                            <CollectionThumbnail 
-                                key={`${index}-collection-list`}
-                                onClick={() => {
-                                    setActive(index)
-                                    handleCurrentCollection(collectionData[index]);
-                                }}>
-                                <img 
-                                    onClick={() => handleShowDetail(true)}
-                                    src={list.image_link} 
-                                    alt="template thumbnail"
-                                />
-                                <p>{list.name}</p>
-                            </CollectionThumbnail>
-                        )
-                    })
-                }
-            </CollectionListHorizontalScroll>
-        </CollectionListWrapper>
-        <SlideButtonWrapper
-            style={
-                showDetail && showNavigation && currentWidth > 900 ? 
-                {width: currentWidth - 600} : 
-                showDetail && showNavigation && currentWidth < 900 ? 
-                {width: currentWidth - 470} :
-                showDetail && currentWidth > 900 ?
-                {width: currentWidth - 390} :
-                showDetail && currentWidth < 900 ?
-                {width: currentWidth - 390} :
-                {width: '100%'} 
-            } 
-        >
-        </SlideButtonWrapper>
+                        })
+                    }
+                </CollectionListHorizontalScroll>
+            </CollectionListWrapper>
+            <SlideButtonWrapper
+                style={
+                    showDetail && showNavigation && currentWidth > 900 ? 
+                    {width: currentWidth - 600} : 
+                    showDetail && showNavigation && currentWidth < 900 ? 
+                    {width: currentWidth - 470} :
+                    showDetail && currentWidth > 900 ?
+                    {width: currentWidth - 390} :
+                    showDetail && currentWidth < 900 ?
+                    {width: currentWidth - 390} :
+                    {width: '100%'} 
+                } 
+            >
+            </SlideButtonWrapper>
         </>
     )
 }

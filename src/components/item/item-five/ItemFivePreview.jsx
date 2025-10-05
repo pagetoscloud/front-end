@@ -1,3 +1,4 @@
+import { toCurrency } from "../../../utils/utils";
 import { AddButton, ItemsBackground, ItemsImage, ItemsText, ItemsWrapper } from "./ItemFivePreview.styled";
 
 export default function ItemsFivePreview({styleData, data, title, price, description, showDetail, handleShow, paragraphShorter, handleChangeCurrentItems, handleChangePage}){
@@ -19,7 +20,7 @@ export default function ItemsFivePreview({styleData, data, title, price, descrip
             <ItemsText>
                 <h4 style={styleData.specialItems.style.title}>{title}</h4>
                 <p style={styleData.specialItems.style.paragraph}>{paragraphShorter(description)}</p>
-                <h5 style={styleData.specialItems.style.price}>{price}</h5>
+                <h5 style={styleData.specialItems.style.price}>{toCurrency(price)}</h5>
             </ItemsText>
             <ItemsBackground
                 style={styleData.specialItems.style.background}

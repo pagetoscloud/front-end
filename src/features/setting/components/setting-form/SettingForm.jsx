@@ -22,11 +22,11 @@ export default function SettingForm({personalData, handleChangeShowSelectProfile
     const handleClickUsername = async () => {
         try {
             // let url = 'https://pagetos-express-backend-v1-561278679973.asia-southeast2.run.app/auth/change-username';
-            // if (process.env.NODE_ENV === 'development'){
+            // if (import.meta.env.VITE_NODE_ENV === 'development'){
             //     url = 'http://localhost:5001/auth/change-username';
             // }
-            const url = process.env.NODE_ENV !== 'development' 
-                ? `${process.env.API_URL}/auth/change-username` 
+            const url = import.meta.env.VITE_NODE_ENV !== 'development' 
+                ? `${import.meta.env.VITE_API_URL}/auth/change-username` 
                 : 'http://localhost:5001/auth/change-username';
 
             const response = await fetch(url, {

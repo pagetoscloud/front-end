@@ -68,12 +68,12 @@ export const templateListData = [
                     id: 1,
                     name: 'Food',
                     listItems: [
-                        {id: 1, name: 'Original Pizz', price: 'Rp 54.000', description: 'Best beef combine with best import cheese.', image: 'https://storage.googleapis.com/pagetos_template_image/original-pizz.png'},
-                        {id: 2, name: 'Margarita Pizz', price: 'Rp 50.000', description: 'Fresh vegetable combine with juicy mean.', image: 'https://storage.googleapis.com/pagetos_template_image/margarita-pizz.png'},
-                        {id: 3, name: 'Extra Cheese', price: 'Rp 60.000', description: 'Cruncy bacon with special double beef.', image: 'https://storage.googleapis.com/pagetos_template_image/extra-cheese.png'},
-                        {id: 4, name: 'Spinach Pizz', price: 'Rp 58.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/spinach-pizza.png'},
-                        {id: 5, name: 'Olive Pizz', price: 'Rp 60.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/olive-pizz.png'},
-                        {id: 6, name: 'Pepperoni Pizz', price: 'Rp 55.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/pepperoni-pizz.png'}
+                        {id: 1, name: 'Original Pizz', price: 54000, description: 'Best beef combine with best import cheese.', image: 'https://storage.googleapis.com/pagetos_template_image/original-pizz.png'},
+                        {id: 2, name: 'Margarita Pizz', price: 50000, description: 'Fresh vegetable combine with juicy mean.', image: 'https://storage.googleapis.com/pagetos_template_image/margarita-pizz.png'},
+                        {id: 3, name: 'Extra Cheese', price: 60000, description: 'Cruncy bacon with special double beef.', image: 'https://storage.googleapis.com/pagetos_template_image/extra-cheese.png'},
+                        {id: 4, name: 'Spinach Pizz', price: 58000, description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/spinach-pizza.png'},
+                        {id: 5, name: 'Olive Pizz', price: 60000, description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/olive-pizz.png'},
+                        {id: 6, name: 'Pepperoni Pizz', price: 55000, description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/pepperoni-pizz.png'}
                     ]
                 },
                 {
@@ -273,12 +273,12 @@ export const templateListData = [
                     id: 1,
                     name: 'Food',
                     listItems: [
-                        {id: 1, name: 'Croissant', price: 'Rp 24.000', description: 'Best beef combine with best import cheese.', image: 'https://storage.googleapis.com/pagetos_template_image/Croissant.png'},
-                        {id: 2, name: 'Macaron', price: 'Rp 24.000', description: 'Fresh vegetable combine with juicy mean.', image:'https://storage.googleapis.com/pagetos_template_image/Macaron.png'},
-                        {id: 3, name: 'Baklava', price: 'Rp 24.000', description: 'Cruncy bacon with special double beef.', image: 'https://storage.googleapis.com/pagetos_template_image/Baklava.png'},
-                        {id: 4, name: 'Puff Pastry', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Puff%20Pastry.png'},
-                        {id: 5, name: 'Danish Pastry', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Danish%20Pastry.png'},
-                        {id: 6, name: 'Tart Buah', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Tart%20Buah.png'},
+                        {id: 1, name: 'Croissant', price: 24000, description: 'Best beef combine with best import cheese.', image: 'https://storage.googleapis.com/pagetos_template_image/Croissant.png'},
+                        {id: 2, name: 'Macaron', price: 24000, description: 'Fresh vegetable combine with juicy mean.', image:'https://storage.googleapis.com/pagetos_template_image/Macaron.png'},
+                        {id: 3, name: 'Baklava', price: 24000, description: 'Cruncy bacon with special double beef.', image: 'https://storage.googleapis.com/pagetos_template_image/Baklava.png'},
+                        {id: 4, name: 'Puff Pastry', price: 24000, description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Puff%20Pastry.png'},
+                        {id: 5, name: 'Danish Pastry', price: 24000, description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Danish%20Pastry.png'},
+                        {id: 6, name: 'Tart Buah', price: 24000, description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Tart%20Buah.png'},
                     ]
                 },
                 {
@@ -484,12 +484,12 @@ export const templateListData = [
                     id: 1,
                     name: 'Food',
                     listItems: [
-                        {id: 1, name: 'Cheese Burger', price: 'Rp 24.000', description: 'Best beef combine with best import cheese.', image: cheeseBurger},
-                        {id: 2, name: 'Whopper', price: 'Rp 24.000', description: 'Fresh vegetable combine with juicy mean.', image: whopper},
-                        {id: 3, name: 'Special Bacon', price: 'Rp 24.000', description: 'Cruncy bacon with special double beef.', image: doubleBeefBacon},
-                        {id: 4, name: 'Fish Burger', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: fishBurger},
-                        {id: 4, name: 'Hot Dog', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: hotDog},
-                        {id: 4, name: 'French Fries', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: frenchFries}
+                        {id: 1, name: 'Cheese Burger', price: 24000, description: 'Best beef combine with best import cheese.', image: cheeseBurger},
+                        {id: 2, name: 'Whopper', price: 24000, description: 'Fresh vegetable combine with juicy mean.', image: whopper},
+                        {id: 3, name: 'Special Bacon', price: 24000, description: 'Cruncy bacon with special double beef.', image: doubleBeefBacon},
+                        {id: 4, name: 'Fish Burger', price: 24000, description: 'Fresh fish with cruncy vegetable', image: fishBurger},
+                        {id: 4, name: 'Hot Dog', price: 24000, description: 'Fresh fish with cruncy vegetable', image: hotDog},
+                        {id: 4, name: 'French Fries', price: 24000, description: 'Fresh fish with cruncy vegetable', image: frenchFries}
                     ]
                 },
                 {
@@ -686,12 +686,12 @@ export const templateListData = [
                     id: 1,
                     name: 'Food',
                     listItems: [
-                        {id: 1, name: 'Cheese Burger', price: 'Rp 24.000', description: 'Best beef combine with best import cheese.', image: cheeseBurger},
-                        {id: 2, name: 'Whopper', price: 'Rp 24.000', description: 'Fresh vegetable combine with juicy mean.', image: whopper},
-                        {id: 3, name: 'Special Bacon', price: 'Rp 24.000', description: 'Cruncy bacon with special double beef.', image: doubleBeefBacon},
-                        {id: 4, name: 'Fish Burger', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: fishBurger},
-                        {id: 4, name: 'Hot Dog', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: hotDog},
-                        {id: 4, name: 'French Fries', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: frenchFries}
+                        {id: 1, name: 'Cheese Burger', price: 24000, description: 'Best beef combine with best import cheese.', image: cheeseBurger},
+                        {id: 2, name: 'Whopper', price: 24000, description: 'Fresh vegetable combine with juicy mean.', image: whopper},
+                        {id: 3, name: 'Special Bacon', price: 24000, description: 'Cruncy bacon with special double beef.', image: doubleBeefBacon},
+                        {id: 4, name: 'Fish Burger', price: 24000, description: 'Fresh fish with cruncy vegetable', image: fishBurger},
+                        {id: 4, name: 'Hot Dog', price: 24000, description: 'Fresh fish with cruncy vegetable', image: hotDog},
+                        {id: 4, name: 'French Fries', price: 24000, description: 'Fresh fish with cruncy vegetable', image: frenchFries}
                     ]
                 },
                 {
@@ -893,26 +893,26 @@ export const templateListData = [
                     id: 1,
                     name: 'Popular',
                     listItems: [
-                        {id: 1, name: 'Cheese Kebab Melt', price: 'Rp 24.000', description: 'Cruncy bacon with special double beef.', image: 'https://storage.googleapis.com/pagetos_template_image/Cheese-Kebab-Melt.jpg'},
-                        {id: 2, name: 'Turkish Adana', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Turkish-Adana.jpg'},
-                        {id: 3, name: 'Falafel Wrap', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Falafel-Wrap.jpg'},
-                        {id: 4, name: 'Doner Kebab Box', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Doner-Kebab-Box.jpg'},
-                        {id: 5, name: 'Lamb Kofta Kebab', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Lamb-Kofta-Kebab.jpg'},
-                        {id: 6, name: 'Kebab Burger', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Kebab-Burger.jpg'}
+                        {id: 1, name: 'Cheese Kebab Melt', price: 24000, description: 'Cruncy bacon with special double beef.', image: 'https://storage.googleapis.com/pagetos_template_image/Cheese-Kebab-Melt.jpg'},
+                        {id: 2, name: 'Turkish Adana', price: 24000, description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Turkish-Adana.jpg'},
+                        {id: 3, name: 'Falafel Wrap', price: 24000, description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Falafel-Wrap.jpg'},
+                        {id: 4, name: 'Doner Kebab Box', price: 24000, description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Doner-Kebab-Box.jpg'},
+                        {id: 5, name: 'Lamb Kofta Kebab', price: 24000, description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Lamb-Kofta-Kebab.jpg'},
+                        {id: 6, name: 'Kebab Burger', price: 24000, description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Kebab-Burger.jpg'}
                     ]
                 },
                 {
                     id: 2,
                     name: 'Food',
                     listItems: [
-                        {id: 1, name: 'Classic Beef Kebab', price: 'Rp 24.000', description: 'Best beef combine with best import cheese.', image: 'https://storage.googleapis.com/pagetos_template_image/Classic-Beef-Kebab.jpg'},
-                        {id: 2, name: 'Chicken Shawarma', price: 'Rp 24.000', description: 'Fresh vegetable combine with juicy mean.', image: 'https://storage.googleapis.com/pagetos_template_image/Chicken-Shawarma.jpg'},
-                        {id: 3, name: 'Cheese Kebab Melt', price: 'Rp 24.000', description: 'Cruncy bacon with special double beef.', image: 'https://storage.googleapis.com/pagetos_template_image/Cheese-Kebab-Melt.jpg'},
-                        {id: 4, name: 'Turkish Adana', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Turkish-Adana.jpg'},
-                        {id: 5, name: 'Falafel Wrap', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Falafel-Wrap.jpg'},
-                        {id: 6, name: 'Doner Kebab Box', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Doner-Kebab-Box.jpg'},
-                        {id: 7, name: 'Lamb Kofta Kebab', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Lamb-Kofta-Kebab.jpg'},
-                        {id: 8, name: 'Kebab Burger', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Kebab-Burger.jpg'}
+                        {id: 1, name: 'Classic Beef Kebab', price: 24000, description: 'Best beef combine with best import cheese.', image: 'https://storage.googleapis.com/pagetos_template_image/Classic-Beef-Kebab.jpg'},
+                        {id: 2, name: 'Chicken Shawarma', price: 24000, description: 'Fresh vegetable combine with juicy mean.', image: 'https://storage.googleapis.com/pagetos_template_image/Chicken-Shawarma.jpg'},
+                        {id: 3, name: 'Cheese Kebab Melt', price: 24000, description: 'Cruncy bacon with special double beef.', image: 'https://storage.googleapis.com/pagetos_template_image/Cheese-Kebab-Melt.jpg'},
+                        {id: 4, name: 'Turkish Adana', price: 24000, description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Turkish-Adana.jpg'},
+                        {id: 5, name: 'Falafel Wrap', price: 24000, description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Falafel-Wrap.jpg'},
+                        {id: 6, name: 'Doner Kebab Box', price: 24000, description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Doner-Kebab-Box.jpg'},
+                        {id: 7, name: 'Lamb Kofta Kebab', price: 24000, description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Lamb-Kofta-Kebab.jpg'},
+                        {id: 8, name: 'Kebab Burger', price: 24000, description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Kebab-Burger.jpg'}
                     ]
                 },
                 {
@@ -1131,26 +1131,26 @@ export const templateListData = [
                     id: 1,
                     name: 'Popular Menu',
                     listItems: [
-                        {id: 1, name: 'Bibimbap', price: 'Rp 24.000', description: 'Best beef combine with best import cheese.', image: 'https://storage.googleapis.com/pagetos_template_image/Bibimbap.jpg'},
-                        {id: 2, name: 'Beef Bulgogi', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Beef-Bulgogi.jpg'},
-                        {id: 3, name: 'Pho Bo', price: 'Rp 24.000', description: 'Fresh vegetable combine with juicy mean.', image: 'https://storage.googleapis.com/pagetos_template_image/Pho-Bo.jpg'},
-                        {id: 4, name: 'Teriyaki Salmon', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Teriyaki-Salmon.jpg'},
-                        {id: 5, name: 'Spicy Tuna Sushi', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Spicy-Tuna-Sushi.jpg'},
-                        {id: 6, name: 'Chicken Katsu Curry', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Chicken-Katsu-Curry.jpg'},
+                        {id: 1, name: 'Bibimbap', price: 24000, description: 'Best beef combine with best import cheese.', image: 'https://storage.googleapis.com/pagetos_template_image/Bibimbap.jpg'},
+                        {id: 2, name: 'Beef Bulgogi', price: 24000, description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Beef-Bulgogi.jpg'},
+                        {id: 3, name: 'Pho Bo', price: 24000, description: 'Fresh vegetable combine with juicy mean.', image: 'https://storage.googleapis.com/pagetos_template_image/Pho-Bo.jpg'},
+                        {id: 4, name: 'Teriyaki Salmon', price: 24000, description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Teriyaki-Salmon.jpg'},
+                        {id: 5, name: 'Spicy Tuna Sushi', price: 24000, description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Spicy-Tuna-Sushi.jpg'},
+                        {id: 6, name: 'Chicken Katsu Curry', price: 24000, description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Chicken-Katsu-Curry.jpg'},
                     ]
                 },
                                 {
                     id: 2,
                     name: 'Food',
                     listItems: [
-                        {id: 1, name: 'Bibimbap', price: 'Rp 24.000', description: 'Best beef combine with best import cheese.', image: 'https://storage.googleapis.com/pagetos_template_image/Bibimbap.jpg'},
-                        {id: 2, name: 'Pho Bo', price: 'Rp 24.000', description: 'Fresh vegetable combine with juicy mean.', image: 'https://storage.googleapis.com/pagetos_template_image/Pho-Bo.jpg'},
-                        {id: 3, name: 'Pad Thai', price: 'Rp 24.000', description: 'Cruncy bacon with special double beef.', image: 'https://storage.googleapis.com/pagetos_template_image/Pad-Thai.jpg'},
-                        {id: 4, name: 'Beef Bulgogi', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Beef-Bulgogi.jpg'},
-                        {id: 5, name: 'Teriyaki Salmon', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Teriyaki-Salmon.jpg'},
-                        {id: 6, name: 'Spicy Tuna Sushi', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Spicy-Tuna-Sushi.jpg'},
-                        {id: 7, name: 'Chicken Katsu Curry', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Chicken-Katsu-Curry.jpg'},
-                        {id: 8, name: 'Thai Green Curry', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Thai-Green-Curry.jpg'},
+                        {id: 1, name: 'Bibimbap', price: 24000, description: 'Best beef combine with best import cheese.', image: 'https://storage.googleapis.com/pagetos_template_image/Bibimbap.jpg'},
+                        {id: 2, name: 'Pho Bo', price: 24000, description: 'Fresh vegetable combine with juicy mean.', image: 'https://storage.googleapis.com/pagetos_template_image/Pho-Bo.jpg'},
+                        {id: 3, name: 'Pad Thai', price: 24000, description: 'Cruncy bacon with special double beef.', image: 'https://storage.googleapis.com/pagetos_template_image/Pad-Thai.jpg'},
+                        {id: 4, name: 'Beef Bulgogi', price: 24000, description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Beef-Bulgogi.jpg'},
+                        {id: 5, name: 'Teriyaki Salmon', price: 24000, description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Teriyaki-Salmon.jpg'},
+                        {id: 6, name: 'Spicy Tuna Sushi', price: 24000, description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Spicy-Tuna-Sushi.jpg'},
+                        {id: 7, name: 'Chicken Katsu Curry', price: 24000, description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Chicken-Katsu-Curry.jpg'},
+                        {id: 8, name: 'Thai Green Curry', price: 24000, description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Thai-Green-Curry.jpg'},
                     ]
                 },
                 {
@@ -1376,22 +1376,22 @@ export const templateListData = [
                     id: 1,
                     name: 'Popular Menu',
                     listItems: [
-                        {id: 1, name: 'Avocado Toast', price: 'Rp 24.000', description: 'Best beef combine with best import cheese.', image: 'https://storage.googleapis.com/pagetos_template_image/Avocado-Toast.jpg'},
-                        {id: 2, name: 'Grilled Chicken', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Grilled-Chicken.jpg'},
-                        {id: 3, name: 'Golden Turmeric', price: 'Rp 24.000', description: 'Fresh vegetable combine with juicy mean.', image: 'https://storage.googleapis.com/pagetos_template_image/Golden-Turmeric.jpg'},
-                        {id: 4, name: 'Salmon Potato', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Salmon-Potato.jpg'},
-                        {id: 5, name: 'Spinach-Feta', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Spinach-Feta.jpg'},
+                        {id: 1, name: 'Avocado Toast', price: 24000, description: 'Best beef combine with best import cheese.', image: 'https://storage.googleapis.com/pagetos_template_image/Avocado-Toast.jpg'},
+                        {id: 2, name: 'Grilled Chicken', price: 24000, description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Grilled-Chicken.jpg'},
+                        {id: 3, name: 'Golden Turmeric', price: 24000, description: 'Fresh vegetable combine with juicy mean.', image: 'https://storage.googleapis.com/pagetos_template_image/Golden-Turmeric.jpg'},
+                        {id: 4, name: 'Salmon Potato', price: 24000, description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Salmon-Potato.jpg'},
+                        {id: 5, name: 'Spinach-Feta', price: 24000, description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Spinach-Feta.jpg'},
                     ]
                 },
                                 {
                     id: 2,
                     name: 'Food',
                     listItems: [
-                        {id: 1, name: 'Avocado Toast', price: 'Rp 24.000', description: 'Best beef combine with best import cheese.', image: 'https://storage.googleapis.com/pagetos_template_image/Avocado-Toast.jpg'},
-                        {id: 2, name: 'Salmon Potato', price: 'Rp 24.000', description: 'Fresh vegetable combine with juicy mean.', image: 'https://storage.googleapis.com/pagetos_template_image/Salmon-Potato.jpg'},
-                        {id: 3, name: 'Grilled Chicken', price: 'Rp 24.000', description: 'Cruncy bacon with special double beef.', image: 'https://storage.googleapis.com/pagetos_template_image/Grilled-Chicken.jpg'},
-                        {id: 4, name: 'Spinach Feta', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Spinach-Feta.jpg'},
-                        {id: 5, name: 'Vegetable Wrap', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Vegetable-Wrap.jpg'},
+                        {id: 1, name: 'Avocado Toast', price: 24000, description: 'Best beef combine with best import cheese.', image: 'https://storage.googleapis.com/pagetos_template_image/Avocado-Toast.jpg'},
+                        {id: 2, name: 'Salmon Potato', price: 24000, description: 'Fresh vegetable combine with juicy mean.', image: 'https://storage.googleapis.com/pagetos_template_image/Salmon-Potato.jpg'},
+                        {id: 3, name: 'Grilled Chicken', price: 24000, description: 'Cruncy bacon with special double beef.', image: 'https://storage.googleapis.com/pagetos_template_image/Grilled-Chicken.jpg'},
+                        {id: 4, name: 'Spinach Feta', price: 24000, description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Spinach-Feta.jpg'},
+                        {id: 5, name: 'Vegetable Wrap', price: 24000, description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Vegetable-Wrap.jpg'},
                     ]
                 },
                 {
@@ -1611,24 +1611,24 @@ export const templateListData = [
                     id: 1,
                     name: 'Popular Menu',
                     listItems: [
-                        {id: 1, name: 'Tenderloin Steak', price: 'Rp 24.000', description: 'Best beef combine with best import cheese.', image: 'https://storage.googleapis.com/pagetos_template_image/Tenderloin.jpg'},
-                        {id: 2, name: 'T-Bone Steak', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/T-Bone-Steak.jpg'},
-                        {id: 3, name: 'BBQ Beef Ribs', price: 'Rp 24.000', description: 'Fresh vegetable combine with juicy mean.', image: 'https://storage.googleapis.com/pagetos_template_image/BBQ-Beef-Ribs.jpg'},
-                        {id: 4, name: 'Ribeye Steak', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Ribeye-Steak.jpg'},
-                        {id: 5, name: 'Sirloin Steak', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Sirloin-Steak.jpg'},
-                        // {id: 5, name: 'Spicy Tuna Sushi', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: ''},
-                        // {id: 6, name: 'Chicken Katsu Curry', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: ''},
+                        {id: 1, name: 'Tenderloin Steak', price: 24000, description: 'Best beef combine with best import cheese.', image: 'https://storage.googleapis.com/pagetos_template_image/Tenderloin.jpg'},
+                        {id: 2, name: 'T-Bone Steak', price: 24000, description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/T-Bone-Steak.jpg'},
+                        {id: 3, name: 'BBQ Beef Ribs', price: 24000, description: 'Fresh vegetable combine with juicy mean.', image: 'https://storage.googleapis.com/pagetos_template_image/BBQ-Beef-Ribs.jpg'},
+                        {id: 4, name: 'Ribeye Steak', price: 24000, description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Ribeye-Steak.jpg'},
+                        {id: 5, name: 'Sirloin Steak', price: 24000, description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Sirloin-Steak.jpg'},
+                        // {id: 5, name: 'Spicy Tuna Sushi', price: 24000, description: 'Fresh fish with cruncy vegetable', image: ''},
+                        // {id: 6, name: 'Chicken Katsu Curry', price: 24000, description: 'Fresh fish with cruncy vegetable', image: ''},
                     ]
                 },
                                 {
                     id: 2,
                     name: 'Food',
                     listItems: [
-                        {id: 1, name: 'Tenderloin Steak', price: 'Rp 24.000', description: 'Best beef combine with best import cheese.', image: 'https://storage.googleapis.com/pagetos_template_image/Tenderloin.jpg'},
-                        {id: 2, name: 'T-Bone Steak', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/T-Bone-Steak.jpg'},
-                        {id: 3, name: 'BBQ Beef Ribs', price: 'Rp 24.000', description: 'Fresh vegetable combine with juicy mean.', image: 'https://storage.googleapis.com/pagetos_template_image/BBQ-Beef-Ribs.jpg'},
-                        {id: 4, name: 'Ribeye Steak', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Ribeye-Steak.jpg'},
-                        {id: 5, name: 'Sirloin Steak', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Sirloin-Steak.jpg'},
+                        {id: 1, name: 'Tenderloin Steak', price: 24000, description: 'Best beef combine with best import cheese.', image: 'https://storage.googleapis.com/pagetos_template_image/Tenderloin.jpg'},
+                        {id: 2, name: 'T-Bone Steak', price: 24000, description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/T-Bone-Steak.jpg'},
+                        {id: 3, name: 'BBQ Beef Ribs', price: 24000, description: 'Fresh vegetable combine with juicy mean.', image: 'https://storage.googleapis.com/pagetos_template_image/BBQ-Beef-Ribs.jpg'},
+                        {id: 4, name: 'Ribeye Steak', price: 24000, description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Ribeye-Steak.jpg'},
+                        {id: 5, name: 'Sirloin Steak', price: 24000, description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Sirloin-Steak.jpg'},
                     ]
                 },
                 {
@@ -1849,24 +1849,24 @@ export const templateListData = [
                     id: 1,
                     name: 'Popular Menu',
                     listItems: [
-                        {id: 1, name: 'Unagi Nigiri', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Unagi-Nigiri.jpg'},
-                        {id: 2, name: 'Rainbow Roll', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Rainbow-Roll.jpg'},
-                        {id: 3, name: 'California Roll', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/California-Roll.jpg'},
-                        {id: 4, name: 'Ebi Tempura Roll', price: 'Rp 24.000', description: 'Best beef combine with best import cheese.', image: 'https://storage.googleapis.com/pagetos_template_image/Ebi-Tempura-Roll.jpg'},
-                        {id: 5, name: 'Tuna Sashimis', price: 'Rp 24.000', description: 'Fresh vegetable combine with juicy mean.', image: 'https://storage.googleapis.com/pagetos_template_image/Tuna-Sashimi.jpg'},
-                        {id: 6, name: 'Spicy Tuna Roll', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Spicy-Tuna-Roll.jpg'},
+                        {id: 1, name: 'Unagi Nigiri', price: 24000, description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Unagi-Nigiri.jpg'},
+                        {id: 2, name: 'Rainbow Roll', price: 24000, description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Rainbow-Roll.jpg'},
+                        {id: 3, name: 'California Roll', price: 24000, description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/California-Roll.jpg'},
+                        {id: 4, name: 'Ebi Tempura Roll', price: 24000, description: 'Best beef combine with best import cheese.', image: 'https://storage.googleapis.com/pagetos_template_image/Ebi-Tempura-Roll.jpg'},
+                        {id: 5, name: 'Tuna Sashimis', price: 24000, description: 'Fresh vegetable combine with juicy mean.', image: 'https://storage.googleapis.com/pagetos_template_image/Tuna-Sashimi.jpg'},
+                        {id: 6, name: 'Spicy Tuna Roll', price: 24000, description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Spicy-Tuna-Roll.jpg'},
                     ]
                 },
                                 {
                     id: 2,
                     name: 'Food',
                     listItems: [
-                        {id: 1, name: 'Ebi Tempura Roll', price: 'Rp 24.000', description: 'Best beef combine with best import cheese.', image: 'https://storage.googleapis.com/pagetos_template_image/Ebi-Tempura-Roll.jpg'},
-                        {id: 2, name: 'California Roll', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/California-Roll.jpg'},
-                        {id: 3, name: 'Tuna Sashimis', price: 'Rp 24.000', description: 'Fresh vegetable combine with juicy mean.', image: 'https://storage.googleapis.com/pagetos_template_image/Tuna-Sashimi.jpg'},
-                        {id: 4, name: 'Spicy Tuna Roll', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Spicy-Tuna-Roll.jpg'},
-                        {id: 5, name: 'Unagi Nigiri', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Unagi-Nigiri.jpg'},
-                        {id: 6, name: 'Rainbow Roll', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Rainbow-Roll.jpg'},
+                        {id: 1, name: 'Ebi Tempura Roll', price: 24000, description: 'Best beef combine with best import cheese.', image: 'https://storage.googleapis.com/pagetos_template_image/Ebi-Tempura-Roll.jpg'},
+                        {id: 2, name: 'California Roll', price: 24000, description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/California-Roll.jpg'},
+                        {id: 3, name: 'Tuna Sashimis', price: 24000, description: 'Fresh vegetable combine with juicy mean.', image: 'https://storage.googleapis.com/pagetos_template_image/Tuna-Sashimi.jpg'},
+                        {id: 4, name: 'Spicy Tuna Roll', price: 24000, description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Spicy-Tuna-Roll.jpg'},
+                        {id: 5, name: 'Unagi Nigiri', price: 24000, description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Unagi-Nigiri.jpg'},
+                        {id: 6, name: 'Rainbow Roll', price: 24000, description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Rainbow-Roll.jpg'},
                     ]
                 },
                 {
@@ -2092,12 +2092,12 @@ export const templateListData = [
                     id: 1,
                     name: 'Popular Menu',
                     listItems: [
-                        {id: 1, name: 'Grilled Chicken', price: 'Rp 35.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Grilled-Chicken-Catering.jpg'},
-                        {id: 2, name: 'Honey Chicken', price: 'Rp 34.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Honey-Chicken.jpg'},
-                        {id: 3, name: 'Chicken Katsu', price: 'Rp 39.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Chicken-Katsu.jpg'},
-                        {id: 4, name: 'Mie Goreng Jawa', price: 'Rp 28.000', description: 'Best beef combine with best import cheese.', image: 'https://storage.googleapis.com/pagetos_template_image/Mie-Goreng-Jawa.jpg'},
-                        {id: 5, name: 'Rendang', price: 'Rp 34.000', description: 'Fresh vegetable combine with juicy mean.', image: 'https://storage.googleapis.com/pagetos_template_image/Rendang.jpg'},
-                        {id: 6, name: 'Sweet & Sour', price: 'Rp 32.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Sweet-Sour.jpg'},
+                        {id: 1, name: 'Grilled Chicken', price: 35000, description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Grilled-Chicken-Catering.jpg'},
+                        {id: 2, name: 'Honey Chicken', price: 34000, description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Honey-Chicken.jpg'},
+                        {id: 3, name: 'Chicken Katsu', price: 39000, description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Chicken-Katsu.jpg'},
+                        {id: 4, name: 'Mie Goreng Jawa', price: 28000, description: 'Best beef combine with best import cheese.', image: 'https://storage.googleapis.com/pagetos_template_image/Mie-Goreng-Jawa.jpg'},
+                        {id: 5, name: 'Rendang', price: 34000, description: 'Fresh vegetable combine with juicy mean.', image: 'https://storage.googleapis.com/pagetos_template_image/Rendang.jpg'},
+                        {id: 6, name: 'Sweet & Sour', price: 32000, description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Sweet-Sour.jpg'},
                     ]
                 },
                 {
@@ -2303,24 +2303,24 @@ export const templateListData = [
                     id: 1,
                     name: 'Popular Menu',
                     listItems: [
-                        {id: 1, name: 'Strawberry Short', price: 'Rp 34.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Strawberry-Short.jpg'},
-                        {id: 2, name: 'Classic Cheesecake', price: 'Rp 28.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Classic-Cheesecake.jpg'},
-                        {id: 3, name: 'Red Velvet', price: 'Rp 37.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Red-Velvet.jpg'},
-                        {id: 4, name: 'Matcha Green Tea', price: 'Rp 28.000', description: 'Best beef combine with best import cheese.', image: 'https://storage.googleapis.com/pagetos_template_image/Matcha-Green-Tea.jpg'},
-                        {id: 5, name: 'Black Forest', price: 'Rp 35.000', description: 'Fresh vegetable combine with juicy mean.', image: 'https://storage.googleapis.com/pagetos_template_image/Black-Forest.jpg'},
-                        {id: 6, name: 'Tiramisu Cake', price: 'Rp 27.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Tiramisu-Cake.jpg'},
+                        {id: 1, name: 'Strawberry Short', price: 34000, description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Strawberry-Short.jpg'},
+                        {id: 2, name: 'Classic Cheesecake', price: 28000, description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Classic-Cheesecake.jpg'},
+                        {id: 3, name: 'Red Velvet', price: 37000, description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Red-Velvet.jpg'},
+                        {id: 4, name: 'Matcha Green Tea', price: 28000, description: 'Best beef combine with best import cheese.', image: 'https://storage.googleapis.com/pagetos_template_image/Matcha-Green-Tea.jpg'},
+                        {id: 5, name: 'Black Forest', price: 35000, description: 'Fresh vegetable combine with juicy mean.', image: 'https://storage.googleapis.com/pagetos_template_image/Black-Forest.jpg'},
+                        {id: 6, name: 'Tiramisu Cake', price: 27000, description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Tiramisu-Cake.jpg'},
                     ]
                 },
                 {
                     id: 3,
                     name: 'Popular Menu',
                     listItems: [
-                        {id: 1, name: 'Strawberry Short', price: 'Rp 34.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Strawberry-Short.jpg'},
-                        {id: 2, name: 'Classic Cheesecake', price: 'Rp 28.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Classic-Cheesecake.jpg'},
-                        {id: 3, name: 'Red Velvet', price: 'Rp 37.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Red-Velvet.jpg'},
-                        {id: 4, name: 'Matcha Green Tea', price: 'Rp 28.000', description: 'Best beef combine with best import cheese.', image: 'https://storage.googleapis.com/pagetos_template_image/Matcha-Green-Tea.jpg'},
-                        {id: 5, name: 'Black Forest', price: 'Rp 35.000', description: 'Fresh vegetable combine with juicy mean.', image: 'https://storage.googleapis.com/pagetos_template_image/Black-Forest.jpg'},
-                        {id: 6, name: 'Tiramisu Cake', price: 'Rp 27.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Tiramisu-Cake.jpg'},
+                        {id: 1, name: 'Strawberry Short', price: 34000, description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Strawberry-Short.jpg'},
+                        {id: 2, name: 'Classic Cheesecake', price: 28000, description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Classic-Cheesecake.jpg'},
+                        {id: 3, name: 'Red Velvet', price: 37000, description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Red-Velvet.jpg'},
+                        {id: 4, name: 'Matcha Green Tea', price: 28000, description: 'Best beef combine with best import cheese.', image: 'https://storage.googleapis.com/pagetos_template_image/Matcha-Green-Tea.jpg'},
+                        {id: 5, name: 'Black Forest', price: 35000, description: 'Fresh vegetable combine with juicy mean.', image: 'https://storage.googleapis.com/pagetos_template_image/Black-Forest.jpg'},
+                        {id: 6, name: 'Tiramisu Cake', price: 27000, description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Tiramisu-Cake.jpg'},
                     ]
                 },
                 {
@@ -2552,12 +2552,12 @@ export const templateListData = [
                     id: 1,
                     name: 'Popular Menu',
                     listItems: [
-                        {id: 1, name: 'Original Crispy', price: 'Rp 24.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Original-Crispy.jpg'},
-                        {id: 2, name: 'Spicy Crispy', price: 'Rp 28.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Spicy-Crispy.jpg'},
-                        {id: 3, name: 'Chicken Tenders', price: 'Rp 28.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Chicken-Tenders.jpg'},
-                        {id: 4, name: 'Cheesy Chicken', price: 'Rp 21.000', description: 'Best beef combine with best import cheese.', image: 'https://storage.googleapis.com/pagetos_template_image/Cheesy-Chicken.jpg'},
-                        {id: 5, name: 'Spicy Burger', price: 'Rp 30.000', description: 'Fresh vegetable combine with juicy mean.', image: 'https://storage.googleapis.com/pagetos_template_image/Spicy-Burger.jpg'},
-                        {id: 6, name: 'Chicken Burger', price: 'Rp 31.000', description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Chicken-Burger.jpg'},
+                        {id: 1, name: 'Original Crispy', price: 24000, description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Original-Crispy.jpg'},
+                        {id: 2, name: 'Spicy Crispy', price: 28.000, description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Spicy-Crispy.jpg'},
+                        {id: 3, name: 'Chicken Tenders', price: 28.000, description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Chicken-Tenders.jpg'},
+                        {id: 4, name: 'Cheesy Chicken', price: 21000, description: 'Best beef combine with best import cheese.', image: 'https://storage.googleapis.com/pagetos_template_image/Cheesy-Chicken.jpg'},
+                        {id: 5, name: 'Spicy Burger', price: 30000, description: 'Fresh vegetable combine with juicy mean.', image: 'https://storage.googleapis.com/pagetos_template_image/Spicy-Burger.jpg'},
+                        {id: 6, name: 'Chicken Burger', price: 31000, description: 'Fresh fish with cruncy vegetable', image: 'https://storage.googleapis.com/pagetos_template_image/Chicken-Burger.jpg'},
                     ]
                 },
                 {

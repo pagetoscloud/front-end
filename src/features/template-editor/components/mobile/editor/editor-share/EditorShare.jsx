@@ -19,10 +19,10 @@ export default function EditorShare({handleEditMode, linkPage, setLinkPage, hand
     const [link, setLink] = useState('https://infork.com/' + linkPage);
     const [edit, setEdit] = useState(false);
     const handleCheckLink = async () => {
-        let url = 'https://dummy-backend-500141028909.asia-southeast2.run.app/personal-area/check-link';
-        if (process.env.NODE_ENV === 'development'){
-            url = 'http://localhost:5001/personal-area/check-link';
-        }
+        const url = import.meta.env.VITE_NODE_ENV !== 'development' 
+        ? `${import.meta.env.VITE_API_URL}/personal-area/check-link` 
+        : 'http://localhost:5001/personal-area/check-link';
+        
         try {
             const response = await fetch(url, {
                 method: "POST",

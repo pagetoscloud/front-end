@@ -1,3 +1,4 @@
+import { toCurrency } from "../../../utils/utils";
 import { ItemsBackground, ItemsCircle, ItemsClick, ItemsImage, ItemsText, ItemsWrapper } from "./ItemThreePreview.styled";
 
 export default function ItemThreePreview({styleData, data, title, price, description, showDetail, handleShow, paragraphShorter, handleChangePage, handleChangeCurrentItems}){
@@ -25,7 +26,7 @@ export default function ItemThreePreview({styleData, data, title, price, descrip
                 <ItemsText>
                     <h4 style={styleData.product.style.title}>{title}</h4>
                     <p style={styleData.product.style.paragraph}>{paragraphShorter(description)}</p>
-                    <h5 style={styleData.product.style.price}>{price}</h5>
+                    <h5 style={styleData.product.style.price}>{toCurrency(price)}</h5>
                 </ItemsText>
             </ItemsText>
             <ItemsBackground

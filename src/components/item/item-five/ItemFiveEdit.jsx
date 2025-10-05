@@ -1,4 +1,5 @@
 import addIcon from '../../../assets/images/white-close-icon.png';
+import PriceInput from '../../others/price-input/PriceInput';
 import { 
     AddButton,
     DeleteItemsButton,
@@ -64,11 +65,19 @@ export default function ItemFiveEdit({items, productRef, imageRef, activeBox, ac
                         value={showDetail ? description: paragraphShorter(description)}
                         onChange={(e) => handleChangeDescription(e.target.value)}
                     />
-                    <ItemsInput
+                    {/* <ItemsInput
                         onClick={() => handleEditMode({mode: 'Text', type: 'price', component: 'specialItems'})}
                         style={styleData.specialItems.style.price}
                         value={price}
                         onChange={(e) => handleChangePrice(e.target.value)}
+                    /> */}
+                    <PriceInput
+                        handleEditMode={handleEditMode}
+                        handleChangePrice={handleChangePrice}
+                        style={styleData.specialItems.style.price} 
+                        componentType="specialItems"
+                        prefix="Rp"
+                        price={price}
                     />
                 </ItemsText>:
                 <ItemsText>

@@ -6,12 +6,12 @@ export default function SignUp(){
     const navigate = useNavigate();
     const authSignup = async (data) => {
         // let url = 'https://pagetos-express-backend-v1-561278679973.asia-southeast2.run.app/auth/register';
-        // if (process.env.NODE_ENV === 'development'){
+        // if (import.meta.env.VITE_NODE_ENV === 'development'){
         //     url = 'http://localhost:5001/auth/register'
         // }
 
-        const url = process.env.NODE_ENV !== 'development' 
-            ? `${process.env.API_URL}/auth/register}` 
+        const url = import.meta.env.VITE_NODE_ENV !== 'development' 
+            ? `${import.meta.env.VITE_API_URL}/auth/register}` 
             : 'http://localhost:5001/auth/register';
 
         try {

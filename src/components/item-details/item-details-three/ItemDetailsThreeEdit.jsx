@@ -80,6 +80,7 @@ export default function ItemDetailsThreeEdit({page, styleData, contentData, hand
                                 value={itemsNoOne.price} 
                                 readOnly
                             />
+                            
                         </ItemDetailsText>
                         {/* <ItemDetailsButton>
                             <img src={arrowDown} alt="arrow down" />

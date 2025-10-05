@@ -39,7 +39,7 @@ export default function Analytics(){
         setCurrentCollection(e);
         const fetchingDataVisitor = async () => {
             let url = 'https://pagetos-express-backend-v1-561278679973.asia-southeast2.run.app/personal-area/analytics';
-            if (process.env.NODE_ENV === 'development'){
+            if (import.meta.env.VITE_NODE_ENV === 'development'){
                 url = 'http://localhost:5001/personal-area/analytics';
             }
             try {
@@ -72,7 +72,7 @@ export default function Analytics(){
             setCurrentCollection(e);
             const fetchingDataVisitor = async () => {
                 let url = 'https://pagetos-express-backend-v1-561278679973.asia-southeast2.run.app/personal-area/analytics';
-                if (process.env.NODE_ENV === 'development'){
+                if (import.meta.env.VITE_NODE_ENV === 'development'){
                     url = 'http://localhost:5001/personal-area/analytics';
                 }
                 try {
@@ -83,7 +83,7 @@ export default function Analytics(){
                         headers: {
                             'Content-Type': 'application/json'
                         },
-                        body: JSON.stringify({web_id: e.web_id})
+                        body: JSON.stringify({web_id: e?.web_id})
                     });
                     const json = await response.json();
                     changeAnalyticsData(json.data);
@@ -96,7 +96,7 @@ export default function Analytics(){
         const getCollectionData = async () => {
             setLoading(true);
             let url = 'https://pagetos-express-backend-v1-561278679973.asia-southeast2.run.app/personal-area/collection';
-            if (process.env.NODE_ENV === 'development'){
+            if (import.meta.env.VITE_NODE_ENV === 'development'){
                 url = 'http://localhost:5001/personal-area/collection';
             }
             try {

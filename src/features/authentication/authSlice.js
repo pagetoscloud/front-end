@@ -5,8 +5,8 @@ export const fetchAuthStatus = createAsyncThunk(
   'auth/fetchStatus',
   async () => {
 
-    const url = process.env.NODE_ENV !== 'development' 
-      ? `${process.env.API_URL}/auth/login-status` 
+    const url = import.meta.env.VITE_NODE_ENV !== 'development' 
+      ? `${import.meta.env.VITE_API_URL}/auth/login-status` 
       : 'http://localhost:5001/auth/login-status';
 
     const res = await fetch(url, {

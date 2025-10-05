@@ -49,7 +49,7 @@ describe('ItemFive Components', () => {
       id: '1',
       name: 'Test Item',
       description: 'This is a long description for the test item.',
-      price: 'Rp. 10.000',
+      price: 10000,
       image: 'test-image.jpg',
     };
     mockItems = {
@@ -106,7 +106,7 @@ describe('ItemFive Components', () => {
         />
       );
       expect(screen.getByDisplayValue(mockData.name)).toBeInTheDocument();
-      expect(screen.getByDisplayValue(mockData.price)).toBeInTheDocument();
+      expect(screen.getByDisplayValue("Rp10.000")).toBeInTheDocument();
       expect(
         screen.getByDisplayValue(mockParagraphShorter(mockData.description))
       ).toBeInTheDocument();
@@ -191,7 +191,7 @@ describe('ItemFive Components', () => {
         />
       );
       expect(screen.getByText(mockData.name)).toBeInTheDocument();
-      expect(screen.getByText(mockData.price)).toBeInTheDocument();
+      expect(screen.getByText('Rp 10.000,00')).toBeInTheDocument();
       expect(
         screen.getByText(mockParagraphShorter(mockData.description))
       ).toBeInTheDocument();

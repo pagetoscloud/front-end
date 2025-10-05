@@ -19,8 +19,8 @@ export default function Header({handleShowNavigation}){
     const { loggedIn } = useSelector(state => state.authentication);
     useEffect(() => {
         const getData = async () => {
-            const url = process.env.NODE_ENV !== 'development' 
-                ? `${process.env.API_URL}/auth/profile-data` 
+            const url = import.meta.env.VITE_NODE_ENV !== 'development' 
+                ? `${import.meta.env.VITE_API_URL}/auth/profile-data` 
                 : 'http://localhost:5001/auth/profile-data';
 
             try {

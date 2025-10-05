@@ -16,6 +16,8 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 export default function LoginForm({authenticationProcess, status}){
+    console.log(`${import.meta.env.VITE_API_URL}/auth/google`);
+    // console.log(process.env.VITE_API_URL);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
@@ -66,8 +68,8 @@ export default function LoginForm({authenticationProcess, status}){
     const size = useWindowSize();
     const height = size[0];
     const handleGoogleAuth = async () => {
-        const redirectUrl = process.env.NODE_ENV !== 'development' 
-            ? `${process.env.API_URL}/auth/google` 
+        const redirectUrl = import.meta.env.VITE_NODE_ENV !== 'development' 
+            ? 'https://pagetos-express-backend-v1-561278679973.asia-southeast2.run.app/auth/google'
             : 'http://localhost:5001/auth/google';
 
         window.location = redirectUrl;

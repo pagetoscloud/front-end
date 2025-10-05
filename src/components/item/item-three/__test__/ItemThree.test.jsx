@@ -31,7 +31,7 @@ const mockStyleData = {
 const mockContentData = {
   name: 'Mock Item',
   description: 'This is a mock description for the item.',
-  price: 'IDR 50.000',
+  price: 50000,
   image: 'mock-item.jpg',
   id: 'item-3',
 }
@@ -76,7 +76,7 @@ describe('ItemThree Components', () => {
 
       expect(screen.getByDisplayValue('Mock Item')).toBeInTheDocument()
       expect(screen.getByDisplayValue('This is a mock description for the item.')).toBeInTheDocument()
-      expect(screen.getByDisplayValue('IDR 50.000')).toBeInTheDocument()
+      expect(screen.getByDisplayValue('Rp50.000')).toBeInTheDocument()
     })
 
     it('calls the correct change handler when the title is changed', () => {
@@ -160,7 +160,7 @@ describe('ItemThree Components', () => {
 
       expect(screen.getByText('Mock Item')).toBeInTheDocument()
       expect(screen.getByText('This...')).toBeInTheDocument()
-      expect(screen.getByText('IDR 50.000')).toBeInTheDocument()
+      expect(screen.getByText('Rp 50.000,00')).toBeInTheDocument()
       expect(screen.getByAltText('Mock Item')).toHaveAttribute('src', 'mock-item.jpg')
     })
 
